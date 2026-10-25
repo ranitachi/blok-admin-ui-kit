@@ -5,6 +5,10 @@ Formatnya mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/),
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-25
+
+Menambah halaman ke-48: panduan integrasi Laravel.
+
 ### Ditambahkan
 - **Integrasi Laravel** (`documentation/laravel.html`, menu baru *Integrasi*): panduan memasang BLOK di Laravel 11/12 dengan struktur modular.
   - Isinya: penyalinan aset, `ModuleServiceProvider` (rute, view, migrasi, dan menu per modul), layout Blade, komponen `x-blok.field`/`x-blok.alert`, jembatan `data-server-submit` untuk form, toast dari flash session, view paginasi, chart dari data server, Fortify, dan halaman error.
@@ -42,5 +46,6 @@ Rilis publik pertama, dengan 47 halaman.
   - fokus terkunci di modal, pengumuman lewat `aria-live`
   - dukungan `prefers-reduced-motion` dan stylesheet print
 
-[Unreleased]: https://github.com/ranitachi/blok-admin-ui-kit/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/ranitachi/blok-admin-ui-kit/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/ranitachi/blok-admin-ui-kit/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/ranitachi/blok-admin-ui-kit/releases/tag/v1.0.0
