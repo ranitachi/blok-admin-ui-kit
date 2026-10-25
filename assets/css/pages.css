@@ -2916,7 +2916,7 @@ span.nb-page-list__item {
 }
 
 /* ==========================================================================
-   Katalog — kartu mengambang "Unduh / GitHub"
+   Kartu mengambang "Unduh / GitHub" (dibuat app.js, hanya di demo online)
    ========================================================================== */
 .nb-fab {
   position: fixed;
@@ -2994,6 +2994,11 @@ body:has(.nb-fab:not([hidden])) .nb-toast-stack {
   bottom: calc(var(--space-5) + 132px);
 }
 
+/* Ruang di akhir halaman supaya footer tidak tertutup kartu. */
+body:has(.nb-fab:not([hidden])) .nb-footer {
+  padding-bottom: calc(var(--space-6) + 132px);
+}
+
 @media (max-width: 767px) {
   .nb-fab {
     right: var(--space-4);
@@ -3022,7 +3027,6 @@ body:has(.nb-fab:not([hidden])) .nb-toast-stack {
     bottom: calc(var(--space-4) + 72px);
   }
 
-  /* Ruang di akhir halaman supaya footer tidak tertutup kartu. */
   body:has(.nb-fab:not([hidden])) .nb-footer {
     padding-bottom: calc(var(--space-6) + 56px);
   }

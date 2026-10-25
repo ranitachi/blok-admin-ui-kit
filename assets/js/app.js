@@ -475,9 +475,60 @@
     });
   }
 
+  /* ---- Kartu "Unduh / GitHub" ---------------------------------------- */
+  /* Hanya di demo online (GitHub Pages), jadi salinan yang diunduh tetap bersih.
+     Disembunyikan per tab lewat sessionStorage; muncul lagi di kunjungan berikutnya. */
+  var FAB_HOSTS = ["ranitachi.github.io"];
+  var FAB_KEY = "nb-fab-hidden";
+  var REPO_URL = "https://github.com/ranitachi/blok-admin-ui-kit";
+  var RELEASE = "v1.0.0";
+  var GITHUB_MARK =
+    "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z";
+
+  function initDownloadFab() {
+    if (FAB_HOSTS.indexOf(window.location.hostname) === -1) return;
+    try {
+      if (window.sessionStorage.getItem(FAB_KEY) === "1") return;
+    } catch (e) {
+      /* storage diblokir: kartu tetap tampil */
+    }
+
+    var fab = document.createElement("aside");
+    fab.className = "nb-fab nb-no-print";
+    fab.setAttribute("aria-labelledby", "nb-fab-title");
+    fab.innerHTML =
+      '<p class="nb-fab__title" id="nb-fab-title">Template gratis · ' + RELEASE + "</p>" +
+      '<div class="nb-fab__actions">' +
+      '<a class="nb-btn nb-btn--yellow nb-fab__btn" href="' + REPO_URL + "/archive/refs/tags/" + RELEASE + '.zip" aria-label="Unduh ZIP ' + RELEASE + ' dari GitHub">' +
+      '<svg class="nb-icon" aria-hidden="true"><use href="#i-download"></use></svg><span class="nb-fab__text">Unduh ZIP</span></a>' +
+      '<a class="nb-btn nb-fab__btn" href="' + REPO_URL + '" target="_blank" rel="noopener" aria-label="GitHub: lihat repositori (tab baru)">' +
+      '<svg class="nb-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" stroke="none" d="' + GITHUB_MARK + '"/></svg>' +
+      '<span class="nb-fab__text">GitHub</span></a>' +
+      "</div>" +
+      '<button class="nb-fab__close" type="button" aria-label="Sembunyikan tautan unduh">' +
+      '<svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg></button>';
+    document.body.appendChild(fab);
+
+    NB.qs(".nb-fab__close", fab).addEventListener("click", function () {
+      fab.hidden = true;
+      try {
+        window.sessionStorage.setItem(FAB_KEY, "1");
+      } catch (e) {
+        /* storage diblokir: kartu hanya tersembunyi sampai halaman dimuat ulang */
+      }
+      // Fokus tidak boleh hilang bersama tombol yang disembunyikan.
+      var heading = NB.qs("main h1");
+      if (heading) {
+        heading.setAttribute("tabindex", "-1");
+        heading.focus();
+      }
+    });
+  }
+
   NB.ready(function () {
     initActiveNav();
     initPrint();
+    initDownloadFab();
     NB.sidebar.init();
     initNavGroups();
     initQuickNav();
