@@ -2,7 +2,7 @@
 
 # BLOK Admin UI Kit
 
-**Template admin dashboard bergaya Neo-Brutalist: 47 halaman HTML, CSS, dan vanilla JavaScript.**
+**Template admin dashboard bergaya Neo-Brutalist: 48 halaman HTML, CSS, dan vanilla JavaScript.**
 Tanpa framework, tanpa build step, tanpa backend. Tinggal buka di browser.
 
 [![Versi](https://img.shields.io/github/v/tag/ranitachi/blok-admin-ui-kit?label=versi&color=FFD43B&style=flat-square)](https://github.com/ranitachi/blok-admin-ui-kit/tags)
@@ -16,7 +16,7 @@ Tanpa framework, tanpa build step, tanpa backend. Tinggal buka di browser.
 
 </div>
 
-> *English:* BLOK is a static, framework-free admin dashboard template in a Neo-Brutalist style (thick borders, hard offset shadows, bold colors). It has 47 pages, a full component library, CRUD demos, auth and error pages, and built-in documentation. It is accessible (WCAG AA), responsive from 320px, and needs no build step. The UI copy is in Indonesian.
+> *English:* BLOK is a static, framework-free admin dashboard template in a Neo-Brutalist style (thick borders, hard offset shadows, bold colors). It has 48 pages, a full component library, CRUD demos, auth and error pages, and built-in documentation. It is accessible (WCAG AA), responsive from 320px, and needs no build step. The UI copy is in Indonesian.
 
 ---
 
@@ -77,8 +77,9 @@ Bisa juga membuka `index.html` langsung di browser, atau menyajikan folder ini d
 | **Autentikasi** (4) | Masuk · Daftar · Lupa kata sandi · Atur ulang kata sandi |
 | **Error** (3) | 403 · 404 · 500 |
 | **Dokumentasi** (5) | Mulai di sini · Indeks komponen · Design token · API JavaScript · Aksesibilitas |
+| **Integrasi** (1) | [Laravel](documentation/laravel.html): instalasi dengan struktur modular, layout Blade, komponen, form, paginasi, Fortify |
 
-**Total: 47 halaman.** Semua data adalah data fiktif untuk skenario inventaris dan aset sebuah institusi.
+**Total: 48 halaman.** Semua data adalah data fiktif untuk skenario inventaris dan aset sebuah institusi.
 
 ## Struktur folder
 

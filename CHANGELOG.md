@@ -5,6 +5,11 @@ Formatnya mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/),
 
 ## [Unreleased]
 
+### Ditambahkan
+- **Integrasi Laravel** (`documentation/laravel.html`, menu baru *Integrasi*): panduan memasang BLOK di Laravel 11/12 dengan struktur modular.
+  - Isinya: penyalinan aset, `ModuleServiceProvider` (rute, view, migrasi, dan menu per modul), layout Blade, komponen `x-blok.field`/`x-blok.alert`, jembatan `data-server-submit` untuk form, toast dari flash session, view paginasi, chart dari data server, Fortify, dan halaman error.
+  - Dilengkapi contoh modul Aset.
+
 ## [1.0.0] - 2026-10-25
 
 Rilis publik pertama, dengan 47 halaman.

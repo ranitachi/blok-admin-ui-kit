@@ -86,6 +86,7 @@ PAGES = [
     ("docs-tokens", "documentation/tokens.html", "Design token", "Dokumentasi", "palette", "F", None),
     ("docs-js", "documentation/javascript.html", "API JavaScript", "Dokumentasi", "code", "F", None),
     ("docs-a11y", "documentation/accessibility.html", "Aksesibilitas", "Dokumentasi", "eye", "F", None),
+    ("int-laravel", "documentation/laravel.html", "Laravel", "Integrasi", "terminal", "F", None),
 ]
 
 # Label item sidebar bila berbeda dari label halaman.
@@ -99,6 +100,7 @@ NAV_GROUPS = [
     ("UI Kit", None),
     ("Halaman", ["reports", "notifications", "profile", "settings", "pricing", "help", "auth", "errors"]),
     ("Dokumentasi", ["docs", "docs-components", "docs-tokens", "docs-js", "docs-a11y"]),
+    ("Integrasi", ["int-laravel"]),
 ]
 
 # Kategori katalog di index.html.
@@ -110,6 +112,7 @@ CATALOG = [
     ("Halaman umum", "file", "pink", ["reports", "notifications", "profile", "settings", "pricing", "help"]),
     ("Auth & error", "lock", "sage", ["auth", "auth-register", "auth-forgot", "auth-reset", "e-403", "errors", "e-500"]),
     ("Dokumentasi", "file", "lavender-soft", [p[0] for p in PAGES if p[0].startswith("docs")]),
+    ("Integrasi", "terminal", "blue", ["int-laravel"]),
 ]
 CATALOG_LABEL = {"index": "Katalog halaman", "dashboard": "Ringkasan inventaris", "dashboard-analytics": "Dashboard analitik",
                  "dashboard-operations": "Dashboard operasional", "assets": "Daftar aset", "users": "Daftar pengguna",

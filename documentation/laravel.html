@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrasi Laravel — BLOK Admin UI Kit</title>
+  <meta name="description" content="Panduan memasang BLOK di Laravel 11/12 dengan struktur modular: aset, layout Blade, menu per modul, komponen, form, paginasi, auth, dan halaman error.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+</head>
+<body class="nb-app" data-page="int-laravel">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Integrasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/laravel.html" data-nav="int-laravel"><svg class="nb-icon" aria-hidden="true"><use href="#i-terminal"></use></svg><span class="nb-nav__label">Laravel</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Integrasi</li>
+            <li><span aria-current="page">Laravel</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Integrasi</li>
+          <li><span aria-current="page">Laravel</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Integrasi</p>
+          <h1 class="nb-page-header__title">Integrasi Laravel</h1>
+          <p class="nb-page-header__desc">Memasang BLOK di Laravel 11/12 dengan struktur modular: setiap fitur membawa rute, view, migrasi, dan item menunya sendiri.</p>
+        </div>
+      </header>
+
+      <div class="nb-settings">
+        <nav class="nb-settings__nav" aria-label="Isi panduan Laravel">
+          <ul class="nb-toc">
+            <li><a href="#ikhtisar">Gambaran &amp; prasyarat</a></li>
+            <li><a href="#instalasi">Instal Laravel &amp; salin aset</a></li>
+            <li><a href="#struktur">Struktur folder modular</a></li>
+            <li><a href="#modul">Registrasi modul</a></li>
+            <li><a href="#layout">Layout Blade</a></li>
+            <li><a href="#sidebar">Sidebar &amp; topbar</a></li>
+            <li><a href="#komponen">Komponen Blade</a></li>
+            <li><a href="#form">Form, validasi &amp; flash</a></li>
+            <li><a href="#tabel">Tabel &amp; paginasi</a></li>
+            <li><a href="#chart">Chart dengan data server</a></li>
+            <li><a href="#auth">Auth &amp; halaman error</a></li>
+            <li><a href="#contoh">Contoh modul lengkap: Aset</a></li>
+            <li><a href="#opsi-paket">Alternatif: nwidart/laravel-modules</a></li>
+            <li><a href="#checklist">Daftar periksa</a></li>
+          </ul>
+        </nav>
+
+        <div class="nb-stack">
+          <section class="nb-card" id="ikhtisar" aria-labelledby="ikhtisar-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="ikhtisar-title">Gambaran &amp; prasyarat</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>BLOK adalah HTML/CSS/JS statis, jadi tidak ada paket Composer atau npm yang perlu dipasang. Integrasinya cukup tiga langkah: salin aset ke <code class="nb-inline-code">public/</code>, pecah kerangka halaman menjadi layout Blade, lalu biarkan tiap fitur hidup sebagai <strong>modul</strong> yang mendaftarkan rute, view, migrasi, dan item menunya sendiri.</p>
+<ul><li>PHP 8.2+ dan Composer.</li><li>Laravel 11 atau 12 (struktur <code class="nb-inline-code">bootstrap/providers.php</code>). Di Laravel 10, daftarkan provider di <code class="nb-inline-code">config/app.php</code>.</li><li>Node/Vite <strong>tidak wajib</strong>; aset BLOK dimuat apa adanya.</li></ul>
+<div class="nb-alert" role="note"><svg class="nb-icon" aria-hidden="true"><use href="#i-info"></use></svg><div><strong>Konvensi di panduan ini</strong><p>Nama aplikasi <code class="nb-inline-code">blok-app</code>, modul contoh <code class="nb-inline-code">Asset</code>. Semua kelas CSS tetap <code class="nb-inline-code">.nb-*</code> dan semua hook JS tetap <code class="nb-inline-code">data-*</code>, sama seperti di template.</p></div></div>
+            </div>
+          </section>
+          <section class="nb-card" id="instalasi" aria-labelledby="instalasi-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="instalasi-title">1. Instal Laravel &amp; salin aset</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Buat proyek baru, lalu salin CSS dan JS inti ke <code class="nb-inline-code">public/vendor/blok</code>. Skrip demo tidak ikut disalin: <code class="nb-inline-code">data.js</code> dan <code class="nb-inline-code">records.js</code> berisi data fiktif, dan <code class="nb-inline-code">assets/js/pages/</code> berisi perilaku halaman demo.</p>
+<pre class="nb-code" tabindex="0" aria-label="Perintah instalasi dan salin aset"><code>composer create-project laravel/laravel blok-app
+cd blok-app
+
+# salin dari folder repositori BLOK (sesuaikan path-nya)
+BLOK=../blok-admin-ui-kit
+mkdir -p public/vendor/blok/js
+cp -R $BLOK/assets/css public/vendor/blok/css
+cp $BLOK/assets/js/{icons,app,components,forms,tables,charts}.js public/vendor/blok/js/</code></pre>
+<p>Setel bahasa ke Indonesia agar <code class="nb-inline-code">lang</code> dan pesan validasi sesuai dengan teks UI:</p>
+<pre class="nb-code" tabindex="0" aria-label="Pengaturan .env"><code>APP_NAME="BLOK"
+APP_LOCALE=id
+APP_FALLBACK_LOCALE=en</code></pre>
+<p>Pesan validasi Bahasa Indonesia bisa ditulis di <code class="nb-inline-code">lang/id/validation.php</code> (jalankan <code class="nb-inline-code">php artisan lang:publish</code> lalu terjemahkan), atau gunakan paket terjemahan komunitas.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="struktur" aria-labelledby="struktur-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="struktur-title">2. Struktur folder modular</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Kerangka tampilan (layout, partial, komponen) dipakai bersama di <code class="nb-inline-code">resources/views</code>. Setiap fitur bisnis menjadi folder mandiri di <code class="nb-inline-code">app/Modules</code>. Menambah atau mencabut fitur cukup dengan menambah atau menghapus foldernya dan satu baris di <code class="nb-inline-code">config/blok.php</code>.</p>
+<pre class="nb-code" tabindex="0" aria-label="Struktur folder Laravel dengan modul"><code>blok-app/
+  app/
+    Modules/
+      Dashboard/
+        Http/Controllers/DashboardController.php
+        Views/index.blade.php
+        module.php                 menu milik modul
+        routes.php
+      Asset/
+        Database/Migrations/2026_10_25_000000_create_assets_table.php
+        Http/Controllers/AssetController.php
+        Http/Requests/AssetRequest.php
+        Models/Asset.php
+        Views/index.blade.php
+        Views/form.blade.php
+        module.php
+        routes.php
+    Providers/ModuleServiceProvider.php   memuat semua modul
+  config/blok.php                         daftar modul &amp; urutan grup sidebar
+  public/vendor/blok/                     css/ dan js/ dari template
+  resources/views/
+    layouts/blok/app.blade.php            shell admin (sidebar + topbar)
+    layouts/blok/standalone.blade.php     auth &amp; halaman error
+    layouts/blok/partials/head.blade.php
+    layouts/blok/partials/sidebar.blade.php
+    layouts/blok/partials/topbar.blade.php
+    layouts/blok/partials/scripts.blade.php
+    components/blok/field.blade.php       &lt;x-blok.field&gt;
+    components/blok/alert.blade.php       &lt;x-blok.alert&gt;
+    vendor/pagination/blok.blade.php
+    auth/login.blade.php
+    errors/403.blade.php, 404.blade.php, 500.blade.php</code></pre>
+<p>Namespace <code class="nb-inline-code">App\Modules\…</code> sudah tercakup PSR-4 bawaan (<code class="nb-inline-code">App\ =&gt; app/</code>), jadi <code class="nb-inline-code">composer.json</code> tidak perlu diubah.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="modul" aria-labelledby="modul-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="modul-title">3. Registrasi modul</h2></header>
+            <div class="nb-card__body nb-prose">
+<p><code class="nb-inline-code">config/blok.php</code> menentukan modul yang aktif dan urutan grup menu:</p>
+<pre class="nb-code" tabindex="0" aria-label="config/blok.php"><code>&lt;?php
+
+return [
+    // Nama folder di app/Modules. Urutan ini juga urutan pemuatan rute.
+    'modules' =&gt; ['Dashboard', 'Asset'],
+
+    // Urutan grup di sidebar. Item dengan grup di luar daftar ini tidak tampil.
+    'groups' =&gt; ['Dashboard', 'Data', 'Operasional', 'Pengaturan'],
+];</code></pre>
+<p>Setiap modul menyumbang item menunya lewat <code class="nb-inline-code">module.php</code>:</p>
+<pre class="nb-code" tabindex="0" aria-label="app/Modules/Asset/module.php"><code>&lt;?php
+
+return [
+    'menu' =&gt; [
+        [
+            'key'    =&gt; 'assets',        // nilai data-page / data-nav
+            'label'  =&gt; 'Aset',
+            'group'  =&gt; 'Data',
+            'icon'   =&gt; 'box',           // nama ikon di icons.js, tanpa awalan i-
+            'route'  =&gt; 'assets.index',
+            'active' =&gt; 'assets.*',      // pola request()-&gt;routeIs()
+            'can'    =&gt; 'manage-assets', // opsional: ability Gate
+        ],
+    ],
+];</code></pre>
+<p>Satu service provider memuat semua modul: view dengan namespace (misalnya <code class="nb-inline-code">asset::index</code>), migrasi, rute (dengan middleware <code class="nb-inline-code">web</code> + <code class="nb-inline-code">auth</code>), lalu menyusun menu untuk layout.</p>
+<pre class="nb-code" tabindex="0" aria-label="app/Providers/ModuleServiceProvider.php"><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
+
+class ModuleServiceProvider extends ServiceProvider
+{
+    /** Item menu dari semua modul, dikelompokkan per grup. */
+    protected array $menu = [];
+
+    public function boot(): void
+    {
+        foreach (config('blok.modules') as $name) {
+            $path = app_path("Modules/{$name}");
+
+            $this-&gt;loadViewsFrom("{$path}/Views", Str::kebab($name));
+            $this-&gt;loadMigrationsFrom("{$path}/Database/Migrations");
+
+            if (! $this-&gt;app-&gt;routesAreCached()) {
+                Route::middleware(['web', 'auth'])-&gt;group("{$path}/routes.php");
+            }
+
+            foreach ((require "{$path}/module.php")['menu'] as $item) {
+                $this-&gt;menu[$item['group']][] = $item;
+            }
+        }
+
+        View::composer('layouts.blok.app', function ($view) {
+            $user = auth()-&gt;user();
+            $menu = [];
+            $active = null;
+
+            foreach (config('blok.groups') as $group) {
+                $items = array_values(array_filter(
+                    $this-&gt;menu[$group] ?? [],
+                    fn ($item) =&gt; ! isset($item['can']) || $user?-&gt;can($item['can'])
+                ));
+
+                foreach ($items as $item) {
+                    if (request()-&gt;routeIs($item['active'] ?? $item['route'])) {
+                        $active = $item['key'];
+                    }
+                }
+
+                if ($items) {
+                    $menu[$group] = $items;
+                }
+            }
+
+            $view-&gt;with(['blokMenu' =&gt; $menu, 'blokActive' =&gt; $active]);
+        });
+    }
+}</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="bootstrap/providers.php"><code>&lt;?php
+
+return [
+    App\Providers\AppServiceProvider::class,
+    App\Providers\ModuleServiceProvider::class,
+];</code></pre>
+<p>Hapus rute <code class="nb-inline-code">/</code> bawaan di <code class="nb-inline-code">routes/web.php</code> karena modul Dashboard yang akan memakainya. Ability seperti <code class="nb-inline-code">manage-assets</code> didefinisikan dengan <code class="nb-inline-code">Gate::define()</code> di <code class="nb-inline-code">AppServiceProvider</code>.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="layout" aria-labelledby="layout-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="layout-title">4. Layout Blade</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Isi <code class="nb-inline-code">&amp;lt;head&amp;gt;</code> dipakai oleh kedua layout. Urutan CSS dan JS wajib sama dengan template. Halaman yang butuh <code class="nb-inline-code">tables.js</code>, <code class="nb-inline-code">charts.js</code>, atau data chart menambahkannya lewat <code class="nb-inline-code">@push</code>.</p>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/layouts/blok/partials/head.blade.php"><code>&lt;!doctype html&gt;
+&lt;html lang="{{ str_replace('_', '-', app()-&gt;getLocale()) }}" class="nb-preload"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;@yield('title') — {{ config('app.name') }}&lt;/title&gt;
+  &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+  &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"&gt;
+  @foreach (['tokens', 'reset', 'layout', 'components', 'pages', 'responsive'] as $css)
+    &lt;link rel="stylesheet" href="{{ asset("vendor/blok/css/{$css}.css") }}"&gt;
+  @endforeach
+  @foreach (['icons', 'app', 'components', 'forms'] as $js)
+    &lt;script src="{{ asset("vendor/blok/js/{$js}.js") }}" defer&gt;&lt;/script&gt;
+  @endforeach
+  @stack('head')
+  @stack('scripts')
+&lt;/head&gt;</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/layouts/blok/app.blade.php"><code>@include('layouts.blok.partials.head')
+&lt;body class="nb-app" data-page="{{ $blokActive }}"&gt;
+  &lt;a class="nb-skip-link" href="#main"&gt;Lewati ke konten utama&lt;/a&gt;
+
+  @include('layouts.blok.partials.sidebar')
+
+  &lt;div class="nb-main"&gt;
+    @include('layouts.blok.partials.topbar')
+
+    &lt;main class="nb-content" id="main" tabindex="-1"&gt;
+      &lt;nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman"&gt;
+        &lt;ol&gt;
+          &lt;li&gt;&lt;a href="{{ route('dashboard') }}"&gt;Beranda&lt;/a&gt;&lt;/li&gt;
+          @yield('breadcrumb')
+        &lt;/ol&gt;
+      &lt;/nav&gt;
+
+      @yield('content')
+    &lt;/main&gt;
+
+    &lt;footer class="nb-footer"&gt;
+      &lt;p&gt;© {{ date('Y') }} {{ config('app.name') }}&lt;/p&gt;
+      &lt;p&gt;&lt;a href="#main"&gt;Kembali ke atas&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
+
+  @include('layouts.blok.partials.scripts')
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Layout <em>standalone</em> dipakai untuk auth dan halaman error. Kelas <code class="nb-inline-code">body</code> dan <code class="nb-inline-code">main</code> diisi oleh view anak (<code class="nb-inline-code">nb-auth-page</code>/<code class="nb-inline-code">nb-auth</code> atau <code class="nb-inline-code">nb-error-body</code>/<code class="nb-inline-code">nb-error-page</code>). Layout ini tidak menyentuh database atau sesi login, jadi aman dipakai halaman 500.</p>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/layouts/blok/standalone.blade.php"><code>@include('layouts.blok.partials.head')
+&lt;body class="@yield('body-class')" data-page="@yield('page')"&gt;
+  &lt;a class="nb-skip-link" href="#main"&gt;Lewati ke konten utama&lt;/a&gt;
+  &lt;header class="nb-standalone-head"&gt;
+    &lt;a class="nb-brand" href="{{ url('/') }}"&gt;
+      &lt;span class="nb-brand__mark" aria-hidden="true"&gt;B&lt;/span&gt;
+      &lt;span class="nb-brand__text"&gt;&lt;strong&gt;{{ config('app.name') }}&lt;/strong&gt;&lt;small&gt;Admin&lt;/small&gt;&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+
+  &lt;main class="@yield('main-class')" id="main" tabindex="-1"&gt;
+    @yield('content')
+  &lt;/main&gt;
+
+  &lt;footer class="nb-footer"&gt;&lt;p&gt;© {{ date('Y') }} {{ config('app.name') }}&lt;/p&gt;&lt;/footer&gt;
+  @include('layouts.blok.partials.scripts')
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+          </section>
+          <section class="nb-card" id="sidebar" aria-labelledby="sidebar-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="sidebar-title">5. Sidebar &amp; topbar</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Sidebar dibangun dari <code class="nb-inline-code">$blokMenu</code>, yang disusun oleh composer di langkah 3. <code class="nb-inline-code">data-nav</code> dan <code class="nb-inline-code">data-page</code> memakai <code class="nb-inline-code">key</code> yang sama, sehingga <code class="nb-inline-code">app.js</code> membuka grup dan menandai item aktif seperti di template. Pencarian halaman di topbar juga otomatis membaca tautan sidebar ini.</p>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/layouts/blok/partials/sidebar.blade.php"><code>&lt;aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama"&gt;
+  &lt;div class="nb-sidebar__brand"&gt;
+    &lt;a class="nb-brand" href="{{ route('dashboard') }}"&gt;
+      &lt;span class="nb-brand__mark" aria-hidden="true"&gt;B&lt;/span&gt;
+      &lt;span class="nb-brand__text"&gt;&lt;strong&gt;{{ config('app.name') }}&lt;/strong&gt;&lt;small&gt;Admin&lt;/small&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi"&gt;
+      &lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-x"&gt;&lt;/use&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;nav class="nb-sidebar__nav" aria-label="Menu"&gt;
+    @foreach ($blokMenu as $group =&gt; $items)
+      &lt;div class="nb-nav-group"&gt;
+        &lt;p class="nb-nav-group__title"&gt;{{ $group }}&lt;/p&gt;
+        &lt;ul class="nb-nav"&gt;
+          @foreach ($items as $item)
+            &lt;li&gt;
+              &lt;a class="nb-nav__link" href="{{ route($item['route']) }}" data-nav="{{ $item['key'] }}"
+                 @if ($item['key'] === $blokActive) aria-current="page" @endif&gt;
+                &lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-{{ $item['icon'] }}"&gt;&lt;/use&gt;&lt;/svg&gt;
+                &lt;span class="nb-nav__label"&gt;{{ $item['label'] }}&lt;/span&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+          @endforeach
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    @endforeach
+  &lt;/nav&gt;
+&lt;/aside&gt;</code></pre>
+<p>Untuk topbar, salin blok <code class="nb-inline-code">&lt;header class="nb-topbar"&gt;</code> dari <code class="nb-inline-code">pages/assets-list.html</code> (di antara penanda <code class="nb-inline-code">nb:topbar</code>). Ganti tautan <code class="nb-inline-code">../*.html</code> dengan <code class="nb-inline-code">route()</code>, isi breadcrumb dengan <code class="nb-inline-code">@yield('breadcrumb')</code>, lalu ganti nama pengguna dan tombol keluar:</p>
+<pre class="nb-code" tabindex="0" aria-label="Potongan topbar: menu akun dan logout"><code>&lt;span class="nb-avatar" aria-hidden="true"&gt;{{ Str::upper(Str::substr(auth()-&gt;user()-&gt;name, 0, 2)) }}&lt;/span&gt;
+&lt;span class="nb-user-btn__text"&gt;
+  &lt;strong&gt;{{ auth()-&gt;user()-&gt;name }}&lt;/strong&gt;&lt;small&gt;{{ auth()-&gt;user()-&gt;email }}&lt;/small&gt;
+&lt;/span&gt;
+…
+&lt;form method="POST" action="{{ route('logout') }}"&gt;
+  @csrf
+  &lt;button class="nb-menu__item nb-menu__item--danger" type="submit" role="menuitem"&gt;
+    &lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-logout"&gt;&lt;/use&gt;&lt;/svg&gt;Keluar
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p>Panel notifikasi di template berisi contoh statis. Hapus panel itu, atau isi dari <code class="nb-inline-code">auth()-&gt;user()-&gt;unreadNotifications</code> bila memakai Laravel Notifications.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="komponen" aria-labelledby="komponen-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="komponen-title">6. Komponen Blade</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Komponen anonim di <code class="nb-inline-code">resources/views/components/blok/</code> dipanggil sebagai <code class="nb-inline-code">&lt;x-blok.nama&gt;</code>. Komponen field menghubungkan error validasi server ke pola aksesibilitas BLOK: <code class="nb-inline-code">aria-invalid</code>, <code class="nb-inline-code">aria-describedby</code>, dan <code class="nb-inline-code">.nb-error</code>. Atribut <code class="nb-inline-code">data-error-id</code> membuat <code class="nb-inline-code">forms.js</code> memakai elemen error yang sama untuk validasi di sisi klien, sehingga pesannya tidak muncul dua kali.</p>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/components/blok/field.blade.php"><code>@props(['name', 'label', 'type' =&gt; 'text', 'value' =&gt; null, 'help' =&gt; null, 'required' =&gt; false])
+
+@php
+    $id = $attributes-&gt;get('id', 'f-'.$name);
+    $errorId = $id.'-error';
+    $helpId = $help ? $id.'-help' : null;
+    $hasError = $errors-&gt;has($name);
+    $describedBy = trim($helpId.' '.($hasError ? $errorId : ''));
+@endphp
+
+&lt;div class="nb-field"&gt;
+  &lt;label class="nb-label" for="{{ $id }}"&gt;
+    {{ $label }} @if ($required)&lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;@endif
+  &lt;/label&gt;
+  &lt;input {{ $attributes-&gt;except('id')-&gt;merge(['class' =&gt; 'nb-input']) }}
+         id="{{ $id }}" name="{{ $name }}" type="{{ $type }}"
+         @if ($type !== 'password') value="{{ old($name, $value) }}" @endif
+         @required($required)
+         @if ($describedBy) aria-describedby="{{ $describedBy }}" @endif
+         @if ($hasError) aria-invalid="true" data-error-id="{{ $errorId }}" @endif&gt;
+  @if ($help)
+    &lt;p class="nb-help" id="{{ $helpId }}"&gt;{{ $help }}&lt;/p&gt;
+  @endif
+  @error($name)
+    &lt;p class="nb-error" id="{{ $errorId }}"&gt;{{ $message }}&lt;/p&gt;
+  @enderror
+&lt;/div&gt;</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/components/blok/alert.blade.php"><code>@props(['type' =&gt; 'info', 'title' =&gt; null])
+
+@php
+    $variant = ['success' =&gt; 'nb-alert--success', 'warning' =&gt; 'nb-alert--warning', 'danger' =&gt; 'nb-alert--danger'][$type] ?? null;
+    $icon = ['success' =&gt; 'check', 'warning' =&gt; 'alert', 'danger' =&gt; 'octagon'][$type] ?? 'info';
+@endphp
+
+&lt;div {{ $attributes-&gt;class(['nb-alert', $variant]) }} role="{{ $type === 'danger' ? 'alert' : 'status' }}"&gt;
+  &lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-{{ $icon }}"&gt;&lt;/use&gt;&lt;/svg&gt;
+  &lt;div&gt;
+    @if ($title)&lt;strong&gt;{{ $title }}&lt;/strong&gt;@endif
+    &lt;p&gt;{{ $slot }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Komponen lain mengikuti pola yang sama: salin markup dari halaman <code class="nb-inline-code">components/*.html</code>, lalu jadikan teks dan state sebagai props. Contoh lain yang layak dibuat komponen: <code class="nb-inline-code">x-blok.select</code>, <code class="nb-inline-code">x-blok.textarea</code>, <code class="nb-inline-code">x-blok.badge</code>, dan <code class="nb-inline-code">x-blok.card</code>.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="form" aria-labelledby="form-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="form-title">7. Form, validasi &amp; flash</h2></header>
+            <div class="nb-card__body nb-prose">
+<p><code class="nb-inline-code">forms.js</code> selalu menahan submit agar validasi di sisi klien berjalan lebih dulu. Untuk form yang memang dikirim ke server, tambahkan <code class="nb-inline-code">data-server-submit</code>. Partial berikut meneruskan form yang valid ke Laravel, menampilkan pesan flash sebagai toast, dan menangani konfirmasi hapus.</p>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/layouts/blok/partials/scripts.blade.php"><code>&lt;script&gt;
+  // Form valid (lolos forms.js) dengan data-server-submit dikirim sungguhan.
+  document.addEventListener('nb:valid-submit', function (e) {
+    if (e.detail.form.hasAttribute('data-server-submit')) e.detail.form.submit();
+  });
+
+  // &lt;form data-confirm="Hapus aset ini?"&gt; meminta konfirmasi sebelum dikirim.
+  document.addEventListener('submit', function (e) {
+    var message = e.target.getAttribute('data-confirm');
+    if (message &amp;&amp; !window.confirm(message)) e.preventDefault();
+  });
+&lt;/script&gt;
+
+@foreach (['success', 'warning', 'danger', 'info'] as $type)
+  @if (session($type))
+    &lt;script&gt;
+      document.addEventListener('DOMContentLoaded', function () {
+        NB.toast({ type: @json($type), message: @json(session($type)) });
+      });
+    &lt;/script&gt;
+  @endif
+@endforeach</code></pre>
+<p>Validasi di server tetap menjadi sumber kebenaran. Atribut HTML (<code class="nb-inline-code">required</code>, <code class="nb-inline-code">type</code>, <code class="nb-inline-code">minlength</code>, <code class="nb-inline-code">pattern</code>) hanya mempercepat umpan balik. Karena <code class="nb-inline-code">form.submit()</code> tidak menyertakan nama tombol submit, bedakan aksi lewat rute atau <code class="nb-inline-code">input hidden</code>, bukan lewat <code class="nb-inline-code">name</code> tombol.</p>
+<pre class="nb-code" tabindex="0" aria-label="Contoh form modul"><code>&lt;form class="nb-card" method="POST" action="{{ $asset-&gt;exists ? route('assets.update', $asset) : route('assets.store') }}"
+      data-validate data-server-submit data-dirty-warn novalidate&gt;
+  @csrf
+  @if ($asset-&gt;exists) @method('PUT') @endif
+
+  &lt;div class="nb-card__body nb-form-grid"&gt;
+    @if ($errors-&gt;any())
+      &lt;x-blok.alert type="danger" title="Periksa kembali isian"&gt;{{ $errors-&gt;count() }} kolom perlu diperbaiki.&lt;/x-blok.alert&gt;
+    @endif
+
+    &lt;x-blok.field name="code" label="Kode aset" :value="$asset-&gt;code" required pattern="AST-[0-9]{2}-[0-9]{4}"
+                  data-pattern-message="Format: AST-26-0001" help="Contoh: AST-26-0001" /&gt;
+    &lt;x-blok.field name="name" label="Nama aset" :value="$asset-&gt;name" required maxlength="120" /&gt;
+  &lt;/div&gt;
+
+  &lt;div class="nb-card__footer nb-btn-row"&gt;
+    &lt;a class="nb-btn nb-btn--outline" href="{{ route('assets.index') }}"&gt;Batal&lt;/a&gt;
+    &lt;button class="nb-btn nb-btn--yellow" type="submit"&gt;Simpan&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+          </section>
+          <section class="nb-card" id="tabel" aria-labelledby="tabel-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="tabel-title">8. Tabel &amp; paginasi</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Untuk data dari database, gunakan paginasi Laravel di server. <code class="nb-inline-code">tables.js</code> (cari, filter, sortir di sisi klien) cocok untuk tabel kecil yang semua barisnya dirender sekaligus. Daftarkan view paginasi BLOK sebagai default:</p>
+<pre class="nb-code" tabindex="0" aria-label="app/Providers/AppServiceProvider.php (method boot)"><code>use Illuminate\Pagination\Paginator;
+
+public function boot(): void
+{
+    Paginator::defaultView('vendor.pagination.blok');
+}</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/vendor/pagination/blok.blade.php"><code>@if ($paginator-&gt;hasPages())
+  &lt;nav class="nb-table-footer nb-pagination" aria-label="Paginasi"&gt;
+    &lt;p class="nb-pagination__info"&gt;
+      Menampilkan {{ $paginator-&gt;firstItem() }}–{{ $paginator-&gt;lastItem() }} dari {{ $paginator-&gt;total() }}
+    &lt;/p&gt;
+    &lt;ul class="nb-pagination__list"&gt;
+      &lt;li&gt;
+        @if ($paginator-&gt;onFirstPage())
+          &lt;button class="nb-pagination__btn" type="button" disabled aria-label="Halaman sebelumnya"&gt;
+            &lt;svg class="nb-icon nb-icon--sm nb-icon--flip" aria-hidden="true"&gt;&lt;use href="#i-chevron-right"&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/button&gt;
+        @else
+          &lt;a class="nb-pagination__btn" href="{{ $paginator-&gt;previousPageUrl() }}" rel="prev" aria-label="Halaman sebelumnya"&gt;
+            &lt;svg class="nb-icon nb-icon--sm nb-icon--flip" aria-hidden="true"&gt;&lt;use href="#i-chevron-right"&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/a&gt;
+        @endif
+      &lt;/li&gt;
+
+      @foreach ($elements as $element)
+        @if (is_string($element))
+          &lt;li class="nb-pagination__gap" aria-hidden="true"&gt;…&lt;/li&gt;
+        @else
+          @foreach ($element as $page =&gt; $url)
+            &lt;li&gt;
+              &lt;a class="nb-pagination__btn" href="{{ $url }}" aria-label="Halaman {{ $page }}"
+                 @if ($page == $paginator-&gt;currentPage()) aria-current="page" @endif&gt;{{ $page }}&lt;/a&gt;
+            &lt;/li&gt;
+          @endforeach
+        @endif
+      @endforeach
+
+      &lt;li&gt;
+        @if ($paginator-&gt;hasMorePages())
+          &lt;a class="nb-pagination__btn" href="{{ $paginator-&gt;nextPageUrl() }}" rel="next" aria-label="Halaman berikutnya"&gt;
+            &lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-chevron-right"&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/a&gt;
+        @else
+          &lt;button class="nb-pagination__btn" type="button" disabled aria-label="Halaman berikutnya"&gt;
+            &lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-chevron-right"&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/button&gt;
+        @endif
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+@endif</code></pre>
+<p>View ini memakai <code class="nb-inline-code">firstItem()</code> dan <code class="nb-inline-code">total()</code>, jadi gunakan <code class="nb-inline-code">paginate()</code>, bukan <code class="nb-inline-code">simplePaginate()</code>.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="chart" aria-labelledby="chart-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="chart-title">9. Chart dengan data server</h2></header>
+            <div class="nb-card__body nb-prose">
+<p><code class="nb-inline-code">charts.js</code> membaca dataset dari <code class="nb-inline-code">NB.data</code> berdasarkan <code class="nb-inline-code">data-chart-source</code>. Di template, objek ini diisi oleh <code class="nb-inline-code">data.js</code>. Di Laravel, isi dari controller dengan bentuk yang sama (<code class="nb-inline-code">caption</code>, <code class="nb-inline-code">unit</code>, <code class="nb-inline-code">labels</code>, <code class="nb-inline-code">values</code>):</p>
+<pre class="nb-code" tabindex="0" aria-label="Mengirim data chart dari controller"><code>// DashboardController
+$labels = ['Nov', 'Des', 'Jan', /* … */];
+$values = Loan::monthlyCounts();   // contoh: query agregat milik modul
+
+return view('dashboard::index', [
+    'charts' =&gt; [
+        'loans' =&gt; [
+            '12b' =&gt; ['caption' =&gt; '12 bulan terakhir', 'unit' =&gt; 'peminjaman', 'labels' =&gt; $labels, 'values' =&gt; $values],
+        ],
+    ],
+]);</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="app/Modules/Dashboard/Views/index.blade.php"><code>@extends('layouts.blok.app')
+@section('title', 'Ringkasan')
+
+@push('head')
+  &lt;script&gt;window.NB = window.NB || {}; window.NB.data = @json($charts);&lt;/script&gt;
+@endpush
+@push('scripts')
+  &lt;script src="{{ asset('vendor/blok/js/charts.js') }}" defer&gt;&lt;/script&gt;
+@endpush
+
+@section('content')
+  &lt;div class="nb-chart" id="loanChart" data-chart="bar" data-chart-source="loans" data-chart-range="12b" aria-label="Tren peminjaman"&gt;
+    &lt;p class="nb-chart-fallback"&gt;Chart tidak dapat dimuat.&lt;/p&gt;
+  &lt;/div&gt;
+@endsection</code></pre>
+<p><code class="nb-inline-code">@json</code> meng-escape karakter HTML, sehingga data aman disisipkan langsung ke tag <code class="nb-inline-code">script</code>.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="auth" aria-labelledby="auth-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="auth-title">10. Auth &amp; halaman error</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Gunakan <strong>Laravel Fortify</strong>, karena Fortify hanya menyediakan backend tanpa view. Laravel Breeze dan starter kit lain membawa UI Tailwind sendiri yang akan bentrok dengan BLOK.</p>
+<pre class="nb-code" tabindex="0" aria-label="Instal Fortify"><code>composer require laravel/fortify
+php artisan fortify:install
+php artisan migrate</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="app/Providers/FortifyServiceProvider.php (method boot)"><code>Fortify::loginView(fn () =&gt; view('auth.login'));
+Fortify::registerView(fn () =&gt; view('auth.register'));
+Fortify::requestPasswordResetLinkView(fn () =&gt; view('auth.forgot-password'));
+Fortify::resetPasswordView(fn ($request) =&gt; view('auth.reset-password', ['request' =&gt; $request]));</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/auth/login.blade.php"><code>@extends('layouts.blok.standalone')
+@section('title', 'Masuk')
+@section('body-class', 'nb-auth-page')
+@section('main-class', 'nb-auth')
+@section('page', 'auth')
+
+@section('content')
+  &lt;section class="nb-auth__panel"&gt;
+    &lt;div class="nb-auth__heading"&gt;
+      &lt;p class="nb-eyebrow"&gt;Selamat datang kembali&lt;/p&gt;
+      &lt;h1&gt;Masuk&lt;/h1&gt;
+    &lt;/div&gt;
+
+    @if (session('status'))
+      &lt;x-blok.alert type="success"&gt;{{ session('status') }}&lt;/x-blok.alert&gt;
+    @endif
+
+    &lt;form class="nb-auth__form" method="POST" action="{{ route('login') }}" data-validate data-server-submit novalidate&gt;
+      @csrf
+      &lt;x-blok.field name="email" label="Email" type="email" required autocomplete="email" /&gt;
+      &lt;x-blok.field name="password" label="Kata sandi" type="password" required autocomplete="current-password" /&gt;
+      &lt;div class="nb-auth__split"&gt;
+        &lt;label class="nb-check"&gt;&lt;input type="checkbox" name="remember"&gt; Ingat saya&lt;/label&gt;
+        &lt;a href="{{ route('password.request') }}"&gt;Lupa kata sandi?&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;button class="nb-btn nb-btn--yellow nb-btn--lg nb-btn--block" type="submit"&gt;Masuk&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+@endsection</code></pre>
+<p>Laravel otomatis memakai <code class="nb-inline-code">resources/views/errors/{kode}.blade.php</code>. Salin isi <code class="nb-inline-code">errors/404.html</code> dari template ke view berikut, lalu lakukan hal yang sama untuk 403 dan 500:</p>
+<pre class="nb-code" tabindex="0" aria-label="resources/views/errors/404.blade.php"><code>@extends('layouts.blok.standalone')
+@section('title', 'Halaman tidak ditemukan')
+@section('body-class', 'nb-error-body')
+@section('main-class', 'nb-error-page')
+
+@section('content')
+  &lt;div class="nb-error-block nb-error-block--yellow"&gt;
+    &lt;p class="nb-error-block__code" aria-hidden="true"&gt;404&lt;/p&gt;
+    &lt;h1&gt;Halaman tidak ditemukan&lt;/h1&gt;
+    &lt;p&gt;Tautan mungkin sudah usang atau halaman dipindahkan. &lt;span class="nb-sr-only"&gt;Kode galat 404.&lt;/span&gt;&lt;/p&gt;
+    &lt;div class="nb-btn-row nb-error-page__actions"&gt;
+      &lt;a class="nb-btn nb-btn--yellow" href="{{ url('/') }}"&gt;
+        &lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-home"&gt;&lt;/use&gt;&lt;/svg&gt;Ke dashboard
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+@endsection</code></pre>
+            </div>
+          </section>
+          <section class="nb-card" id="contoh" aria-labelledby="contoh-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="contoh-title">11. Contoh modul lengkap: Aset</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Rute modul sudah dibungkus middleware <code class="nb-inline-code">web</code> + <code class="nb-inline-code">auth</code> oleh provider, jadi file rute cukup berisi definisinya saja:</p>
+<pre class="nb-code" tabindex="0" aria-label="app/Modules/Asset/routes.php"><code>&lt;?php
+
+use App\Modules\Asset\Http\Controllers\AssetController;
+use Illuminate\Support\Facades\Route;
+
+Route::resource('assets', AssetController::class)-&gt;except('show');</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="app/Modules/Asset/Http/Controllers/AssetController.php"><code>&lt;?php
+
+namespace App\Modules\Asset\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Modules\Asset\Http\Requests\AssetRequest;
+use App\Modules\Asset\Models\Asset;
+use Illuminate\Http\Request;
+
+class AssetController extends Controller
+{
+    public function index(Request $request)
+    {
+        $assets = Asset::query()
+            -&gt;when($request-&gt;string('q')-&gt;trim()-&gt;value(), fn ($query, $q) =&gt; $query-&gt;where('name', 'like', "%{$q}%"))
+            -&gt;latest()
+            -&gt;paginate(15)
+            -&gt;withQueryString();
+
+        return view('asset::index', compact('assets'));
+    }
+
+    public function create()
+    {
+        return view('asset::form', ['asset' =&gt; new Asset]);
+    }
+
+    public function store(AssetRequest $request)
+    {
+        Asset::create($request-&gt;validated());
+
+        return redirect()-&gt;route('assets.index')-&gt;with('success', 'Aset berhasil ditambahkan.');
+    }
+
+    public function edit(Asset $asset)
+    {
+        return view('asset::form', compact('asset'));
+    }
+
+    public function update(AssetRequest $request, Asset $asset)
+    {
+        $asset-&gt;update($request-&gt;validated());
+
+        return redirect()-&gt;route('assets.index')-&gt;with('success', 'Perubahan aset disimpan.');
+    }
+
+    public function destroy(Asset $asset)
+    {
+        $asset-&gt;delete();
+
+        return back()-&gt;with('success', 'Aset dihapus.');
+    }
+}</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="app/Modules/Asset/Http/Requests/AssetRequest.php"><code>&lt;?php
+
+namespace App\Modules\Asset\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
+class AssetRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return $this-&gt;user()-&gt;can('manage-assets');
+    }
+
+    public function rules(): array
+    {
+        return [
+            'code' =&gt; ['required', 'regex:/^AST-\d{2}-\d{4}$/', Rule::unique('assets')-&gt;ignore($this-&gt;route('asset'))],
+            'name' =&gt; ['required', 'string', 'max:120'],
+        ];
+    }
+}</code></pre>
+<pre class="nb-code" tabindex="0" aria-label="app/Modules/Asset/Views/index.blade.php"><code>@extends('layouts.blok.app')
+@section('title', 'Daftar aset')
+@section('breadcrumb')
+  &lt;li&gt;Data&lt;/li&gt;
+  &lt;li&gt;&lt;span aria-current="page"&gt;Aset&lt;/span&gt;&lt;/li&gt;
+@endsection
+
+@section('content')
+  &lt;header class="nb-page-header"&gt;
+    &lt;div class="nb-page-header__text"&gt;
+      &lt;p class="nb-eyebrow"&gt;Data&lt;/p&gt;
+      &lt;h1 class="nb-page-header__title"&gt;Daftar aset&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-page-header__actions"&gt;
+      &lt;a class="nb-btn nb-btn--yellow" href="{{ route('assets.create') }}"&gt;
+        &lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-plus"&gt;&lt;/use&gt;&lt;/svg&gt;Tambah aset
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;section class="nb-card" aria-labelledby="tbl-assets-title"&gt;
+    &lt;header class="nb-card__header"&gt;&lt;h2 class="nb-card__title" id="tbl-assets-title"&gt;Semua aset&lt;/h2&gt;&lt;/header&gt;
+    &lt;div class="nb-table-wrap" tabindex="0" role="region" aria-labelledby="tbl-assets-title"&gt;
+      &lt;table class="nb-table"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th scope="col"&gt;Kode&lt;/th&gt;
+            &lt;th scope="col"&gt;Nama&lt;/th&gt;
+            &lt;th scope="col"&gt;&lt;span class="nb-sr-only"&gt;Aksi&lt;/span&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          @forelse ($assets as $asset)
+            &lt;tr&gt;
+              &lt;td class="nb-cell-id"&gt;{{ $asset-&gt;code }}&lt;/td&gt;
+              &lt;td class="nb-cell-strong"&gt;{{ $asset-&gt;name }}&lt;/td&gt;
+              &lt;td class="nb-cell-actions"&gt;
+                &lt;div class="nb-row-actions"&gt;
+                  &lt;a class="nb-icon-btn" href="{{ route('assets.edit', $asset) }}" aria-label="Ubah {{ $asset-&gt;name }}"&gt;
+                    &lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-edit"&gt;&lt;/use&gt;&lt;/svg&gt;
+                  &lt;/a&gt;
+                  &lt;form method="POST" action="{{ route('assets.destroy', $asset) }}" data-confirm="Hapus {{ $asset-&gt;name }}?"&gt;
+                    @csrf @method('DELETE')
+                    &lt;button class="nb-icon-btn" type="submit" aria-label="Hapus {{ $asset-&gt;name }}"&gt;
+                      &lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-trash"&gt;&lt;/use&gt;&lt;/svg&gt;
+                    &lt;/button&gt;
+                  &lt;/form&gt;
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          @empty
+            &lt;tr&gt;&lt;td colspan="3"&gt;Belum ada aset.&lt;/td&gt;&lt;/tr&gt;
+          @endforelse
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+    {{ $assets-&gt;links() }}
+  &lt;/section&gt;
+@endsection</code></pre>
+<p><code class="nb-inline-code">Views/form.blade.php</code> memakai layout yang sama dan berisi form dari langkah 7. Setelah semua file ada, jalankan <code class="nb-inline-code">php artisan migrate</code>. Menu <em>Aset</em> langsung muncul di grup <em>Data</em>.</p>
+            </div>
+          </section>
+          <section class="nb-card" id="opsi-paket" aria-labelledby="opsi-paket-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="opsi-paket-title">Alternatif: nwidart/laravel-modules</h2></header>
+            <div class="nb-card__body nb-prose">
+<p>Untuk proyek besar yang butuh generator (<code class="nb-inline-code">module:make</code>, <code class="nb-inline-code">module:make-controller</code>) dan modul yang bisa diaktifkan atau dinonaktifkan tanpa mengubah kode, struktur yang sama bisa dipindahkan ke paket <strong>nwidart/laravel-modules</strong>:</p>
+<pre class="nb-code" tabindex="0" aria-label="Memasang laravel-modules"><code>composer require nwidart/laravel-modules
+php artisan module:make Asset</code></pre>
+<ul><li>Layout, partial, dan komponen <code class="nb-inline-code">x-blok.*</code> tetap di <code class="nb-inline-code">resources/views</code> aplikasi, dipakai bersama oleh semua modul.</li><li>View modul dipanggil dengan namespace huruf kecil, misalnya <code class="nb-inline-code">view('asset::index')</code>, sama seperti panduan ini.</li><li>Item menu bisa tetap dibaca dari <code class="nb-inline-code">module.php</code>. Ganti loop <code class="nb-inline-code">config('blok.modules')</code> dengan daftar modul aktif dari paket (<code class="nb-inline-code">Module::allEnabled()</code>).</li></ul>
+            </div>
+          </section>
+          <section class="nb-card" id="checklist" aria-labelledby="checklist-title">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="checklist-title">Daftar periksa</h2></header>
+            <div class="nb-card__body nb-prose">
+<ul>
+<li>Aset di <code class="nb-inline-code">public/vendor/blok</code>: hanya <code class="nb-inline-code">icons</code>, <code class="nb-inline-code">app</code>, <code class="nb-inline-code">components</code>, <code class="nb-inline-code">forms</code>, <code class="nb-inline-code">tables</code>, <code class="nb-inline-code">charts</code>. Jangan sertakan <code class="nb-inline-code">data.js</code>, <code class="nb-inline-code">records.js</code>, atau <code class="nb-inline-code">js/pages/*</code>.</li>
+<li>Setiap item menu punya <code class="nb-inline-code">key</code> unik; nilai itu menjadi <code class="nb-inline-code">data-page</code> dan <code class="nb-inline-code">data-nav</code>.</li>
+<li>Setiap view mengisi <code class="nb-inline-code">@section('title')</code> yang unik.</li>
+<li>Form yang dikirim ke server memakai <code class="nb-inline-code">@csrf</code>, <code class="nb-inline-code">data-validate</code>, dan <code class="nb-inline-code">data-server-submit</code>, dan validasinya tetap ada di FormRequest.</li>
+<li>Field memakai <code class="nb-inline-code">&lt;x-blok.field&gt;</code> agar error server terhubung lewat <code class="nb-inline-code">aria-describedby</code>.</li>
+<li>Rute modul berada di bawah middleware <code class="nb-inline-code">auth</code>. Item menu dengan <code class="nb-inline-code">can</code> disembunyikan, dan aksesnya tetap dicek ulang di FormRequest atau policy.</li>
+<li>Halaman 403, 404, dan 500 memakai layout standalone tanpa query database.</li>
+<li>Jalankan <code class="nb-inline-code">php artisan route:cache</code> dan <code class="nb-inline-code">view:cache</code> saat deploy. Provider sudah melewati pendaftaran rute bila cache aktif.</li>
+</ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
