@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruangan — BLOK Admin UI Kit</title>
+  <meta name="description" content="Daftar ruangan dalam tampilan kartu/daftar dengan filter gedung, status, pencarian dan pemesanan.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/records.js" defer></script>
+  <script src="../assets/js/tables.js" defer></script>
+  <script src="../assets/js/pages/crud.js" defer></script>
+  <script src="../assets/js/pages/operations.js" defer></script>
+</head>
+<body class="nb-app" data-page="rooms">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Data</li>
+            <li><span aria-current="page">Ruangan</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Data</li>
+          <li><span aria-current="page">Ruangan</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Data &amp; CRUD</p>
+          <h1 class="nb-page-header__title">Ruangan</h1>
+          <p class="nb-page-header__desc">Ruangan fiktif beserta kapasitas, fasilitas dan utilisasi. Pemesanan hanya simulasi di halaman ini.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <a class="nb-btn nb-btn--outline" href="bookings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-bookmark"></use></svg>Peminjaman aset</a>
+        </div>
+      </header>
+
+      <section class="nb-grid nb-grid--4" aria-label="Ringkasan ruangan">
+        <article class="nb-card nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Total ruangan</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">12</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Di 4 gedung</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--mint nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Tersedia</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">6</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Bisa dipakai sekarang</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--yellow nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Sedang dipakai</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">4</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Sesuai jadwal hari ini</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--pink nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Perawatan</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">2</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Ditutup sementara</p>
+          </div>
+        </article>
+      </section>
+      <section class="nb-card" aria-labelledby="rooms-title">
+        <div class="nb-card__header">
+          <div>
+            <h2 class="nb-card__title" id="rooms-title">Semua ruangan</h2>
+            <p class="nb-card__subtitle" data-room-count aria-live="polite">Menampilkan 12 dari 12 ruangan</p>
+          </div>
+          <div class="nb-segmented" role="group" aria-label="Tampilan" data-toggle-group data-room-view>
+            <button class="nb-segmented__btn" type="button" aria-pressed="true" data-value="grid"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg><span>Kartu</span></button>
+            <button class="nb-segmented__btn" type="button" aria-pressed="false" data-value="list"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-list"></use></svg><span>Daftar</span></button>
+          </div>
+        </div>
+        <div class="nb-table-toolbar" role="search" aria-label="Saring ruangan">
+          <div class="nb-field nb-table-toolbar__search">
+            <label class="nb-label" for="rooms-search">Cari</label>
+            <div class="nb-search"><svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg><input class="nb-search__input" id="rooms-search" type="search" placeholder="Nama, kode, fasilitas…" data-room-search autocomplete="off"></div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="rooms-bld">Gedung</label>
+            <select class="nb-select" id="rooms-bld" data-room-filter="building">
+              <option value="">Semua gedung</option>
+              <option value="gedung-a">Gedung A</option>
+              <option value="gedung-b">Gedung B</option>
+              <option value="gedung-c">Gedung C</option>
+              <option value="gedung-d">Gedung D</option>
+            </select>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="rooms-st">Status</label>
+            <select class="nb-select" id="rooms-st" data-room-filter="status">
+              <option value="">Semua status</option>
+              <option value="tersedia">Tersedia</option>
+              <option value="dipakai">Sedang dipakai</option>
+              <option value="perawatan">Perawatan</option>
+            </select>
+          </div>
+          <button class="nb-btn nb-btn--outline" type="button" data-room-reset><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-refresh"></use></svg>Reset</button>
+        </div>
+        <div class="nb-card__body">
+          <div class="nb-room-grid" data-room-grid>
+            <article class="nb-card nb-room-card" data-room data-code="GD-A/201" data-name="Lab Multimedia" data-building="gedung-a" data-status="dipakai" data-capacity="32" data-search="gd-a/201 lab multimedia gedung a laboratorium proyektor 32 pc ac" aria-labelledby="rm-gd-a/201-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-A/201 · Laboratorium</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-a/201-title">Lab Multimedia</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--warning nb-badge--dot">Sedang dipakai</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>32 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung A, Lantai 2</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Lab Multimedia"><li>Proyektor</li><li>32 PC</li><li>AC</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-a/201-util">Utilisasi minggu ini</span><strong>85%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-a/201-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85"><div class="nb-progress__bar" style="--value: 85%; --progress-color: var(--color-pink)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-A/201"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-A/105" data-name="Lab Biologi" data-building="gedung-a" data-status="tersedia" data-capacity="28" data-search="gd-a/105 lab biologi gedung a laboratorium mikroskop wastafel ac" aria-labelledby="rm-gd-a/105-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-A/105 · Laboratorium</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-a/105-title">Lab Biologi</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--success nb-badge--dot">Tersedia</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>28 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung A, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Lab Biologi"><li>Mikroskop</li><li>Wastafel</li><li>AC</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-a/105-util">Utilisasi minggu ini</span><strong>58%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-a/105-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58"><div class="nb-progress__bar" style="--value: 58%; --progress-color: var(--color-mint)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-A/105"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-A/106" data-name="Lab Kimia" data-building="gedung-a" data-status="perawatan" data-capacity="28" data-search="gd-a/106 lab kimia gedung a laboratorium lemari asam wastafel" aria-labelledby="rm-gd-a/106-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-A/106 · Laboratorium</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-a/106-title">Lab Kimia</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--danger nb-badge--dot">Perawatan</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>28 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung A, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Lab Kimia"><li>Lemari asam</li><li>Wastafel</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-a/106-util">Utilisasi minggu ini</span><strong>0%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-a/106-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="nb-progress__bar" style="--value: 0%; --progress-color: var(--color-mint)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--outline" type="button" disabled aria-describedby="rm-gd-a/106-note"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button><p class="nb-help" id="rm-gd-a/106-note">Sedang perawatan, belum bisa dipesan.</p></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-A/110" data-name="Perpustakaan" data-building="gedung-a" data-status="tersedia" data-capacity="80" data-search="gd-a/110 perpustakaan gedung a ruang baca wi-fi loker ac" aria-labelledby="rm-gd-a/110-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-A/110 · Ruang baca</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-a/110-title">Perpustakaan</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--success nb-badge--dot">Tersedia</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>80 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung A, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Perpustakaan"><li>Wi-Fi</li><li>Loker</li><li>AC</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-a/110-util">Utilisasi minggu ini</span><strong>62%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-a/110-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62"><div class="nb-progress__bar" style="--value: 62%; --progress-color: var(--color-yellow)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-A/110"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-B/105" data-name="Ruang Rapat 2" data-building="gedung-b" data-status="tersedia" data-capacity="16" data-search="gd-b/105 ruang rapat 2 gedung b ruang rapat layar tv konferensi video" aria-labelledby="rm-gd-b/105-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-B/105 · Ruang rapat</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-b/105-title">Ruang Rapat 2</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--success nb-badge--dot">Tersedia</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>16 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung B, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Ruang Rapat 2"><li>Layar TV</li><li>Konferensi video</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-b/105-util">Utilisasi minggu ini</span><strong>40%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-b/105-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><div class="nb-progress__bar" style="--value: 40%; --progress-color: var(--color-mint)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-B/105"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-B/204" data-name="Ruang Rapat 3" data-building="gedung-b" data-status="dipakai" data-capacity="10" data-search="gd-b/204 ruang rapat 3 gedung b ruang rapat papan tulis ac" aria-labelledby="rm-gd-b/204-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-B/204 · Ruang rapat</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-b/204-title">Ruang Rapat 3</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--warning nb-badge--dot">Sedang dipakai</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>10 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung B, Lantai 2</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Ruang Rapat 3"><li>Papan tulis</li><li>AC</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-b/204-util">Utilisasi minggu ini</span><strong>71%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-b/204-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="71"><div class="nb-progress__bar" style="--value: 71%; --progress-color: var(--color-yellow)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-B/204"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-B/102" data-name="Tata Usaha" data-building="gedung-b" data-status="dipakai" data-capacity="12" data-search="gd-b/102 tata usaha gedung b kantor printer lemari arsip" aria-labelledby="rm-gd-b/102-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-B/102 · Kantor</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-b/102-title">Tata Usaha</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--warning nb-badge--dot">Sedang dipakai</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>12 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung B, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Tata Usaha"><li>Printer</li><li>Lemari arsip</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-b/102-util">Utilisasi minggu ini</span><strong>90%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-b/102-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90"><div class="nb-progress__bar" style="--value: 90%; --progress-color: var(--color-pink)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-B/102"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-B/B01" data-name="Ruang Server" data-building="gedung-b" data-status="tersedia" data-capacity="4" data-search="gd-b/b01 ruang server gedung b teknis rak server ups ac presisi" aria-labelledby="rm-gd-b/b01-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-B/B01 · Teknis</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-b/b01-title">Ruang Server</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--success nb-badge--dot">Tersedia</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>4 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung B, Basement</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Ruang Server"><li>Rak server</li><li>UPS</li><li>AC presisi</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-b/b01-util">Utilisasi minggu ini</span><strong>35%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-b/b01-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35"><div class="nb-progress__bar" style="--value: 35%; --progress-color: var(--color-mint)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><p class="nb-help">Ruang teknis — tidak dipesan lewat sistem.</p></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-C/001" data-name="Aula Utama" data-building="gedung-c" data-status="dipakai" data-capacity="250" data-search="gd-c/001 aula utama gedung c aula panggung sound system proyektor" aria-labelledby="rm-gd-c/001-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-C/001 · Aula</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-c/001-title">Aula Utama</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--warning nb-badge--dot">Sedang dipakai</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>250 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung C, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Aula Utama"><li>Panggung</li><li>Sound system</li><li>Proyektor</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-c/001-util">Utilisasi minggu ini</span><strong>100%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-c/001-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="nb-progress__bar" style="--value: 100%; --progress-color: var(--color-pink)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-C/001"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-C/210" data-name="Studio Humas" data-building="gedung-c" data-status="tersedia" data-capacity="8" data-search="gd-c/210 studio humas gedung c studio lampu studio kedap suara" aria-labelledby="rm-gd-c/210-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-C/210 · Studio</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-c/210-title">Studio Humas</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--success nb-badge--dot">Tersedia</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>8 orang</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung C, Lantai 2</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Studio Humas"><li>Lampu studio</li><li>Kedap suara</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-c/210-util">Utilisasi minggu ini</span><strong>27%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-c/210-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="27"><div class="nb-progress__bar" style="--value: 27%; --progress-color: var(--color-mint)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><button class="nb-btn nb-btn--sm nb-btn--yellow" type="button" data-room-book="GD-C/210"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Pesan ruangan</button></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-C/015" data-name="Gudang Olahraga" data-building="gedung-c" data-status="tersedia" data-capacity="0" data-search="gd-c/015 gudang olahraga gedung c gudang rak baja ventilasi" aria-labelledby="rm-gd-c/015-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-C/015 · Gudang</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-c/015-title">Gudang Olahraga</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--success nb-badge--dot">Tersedia</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>Penyimpanan</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung C, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Gudang Olahraga"><li>Rak baja</li><li>Ventilasi</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-c/015-util">Utilisasi minggu ini</span><strong>64%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-c/015-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64"><div class="nb-progress__bar" style="--value: 64%; --progress-color: var(--color-yellow)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><p class="nb-help">Ruang gudang — tidak dipesan lewat sistem.</p></div>
+            </article>
+            <article class="nb-card nb-room-card" data-room data-code="GD-D/014" data-name="Gudang TI" data-building="gedung-d" data-status="perawatan" data-capacity="0" data-search="gd-d/014 gudang ti gedung d gudang rak baja cctv" aria-labelledby="rm-gd-d/014-title">
+              <div class="nb-room-card__head">
+                <div>
+                  <p class="nb-room-card__code">GD-D/014 · Gudang</p>
+                  <h3 class="nb-room-card__title" id="rm-gd-d/014-title">Gudang TI</h3>
+                </div>
+                <div class="nb-room-card__badges" data-room-badges><span class="nb-badge nb-badge--danger nb-badge--dot">Perawatan</span></div>
+              </div>
+              <dl class="nb-room-card__facts">
+                <div><dt>Kapasitas</dt><dd>Penyimpanan</dd></div>
+                <div><dt>Lokasi</dt><dd>Gedung D, Lantai 1</dd></div>
+              </dl>
+              <ul class="nb-room-card__facilities" aria-label="Fasilitas Gudang TI"><li>Rak baja</li><li>CCTV</li></ul>
+              <div>
+                <div class="nb-room-card__util-head"><span id="rm-gd-d/014-util">Utilisasi minggu ini</span><strong>91%</strong></div>
+                <div class="nb-progress nb-progress--thin" role="progressbar" aria-labelledby="rm-gd-d/014-util" aria-valuemin="0" aria-valuemax="100" aria-valuenow="91"><div class="nb-progress__bar" style="--value: 91%; --progress-color: var(--color-pink)"></div></div>
+              </div>
+              <ul class="nb-room-card__bookings" data-room-bookings aria-label="Pesanan sesi ini" hidden></ul>
+              <div class="nb-room-card__actions"><p class="nb-help">Ruang gudang — tidak dipesan lewat sistem.</p></div>
+            </article>
+          </div>
+          <div class="nb-empty" data-room-empty hidden>
+            <span class="nb-empty__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
+            <h3 class="nb-empty__title">Tidak ada ruangan yang cocok</h3>
+            <p class="nb-empty__text">Coba kata kunci lain atau tekan Reset untuk melihat semua ruangan.</p>
+            <button class="nb-btn nb-btn--outline" type="button" data-room-reset><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-refresh"></use></svg>Reset filter</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+  <div class="nb-modal" id="modal-room-book" hidden>
+    <div class="nb-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-room-book-title" aria-describedby="modal-room-book-desc">
+      <div class="nb-modal__header">
+        <h2 class="nb-modal__title" id="modal-room-book-title">Pesan ruangan</h2>
+        <button class="nb-icon-btn" type="button" data-modal-close aria-label="Tutup dialog"><svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+      </div>
+      <form class="nb-modal__form" id="modal-room-book-form" data-validate data-room-book-form novalidate>
+        <div class="nb-modal__body" id="modal-room-book-desc">
+          <p>Ruangan: <strong data-room-book-name>—</strong> <span class="nb-help" data-room-book-cap></span></p>
+          <input type="hidden" name="room" data-room-book-code>
+          <div class="nb-form-grid" style="margin-top: var(--space-4)">
+            <div class="nb-field">
+              <label class="nb-label" for="rb-date">Tanggal <span class="nb-req" aria-hidden="true">*</span></label>
+              <input class="nb-input" id="rb-date" name="date" type="date" required min="2026-10-25" max="2026-12-31">
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="rb-session">Sesi <span class="nb-req" aria-hidden="true">*</span></label>
+              <select class="nb-select" id="rb-session" name="session" required>
+                <option value="">Pilih sesi</option>
+                <option value="Pagi · 07.30–10.00">Pagi · 07.30–10.00</option>
+                <option value="Siang · 10.30–13.00">Siang · 10.30–13.00</option>
+                <option value="Sore · 13.30–16.00">Sore · 13.30–16.00</option>
+              </select>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="rb-people">Jumlah peserta <span class="nb-req" aria-hidden="true">*</span></label>
+              <input class="nb-input" id="rb-people" name="people" type="number" required min="1" max="250" inputmode="numeric" aria-describedby="rb-people-help">
+              <p class="nb-help" id="rb-people-help" data-room-book-max>Maksimal sesuai kapasitas ruangan.</p>
+            </div>
+            <div class="nb-field nb-field--full">
+              <label class="nb-label" for="rb-purpose">Keperluan <span class="nb-req" aria-hidden="true">*</span></label>
+              <textarea class="nb-textarea" id="rb-purpose" name="purpose" rows="3" required minlength="10" placeholder="mis. Rapat koordinasi panitia pentas seni"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="nb-modal__footer">
+          <button class="nb-btn nb-btn--outline" type="button" data-modal-close>Batal</button>
+          <button class="nb-btn nb-btn--yellow" type="submit"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>Kirim pesanan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

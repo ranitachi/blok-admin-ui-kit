@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengguna — BLOK Admin UI Kit</title>
+  <meta name="description" content="Daftar pengguna dengan pencarian, filter peran/status, urutan, paginasi dan undangan.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/records.js" defer></script>
+  <script src="../assets/js/tables.js" defer></script>
+  <script src="../assets/js/pages/crud.js" defer></script>
+</head>
+<body class="nb-app" data-page="users">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Data</li>
+            <li><span aria-current="page">Pengguna</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Data</li>
+          <li><span aria-current="page">Pengguna</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Data &amp; CRUD</p>
+          <h1 class="nb-page-header__title">Pengguna</h1>
+          <p class="nb-page-header__desc">Akun fiktif yang memakai sistem inventaris. Undang, hapus dan ubah peran hanya berlaku di sesi browser ini.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <button class="nb-btn nb-btn--yellow" type="button" data-modal-open="modal-invite"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-plus"></use></svg>Undang pengguna</button>
+        </div>
+      </header>
+
+      <section class="nb-grid nb-grid--4" aria-label="Ringkasan pengguna">
+        <article class="nb-card nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Total pengguna</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">14</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">5 peran berbeda</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--mint nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Aktif</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">11</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Masuk dalam 30 hari terakhir</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--yellow nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Undangan tertunda</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-mail"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">1</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Belum menerima undangan</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--pink nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Nonaktif</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value">2</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Akses dicabut sementara</p>
+          </div>
+        </article>
+      </section>
+      <div class="nb-alert nb-alert--lavender nb-crud-session" data-crud-session hidden>
+        <span class="nb-alert__icon" aria-hidden="true"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-info"></use></svg></span>
+        <div class="nb-alert__body">
+          <p class="nb-alert__title">Perubahan sesi ini</p>
+          <p data-crud-session-text>Ada perubahan demo yang tersimpan sementara di sesi browser ini.</p>
+          <div class="nb-alert__actions"><button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-crud-session-clear><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-refresh"></use></svg>Kembalikan data contoh</button></div>
+        </div>
+      </div>
+      <section class="nb-card" data-table data-page-size="10" data-table-label="pengguna" data-crud-table="users">
+        <div class="nb-card__header">
+          <div>
+            <h2 class="nb-card__title" id="tbl-users-title">Daftar pengguna</h2>
+            <p class="nb-card__subtitle">Klik nama untuk membuka profil, mengubah peran, atau menonaktifkan akun.</p>
+          </div>
+        </div>
+        <div class="nb-table-toolbar" role="search" aria-label="Saring daftar pengguna">
+          <div class="nb-field nb-table-toolbar__search">
+            <label class="nb-label" for="users-search">Cari</label>
+            <div class="nb-search">
+              <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+              <input class="nb-search__input" id="users-search" type="search" placeholder="Nama, email, unit…" data-table-search autocomplete="off">
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="users-role">Peran</label>
+            <select class="nb-select" id="users-role" data-table-filter="role">
+              <option value="">Semua peran</option>
+              <option value="administrator">Administrator</option>
+              <option value="operator-gudang">Operator gudang</option>
+              <option value="teknisi">Teknisi</option>
+              <option value="auditor">Auditor</option>
+              <option value="peminjam">Peminjam</option>
+            </select>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="users-status">Status</label>
+            <select class="nb-select" id="users-status" data-table-filter="status">
+              <option value="">Semua status</option>
+              <option value="aktif">Aktif</option>
+              <option value="nonaktif">Nonaktif</option>
+              <option value="undangan">Undangan terkirim</option>
+            </select>
+          </div>
+          <button class="nb-btn nb-btn--outline" type="button" data-table-reset><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-refresh"></use></svg>Reset</button>
+        </div>
+        <div class="nb-table-wrap" tabindex="0" role="region" aria-labelledby="tbl-users-title">
+          <table class="nb-table">
+            <thead>
+              <tr>
+                <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Nama<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Peran<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Unit<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col">Status</th>
+                <th scope="col" aria-sort="none" data-sort-type="number"><button class="nb-sort" type="button" data-sort>Aset<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col" aria-sort="none" data-sort-type="date"><button class="nb-sort" type="button" data-sort>Terakhir aktif<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col"><span class="nb-sr-only">Aksi</span></th>
+              </tr>
+            </thead>
+            <tbody data-table-body>
+              <tr data-id="USR-001" data-role="administrator" data-status="aktif" data-search="usr-001 rani ardiani administrator tata usaha rani@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--yellow nb-avatar--sm" aria-hidden="true">RA</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-001">Rani Ardiani</a><span class="nb-cell-sub">rani@example.com</span></span></div></td>
+                <td>Administrator</td>
+                <td>Tata Usaha</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="6">6</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-24T10:02">Hari ini, 10.02</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-001" aria-label="Lihat profil Rani Ardiani"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Rani Ardiani" data-crud-delete="USR-001"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-002" data-role="operator-gudang" data-status="aktif" data-search="usr-002 dimas pratama operator gudang gudang ti dimas@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--mint nb-avatar--sm" aria-hidden="true">DP</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-002">Dimas Pratama</a><span class="nb-cell-sub">dimas@example.com</span></span></div></td>
+                <td>Operator gudang</td>
+                <td>Gudang TI</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="4">4</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-24T09:40">Hari ini, 09.40</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-002" aria-label="Lihat profil Dimas Pratama"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Dimas Pratama" data-crud-delete="USR-002"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-003" data-role="peminjam" data-status="aktif" data-search="usr-003 sari wulandari peminjam humas sari@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--pink nb-avatar--sm" aria-hidden="true">SW</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-003">Sari Wulandari</a><span class="nb-cell-sub">sari@example.com</span></span></div></td>
+                <td>Peminjam</td>
+                <td>Humas</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="1">1</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-23T15:20">Kemarin, 15.20</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-003" aria-label="Lihat profil Sari Wulandari"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Sari Wulandari" data-crud-delete="USR-003"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-004" data-role="teknisi" data-status="aktif" data-search="usr-004 bagus santoso teknisi sarana &amp; prasarana bagus@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--blue nb-avatar--sm" aria-hidden="true">BS</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-004">Bagus Santoso</a><span class="nb-cell-sub">bagus@example.com</span></span></div></td>
+                <td>Teknisi</td>
+                <td>Sarana &amp; Prasarana</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="2">2</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-24T08:55">Hari ini, 08.55</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-004" aria-label="Lihat profil Bagus Santoso"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Bagus Santoso" data-crud-delete="USR-004"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-005" data-role="auditor" data-status="aktif" data-search="usr-005 maya lestari auditor keuangan maya@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--lavender nb-avatar--sm" aria-hidden="true">ML</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-005">Maya Lestari</a><span class="nb-cell-sub">maya@example.com</span></span></div></td>
+                <td>Auditor</td>
+                <td>Keuangan</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="0">0</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-22T13:10">22 Okt 2026</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-005" aria-label="Lihat profil Maya Lestari"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Maya Lestari" data-crud-delete="USR-005"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-006" data-role="teknisi" data-status="aktif" data-search="usr-006 fajar nugroho teknisi sarana &amp; prasarana fajar@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--mint nb-avatar--sm" aria-hidden="true">FN</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-006">Fajar Nugroho</a><span class="nb-cell-sub">fajar@example.com</span></span></div></td>
+                <td>Teknisi</td>
+                <td>Sarana &amp; Prasarana</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="0">0</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-24T07:30">Hari ini, 07.30</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-006" aria-label="Lihat profil Fajar Nugroho"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Fajar Nugroho" data-crud-delete="USR-006"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-007" data-role="peminjam" data-status="aktif" data-search="usr-007 intan permata peminjam lab biologi intan@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--pink nb-avatar--sm" aria-hidden="true">IP</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-007">Intan Permata</a><span class="nb-cell-sub">intan@example.com</span></span></div></td>
+                <td>Peminjam</td>
+                <td>Lab Biologi</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="2">2</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-20T11:45">20 Okt 2026</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-007" aria-label="Lihat profil Intan Permata"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Intan Permata" data-crud-delete="USR-007"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-008" data-role="operator-gudang" data-status="aktif" data-search="usr-008 yoga saputra operator gudang gudang olahraga yoga@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--yellow nb-avatar--sm" aria-hidden="true">YS</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-008">Yoga Saputra</a><span class="nb-cell-sub">yoga@example.com</span></span></div></td>
+                <td>Operator gudang</td>
+                <td>Gudang Olahraga</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="6">6</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-23T16:05">Kemarin, 16.05</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-008" aria-label="Lihat profil Yoga Saputra"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Yoga Saputra" data-crud-delete="USR-008"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-009" data-role="peminjam" data-status="nonaktif" data-search="usr-009 lina marlina peminjam perpustakaan lina@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--blue nb-avatar--sm" aria-hidden="true">LM</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-009">Lina Marlina</a><span class="nb-cell-sub">lina@example.com</span></span></div></td>
+                <td>Peminjam</td>
+                <td>Perpustakaan</td>
+                <td><span class="nb-badge nb-badge--neutral nb-badge--dot">Nonaktif</span></td>
+                <td class="nb-cell-num" data-sort-value="1">1</td>
+                <td class="nb-cell-muted" data-sort-value="2026-08-14T10:00">14 Agu 2026</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-009" aria-label="Lihat profil Lina Marlina"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Lina Marlina" data-crud-delete="USR-009"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-010" data-role="peminjam" data-status="aktif" data-search="usr-010 hendra wijaya peminjam lab kimia hendra@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--lavender nb-avatar--sm" aria-hidden="true">HW</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-010">Hendra Wijaya</a><span class="nb-cell-sub">hendra@example.com</span></span></div></td>
+                <td>Peminjam</td>
+                <td>Lab Kimia</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="2">2</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-19T09:15">19 Okt 2026</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-010" aria-label="Lihat profil Hendra Wijaya"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Hendra Wijaya" data-crud-delete="USR-010"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-011" data-role="operator-gudang" data-status="undangan" data-search="usr-011 putri ayu operator gudang gudang ti putri@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--mint nb-avatar--sm" aria-hidden="true">PA</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-011">Putri Ayu</a><span class="nb-cell-sub">putri@example.com</span></span></div></td>
+                <td>Operator gudang</td>
+                <td>Gudang TI</td>
+                <td><span class="nb-badge nb-badge--warning nb-badge--dot">Undangan terkirim</span></td>
+                <td class="nb-cell-num" data-sort-value="0">0</td>
+                <td class="nb-cell-muted" data-sort-value="">Belum pernah masuk</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-011" aria-label="Lihat profil Putri Ayu"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Putri Ayu" data-crud-delete="USR-011"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-012" data-role="teknisi" data-status="aktif" data-search="usr-012 arif rahman teknisi sarana &amp; prasarana arif@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--blue nb-avatar--sm" aria-hidden="true">AR</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-012">Arif Rahman</a><span class="nb-cell-sub">arif@example.com</span></span></div></td>
+                <td>Teknisi</td>
+                <td>Sarana &amp; Prasarana</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="0">0</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-24T10:20">Hari ini, 10.20</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-012" aria-label="Lihat profil Arif Rahman"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Arif Rahman" data-crud-delete="USR-012"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-013" data-role="peminjam" data-status="aktif" data-search="usr-013 nadia kusuma peminjam humas nadia@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--yellow nb-avatar--sm" aria-hidden="true">NK</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-013">Nadia Kusuma</a><span class="nb-cell-sub">nadia@example.com</span></span></div></td>
+                <td>Peminjam</td>
+                <td>Humas</td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span></td>
+                <td class="nb-cell-num" data-sort-value="0">0</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-21T14:30">21 Okt 2026</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-013" aria-label="Lihat profil Nadia Kusuma"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Nadia Kusuma" data-crud-delete="USR-013"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="USR-014" data-role="auditor" data-status="nonaktif" data-search="usr-014 teguh prasetyo auditor keuangan teguh@example.com">
+                <td><div class="nb-cell-user"><span class="nb-avatar nb-avatar--pink nb-avatar--sm" aria-hidden="true">TP</span><span><a class="nb-cell-link" href="users-detail.html?id=USR-014">Teguh Prasetyo</a><span class="nb-cell-sub">teguh@example.com</span></span></div></td>
+                <td>Auditor</td>
+                <td>Keuangan</td>
+                <td><span class="nb-badge nb-badge--neutral nb-badge--dot">Nonaktif</span></td>
+                <td class="nb-cell-num" data-sort-value="0">0</td>
+                <td class="nb-cell-muted" data-sort-value="2026-05-02T08:00">2 Mei 2026</td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="users-detail.html?id=USR-014" aria-label="Lihat profil Teguh Prasetyo"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Teguh Prasetyo" data-crud-delete="USR-014"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+            </tbody>
+            <tbody class="nb-table__empty" data-table-empty hidden>
+              <tr><td colspan="7"><strong>Tidak ada pengguna yang cocok</strong>Ubah kata kunci atau filter, lalu tekan Reset.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="nb-table-footer nb-pagination">
+          <p class="nb-pagination__info" data-table-info aria-live="polite"></p>
+          <ul class="nb-pagination__list" data-table-pagination aria-label="Paginasi daftar pengguna"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+  <div class="nb-modal" id="modal-invite" hidden>
+    <div class="nb-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-invite-title" aria-describedby="modal-invite-desc">
+      <div class="nb-modal__header">
+        <h2 class="nb-modal__title" id="modal-invite-title">Undang pengguna</h2>
+        <button class="nb-icon-btn" type="button" data-modal-close aria-label="Tutup dialog"><svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+      </div>
+      <form class="nb-modal__form" id="modal-invite-form" data-validate data-crud-user-form novalidate>
+        <div class="nb-modal__body" id="modal-invite-desc">
+          <p class="nb-help">Demo: tidak ada email yang dikirim. Pengguna baru muncul di tabel dengan status <strong>Undangan terkirim</strong>.</p>
+          <div class="nb-form-grid" style="margin-top: var(--space-4)">
+            <div class="nb-field nb-field--full">
+              <label class="nb-label" for="inv-name">Nama lengkap <span class="nb-req" aria-hidden="true">*</span></label>
+              <input class="nb-input" id="inv-name" name="name" type="text" required minlength="3" autocomplete="off">
+            </div>
+            <div class="nb-field nb-field--full">
+              <label class="nb-label" for="inv-email">Email <span class="nb-req" aria-hidden="true">*</span></label>
+              <input class="nb-input" id="inv-email" name="email" type="email" required autocomplete="off" placeholder="nama@example.com" aria-describedby="inv-email-help">
+              <p class="nb-help" id="inv-email-help">Gunakan domain contoh — data fiktif.</p>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="inv-role">Peran <span class="nb-req" aria-hidden="true">*</span></label>
+              <select class="nb-select" id="inv-role" name="role" required>
+              <option value="Administrator">Administrator</option>
+              <option value="Operator gudang">Operator gudang</option>
+              <option value="Teknisi">Teknisi</option>
+              <option value="Auditor">Auditor</option>
+              <option value="Peminjam" selected>Peminjam</option>
+              </select>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="inv-unit">Unit kerja</label>
+              <input class="nb-input" id="inv-unit" name="unit" type="text" autocomplete="off" placeholder="mis. Tata Usaha">
+            </div>
+          </div>
+        </div>
+        <div class="nb-modal__footer">
+          <button class="nb-btn nb-btn--outline" type="button" data-modal-close>Batal</button>
+          <button class="nb-btn nb-btn--yellow" type="submit"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-mail"></use></svg>Buat undangan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="nb-modal nb-modal--sm" id="modal-delete-user" hidden>
+    <div class="nb-modal__dialog" role="alertdialog" aria-modal="true" aria-labelledby="modal-delete-user-title" aria-describedby="modal-delete-user-desc">
+      <div class="nb-modal__header">
+        <h2 class="nb-modal__title" id="modal-delete-user-title">Hapus pengguna?</h2>
+        <button class="nb-icon-btn" type="button" data-modal-close aria-label="Tutup dialog"><svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+      </div>
+      <div class="nb-modal__body" id="modal-delete-user-desc">
+        <p data-crud-delete-text>Akun <strong data-crud-delete-name>ini</strong> akan dihapus dari daftar.</p>
+        <div class="nb-field" style="margin-top: var(--space-4)">
+          <label class="nb-label" for="modal-delete-user-input">Ketik <strong>HAPUS</strong> untuk konfirmasi</label>
+          <input class="nb-input" id="modal-delete-user-input" type="text" autocomplete="off" data-confirm-input="HAPUS" aria-describedby="modal-delete-user-help">
+          <p class="nb-help" id="modal-delete-user-help">Demo: baris hanya hilang dari tampilan sesi ini.</p>
+        </div>
+      </div>
+      <div class="nb-modal__footer">
+        <button class="nb-btn nb-btn--outline" type="button" data-modal-close data-autofocus>Batal</button>
+        <button class="nb-btn nb-btn--danger" type="button" disabled data-confirm-target data-crud-delete-confirm><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg>Hapus pengguna</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

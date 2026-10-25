@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node (hanya untuk tools/qa/sweep.js)
+node_modules/
+package-lock.json
+
+# Output QA
+tools/qa/shots/
+
+# Python
+__pycache__/
+*.pyc

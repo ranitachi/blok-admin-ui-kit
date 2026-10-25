@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar aset — BLOK Admin UI Kit</title>
+  <meta name="description" content="Daftar inventaris aset dengan pencarian, filter status/kategori/lokasi, urutan, paginasi dan aksi baris.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/records.js" defer></script>
+  <script src="../assets/js/tables.js" defer></script>
+  <script src="../assets/js/pages/crud.js" defer></script>
+</head>
+<body class="nb-app" data-page="assets">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Data</li>
+            <li><span aria-current="page">Aset</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Data</li>
+          <li><span aria-current="page">Aset</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Data &amp; CRUD</p>
+          <h1 class="nb-page-header__title">Daftar aset</h1>
+          <p class="nb-page-header__desc">Seluruh aset fiktif yang tercatat. Tambah, ubah dan hapus bekerja di sesi browser ini saja — tidak ada database.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <button class="nb-btn nb-btn--outline" type="button" data-toast="Ekspor CSV (demo)" data-toast-message="Tidak ada file yang dibuat — template statis."><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-download"></use></svg>Ekspor</button>
+          <a class="nb-btn nb-btn--yellow" href="assets-create.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-plus"></use></svg>Tambah aset</a>
+        </div>
+      </header>
+
+      <section class="nb-grid nb-grid--4" aria-label="Ringkasan aset">
+        <article class="nb-card nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Total aset</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value" data-kpi="total">24</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Nilai buku Rp378.500.000</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--mint nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Kondisi baik</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value" data-kpi="baik">14</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Siap dipakai atau dipinjam</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--pink nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Perlu tindakan</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value" data-kpi="tindakan">6</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">4 perlu servis · 2 rusak berat</p>
+          </div>
+        </article>
+        <article class="nb-card nb-card--blue nb-kpi">
+          <div class="nb-kpi__top">
+            <h2 class="nb-kpi__label">Sedang dipinjam</h2>
+            <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg></span>
+          </div>
+          <p class="nb-kpi__value" data-kpi="dipinjam">4</p>
+          <div class="nb-kpi__bottom">
+            <p class="nb-kpi__meta">Lihat jadwal di halaman Peminjaman</p>
+          </div>
+        </article>
+      </section>
+      <div class="nb-alert nb-alert--lavender nb-crud-session" data-crud-session hidden>
+        <span class="nb-alert__icon" aria-hidden="true"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-info"></use></svg></span>
+        <div class="nb-alert__body">
+          <p class="nb-alert__title">Perubahan sesi ini</p>
+          <p data-crud-session-text>Ada perubahan demo yang tersimpan sementara di sesi browser ini.</p>
+          <div class="nb-alert__actions"><button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-crud-session-clear><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-refresh"></use></svg>Kembalikan data contoh</button></div>
+        </div>
+      </div>
+      <section class="nb-card" data-table data-page-size="8" data-table-label="aset" data-crud-table="assets">
+        <div class="nb-card__header">
+          <div>
+            <h2 class="nb-card__title" id="tbl-assets-title">Daftar aset</h2>
+            <p class="nb-card__subtitle">Klik kode atau nama untuk membuka detail. Kolom bertanda panah bisa diurutkan.</p>
+          </div>
+        </div>
+        <div class="nb-table-toolbar" role="search" aria-label="Saring daftar aset">
+          <div class="nb-field nb-table-toolbar__search">
+            <label class="nb-label" for="assets-search">Cari</label>
+            <div class="nb-search">
+              <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+              <input class="nb-search__input" id="assets-search" type="search" placeholder="Kode, nama, merek, lokasi, penanggung jawab…" data-table-search autocomplete="off">
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="assets-status">Status</label>
+            <select class="nb-select" id="assets-status" data-table-filter="status">
+              <option value="">Semua status</option>
+              <option value="baik">Baik</option>
+              <option value="servis">Perlu servis</option>
+              <option value="rusak">Rusak berat</option>
+              <option value="dipinjam">Dipinjam</option>
+            </select>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="assets-cat">Kategori</label>
+            <select class="nb-select" id="assets-cat" data-table-filter="category">
+              <option value="">Semua kategori</option>
+              <option value="elektronik">Elektronik</option>
+              <option value="furnitur">Furnitur</option>
+              <option value="lab">Alat laboratorium</option>
+              <option value="olahraga">Peralatan olahraga</option>
+              <option value="kendaraan">Kendaraan &amp; lainnya</option>
+            </select>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="assets-bld">Lokasi</label>
+            <select class="nb-select" id="assets-bld" data-table-filter="building">
+              <option value="">Semua lokasi</option>
+              <option value="gedung-a">Gedung A</option>
+              <option value="gedung-b">Gedung B</option>
+              <option value="gedung-c">Gedung C</option>
+              <option value="gedung-d">Gedung D</option>
+              <option value="luar">Area luar</option>
+            </select>
+          </div>
+          <button class="nb-btn nb-btn--outline" type="button" data-table-reset><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-refresh"></use></svg>Reset</button>
+        </div>
+        <div class="nb-bulkbar" data-table-bulkbar hidden>
+          <span data-table-selected-count aria-live="polite">0 aset dipilih</span>
+          <div class="nb-bulkbar__actions">
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-table-bulk="export" data-bulk-title="Ekspor aset terpilih (demo)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-download"></use></svg>Ekspor CSV</button>
+            <button class="nb-btn nb-btn--sm nb-btn--ghost" type="button" data-table-bulk="clear">Batal pilih</button>
+          </div>
+        </div>
+        <div class="nb-table-wrap" tabindex="0" role="region" aria-labelledby="tbl-assets-title">
+          <table class="nb-table">
+            <thead>
+              <tr>
+                <th scope="col" class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select-all aria-label="Pilih semua aset di halaman ini"><span class="nb-sr-only">Pilih semua</span></label></th>
+                <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Kode<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Nama aset<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Kategori<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col">Lokasi</th>
+                <th scope="col">Status</th>
+                <th scope="col" aria-sort="none" data-sort-type="number"><button class="nb-sort" type="button" data-sort>Nilai<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col" aria-sort="none" data-sort-type="date"><button class="nb-sort" type="button" data-sort>Diperbarui<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                <th scope="col"><span class="nb-sr-only">Aksi</span></th>
+              </tr>
+            </thead>
+            <tbody data-table-body>
+              <tr data-id="AST-26-1284" data-status="servis" data-category="elektronik" data-building="gedung-a" data-search="ast-26-1284 proyektor lcd 4.000 lumen elektronik epsilon eb-x49 px49-2201-884 lab multimedia gd-a/201 dimas pratama">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Proyektor LCD 4.000 lumen"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1284">AST-26-1284</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1284">Proyektor LCD 4.000 lumen</a></td>
+                <td>Elektronik</td>
+                <td>Lab Multimedia<span class="nb-cell-sub">GD-A/201</span></td>
+                <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                <td class="nb-cell-num" data-sort-value="8500000">Rp8.500.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-24"><time datetime="2026-10-24">24 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1284" aria-label="Lihat Proyektor LCD 4.000 lumen"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1284" aria-label="Ubah Proyektor LCD 4.000 lumen"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Proyektor LCD 4.000 lumen" data-crud-delete="AST-26-1284"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1283" data-status="baik" data-category="furnitur" data-building="gedung-b" data-search="ast-26-1283 kursi ergonomis (12 unit) furnitur ergoline mesh pro emp-12-0923 ruang rapat 2 gd-b/105 rani ardiani">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Kursi ergonomis (12 unit)"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1283">AST-26-1283</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1283">Kursi ergonomis (12 unit)</a></td>
+                <td>Furnitur</td>
+                <td>Ruang Rapat 2<span class="nb-cell-sub">GD-B/105</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="14400000">Rp14.400.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-23"><time datetime="2026-10-23">23 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1283" aria-label="Lihat Kursi ergonomis (12 unit)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1283" aria-label="Ubah Kursi ergonomis (12 unit)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Kursi ergonomis (12 unit)" data-crud-delete="AST-26-1283"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1282" data-status="dipinjam" data-category="lab" data-building="gedung-a" data-search="ast-26-1282 mikroskop binokuler alat laboratorium optika b-292 ob292-7731 lab biologi gd-a/105 intan permata">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Mikroskop binokuler"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1282">AST-26-1282</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1282">Mikroskop binokuler</a></td>
+                <td>Alat laboratorium</td>
+                <td>Lab Biologi<span class="nb-cell-sub">GD-A/105</span></td>
+                <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                <td class="nb-cell-num" data-sort-value="6200000">Rp6.200.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-22"><time datetime="2026-10-22">22 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1282" aria-label="Lihat Mikroskop binokuler"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1282" aria-label="Ubah Mikroskop binokuler"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Mikroskop binokuler" data-crud-delete="AST-26-1282"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1281" data-status="baik" data-category="elektronik" data-building="gedung-d" data-search="ast-26-1281 laptop 14 inci (core i5) elektronik lumen book 14 lb14-55-1209 gudang ti gd-d/014 dimas pratama">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Laptop 14 inci (Core i5)"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1281">AST-26-1281</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1281">Laptop 14 inci (Core i5)</a></td>
+                <td>Elektronik</td>
+                <td>Gudang TI<span class="nb-cell-sub">GD-D/014</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="11750000">Rp11.750.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-21"><time datetime="2026-10-21">21 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1281" aria-label="Lihat Laptop 14 inci (Core i5)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1281" aria-label="Ubah Laptop 14 inci (Core i5)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Laptop 14 inci (Core i5)" data-crud-delete="AST-26-1281"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1280" data-status="rusak" data-category="olahraga" data-building="gedung-c" data-search="ast-26-1280 matras senam lipat peralatan olahraga fitfold 180 ff180-33 aula utama gd-c/001 yoga saputra">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Matras senam lipat"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1280">AST-26-1280</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1280">Matras senam lipat</a></td>
+                <td>Peralatan olahraga</td>
+                <td>Aula Utama<span class="nb-cell-sub">GD-C/001</span></td>
+                <td><span class="nb-badge nb-badge--danger nb-badge--dot">Rusak berat</span></td>
+                <td class="nb-cell-num" data-sort-value="950000">Rp950.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-20"><time datetime="2026-10-20">20 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1280" aria-label="Lihat Matras senam lipat"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1280" aria-label="Ubah Matras senam lipat"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Matras senam lipat" data-crud-delete="AST-26-1280"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1279" data-status="baik" data-category="elektronik" data-building="gedung-b" data-search="ast-26-1279 router nirkabel wi-fi 6 elektronik netra ax3000 nax3-88-410 ruang server gd-b/b01 bagus santoso">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Router nirkabel Wi-Fi 6"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1279">AST-26-1279</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1279">Router nirkabel Wi-Fi 6</a></td>
+                <td>Elektronik</td>
+                <td>Ruang Server<span class="nb-cell-sub">GD-B/B01</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="2300000">Rp2.300.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-19"><time datetime="2026-10-19">19 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1279" aria-label="Lihat Router nirkabel Wi-Fi 6"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1279" aria-label="Ubah Router nirkabel Wi-Fi 6"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Router nirkabel Wi-Fi 6" data-crud-delete="AST-26-1279"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1278" data-status="baik" data-category="furnitur" data-building="gedung-b" data-search="ast-26-1278 lemari arsip baja furnitur brankas pro 4l bp4l-1902 tata usaha gd-b/102 rani ardiani">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Lemari arsip baja"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1278">AST-26-1278</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1278">Lemari arsip baja</a></td>
+                <td>Furnitur</td>
+                <td>Tata Usaha<span class="nb-cell-sub">GD-B/102</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="3100000">Rp3.100.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-17"><time datetime="2026-10-17">17 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1278" aria-label="Lihat Lemari arsip baja"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1278" aria-label="Ubah Lemari arsip baja"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Lemari arsip baja" data-crud-delete="AST-26-1278"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1277" data-status="servis" data-category="lab" data-building="gedung-a" data-search="ast-26-1277 sentrifus mini alat laboratorium spinlab m6 slm6-0457 lab kimia gd-a/106 hendra wijaya">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Sentrifus mini"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1277">AST-26-1277</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1277">Sentrifus mini</a></td>
+                <td>Alat laboratorium</td>
+                <td>Lab Kimia<span class="nb-cell-sub">GD-A/106</span></td>
+                <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                <td class="nb-cell-num" data-sort-value="4800000">Rp4.800.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-15"><time datetime="2026-10-15">15 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1277" aria-label="Lihat Sentrifus mini"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1277" aria-label="Ubah Sentrifus mini"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Sentrifus mini" data-crud-delete="AST-26-1277"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1276" data-status="dipinjam" data-category="olahraga" data-building="gedung-c" data-search="ast-26-1276 bola voli (10 buah) peralatan olahraga mikasa-style v200 bv10-2611 gudang olahraga gd-c/015 yoga saputra">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Bola voli (10 buah)"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1276">AST-26-1276</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1276">Bola voli (10 buah)</a></td>
+                <td>Peralatan olahraga</td>
+                <td>Gudang Olahraga<span class="nb-cell-sub">GD-C/015</span></td>
+                <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                <td class="nb-cell-num" data-sort-value="1250000">Rp1.250.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-14"><time datetime="2026-10-14">14 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1276" aria-label="Lihat Bola voli (10 buah)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1276" aria-label="Ubah Bola voli (10 buah)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Bola voli (10 buah)" data-crud-delete="AST-26-1276"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1275" data-status="baik" data-category="kendaraan" data-building="luar" data-search="ast-26-1275 mobil operasional kendaraan &amp; lainnya minivan 1.5 mt mv15-b1234xy parkir timur area luar rani ardiani">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Mobil operasional"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1275">AST-26-1275</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1275">Mobil operasional</a></td>
+                <td>Kendaraan &amp; lainnya</td>
+                <td>Parkir Timur<span class="nb-cell-sub">Area luar</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="238000000">Rp238.000.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-11"><time datetime="2026-10-11">11 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1275" aria-label="Lihat Mobil operasional"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1275" aria-label="Ubah Mobil operasional"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Mobil operasional" data-crud-delete="AST-26-1275"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1274" data-status="servis" data-category="furnitur" data-building="gedung-c" data-search="ast-26-1274 meja lipat seminar furnitur foldy t-120 ft120-08 aula utama gd-c/001 yoga saputra">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Meja lipat seminar"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1274">AST-26-1274</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1274">Meja lipat seminar</a></td>
+                <td>Furnitur</td>
+                <td>Aula Utama<span class="nb-cell-sub">GD-C/001</span></td>
+                <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                <td class="nb-cell-num" data-sort-value="780000">Rp780.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-09"><time datetime="2026-10-09">9 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1274" aria-label="Lihat Meja lipat seminar"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1274" aria-label="Ubah Meja lipat seminar"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Meja lipat seminar" data-crud-delete="AST-26-1274"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1273" data-status="dipinjam" data-category="elektronik" data-building="gedung-c" data-search="ast-26-1273 kamera dokumentasi elektronik optix z50 oz50-61-772 studio humas gd-c/210 sari wulandari">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Kamera dokumentasi"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1273">AST-26-1273</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1273">Kamera dokumentasi</a></td>
+                <td>Elektronik</td>
+                <td>Studio Humas<span class="nb-cell-sub">GD-C/210</span></td>
+                <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                <td class="nb-cell-num" data-sort-value="9900000">Rp9.900.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-06"><time datetime="2026-10-06">6 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1273" aria-label="Lihat Kamera dokumentasi"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1273" aria-label="Ubah Kamera dokumentasi"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Kamera dokumentasi" data-crud-delete="AST-26-1273"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1272" data-status="baik" data-category="elektronik" data-building="gedung-b" data-search="ast-26-1272 printer laser a4 elektronik printa l310 pl310-4408 tata usaha gd-b/102 rani ardiani">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Printer laser A4"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1272">AST-26-1272</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1272">Printer laser A4</a></td>
+                <td>Elektronik</td>
+                <td>Tata Usaha<span class="nb-cell-sub">GD-B/102</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="3450000">Rp3.450.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-04"><time datetime="2026-10-04">4 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1272" aria-label="Lihat Printer laser A4"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1272" aria-label="Ubah Printer laser A4"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Printer laser A4" data-crud-delete="AST-26-1272"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1271" data-status="baik" data-category="lab" data-building="gedung-a" data-search="ast-26-1271 timbangan analitik alat laboratorium precisa 220 pr220-118 lab kimia gd-a/106 hendra wijaya">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Timbangan analitik"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1271">AST-26-1271</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1271">Timbangan analitik</a></td>
+                <td>Alat laboratorium</td>
+                <td>Lab Kimia<span class="nb-cell-sub">GD-A/106</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="7300000">Rp7.300.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-10-02"><time datetime="2026-10-02">2 Okt 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1271" aria-label="Lihat Timbangan analitik"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1271" aria-label="Ubah Timbangan analitik"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Timbangan analitik" data-crud-delete="AST-26-1271"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1270" data-status="baik" data-category="furnitur" data-building="gedung-b" data-search="ast-26-1270 papan tulis kaca furnitur glassboard 180 gb180-07 ruang rapat 3 gd-b/204 rani ardiani">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Papan tulis kaca"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1270">AST-26-1270</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1270">Papan tulis kaca</a></td>
+                <td>Furnitur</td>
+                <td>Ruang Rapat 3<span class="nb-cell-sub">GD-B/204</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="2650000">Rp2.650.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-29"><time datetime="2026-09-29">29 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1270" aria-label="Lihat Papan tulis kaca"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1270" aria-label="Ubah Papan tulis kaca"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Papan tulis kaca" data-crud-delete="AST-26-1270"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1269" data-status="dipinjam" data-category="elektronik" data-building="gedung-c" data-search="ast-26-1269 speaker portabel elektronik sonora go 50 sg50-3320 aula utama gd-c/001 yoga saputra">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Speaker portabel"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1269">AST-26-1269</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1269">Speaker portabel</a></td>
+                <td>Elektronik</td>
+                <td>Aula Utama<span class="nb-cell-sub">GD-C/001</span></td>
+                <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                <td class="nb-cell-num" data-sort-value="2100000">Rp2.100.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-27"><time datetime="2026-09-27">27 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1269" aria-label="Lihat Speaker portabel"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1269" aria-label="Ubah Speaker portabel"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Speaker portabel" data-crud-delete="AST-26-1269"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1268" data-status="rusak" data-category="olahraga" data-building="gedung-c" data-search="ast-26-1268 treadmill elektrik peralatan olahraga runmate t5 rmt5-901 gudang olahraga gd-c/015 yoga saputra">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Treadmill elektrik"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1268">AST-26-1268</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1268">Treadmill elektrik</a></td>
+                <td>Peralatan olahraga</td>
+                <td>Gudang Olahraga<span class="nb-cell-sub">GD-C/015</span></td>
+                <td><span class="nb-badge nb-badge--danger nb-badge--dot">Rusak berat</span></td>
+                <td class="nb-cell-num" data-sort-value="12800000">Rp12.800.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-25"><time datetime="2026-09-25">25 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1268" aria-label="Lihat Treadmill elektrik"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1268" aria-label="Ubah Treadmill elektrik"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Treadmill elektrik" data-crud-delete="AST-26-1268"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1267" data-status="baik" data-category="furnitur" data-building="gedung-a" data-search="ast-26-1267 rak buku baja furnitur shelvy 5t sh5t-44 perpustakaan gd-a/110 lina marlina">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Rak buku baja"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1267">AST-26-1267</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1267">Rak buku baja</a></td>
+                <td>Furnitur</td>
+                <td>Perpustakaan<span class="nb-cell-sub">GD-A/110</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="1850000">Rp1.850.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-22"><time datetime="2026-09-22">22 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1267" aria-label="Lihat Rak buku baja"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1267" aria-label="Ubah Rak buku baja"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Rak buku baja" data-crud-delete="AST-26-1267"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1266" data-status="baik" data-category="elektronik" data-building="gedung-a" data-search="ast-26-1266 monitor 27 inci elektronik viewport 27q vp27q-5512 lab multimedia gd-a/201 dimas pratama">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Monitor 27 inci"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1266">AST-26-1266</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1266">Monitor 27 inci</a></td>
+                <td>Elektronik</td>
+                <td>Lab Multimedia<span class="nb-cell-sub">GD-A/201</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="3900000">Rp3.900.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-19"><time datetime="2026-09-19">19 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1266" aria-label="Lihat Monitor 27 inci"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1266" aria-label="Ubah Monitor 27 inci"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Monitor 27 inci" data-crud-delete="AST-26-1266"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1265" data-status="servis" data-category="lab" data-building="gedung-a" data-search="ast-26-1265 inkubator laboratorium alat laboratorium termolab i-40 tli40-022 lab biologi gd-a/105 intan permata">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Inkubator laboratorium"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1265">AST-26-1265</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1265">Inkubator laboratorium</a></td>
+                <td>Alat laboratorium</td>
+                <td>Lab Biologi<span class="nb-cell-sub">GD-A/105</span></td>
+                <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                <td class="nb-cell-num" data-sort-value="15600000">Rp15.600.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-16"><time datetime="2026-09-16">16 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1265" aria-label="Lihat Inkubator laboratorium"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1265" aria-label="Ubah Inkubator laboratorium"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Inkubator laboratorium" data-crud-delete="AST-26-1265"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1264" data-status="baik" data-category="kendaraan" data-building="luar" data-search="ast-26-1264 sepeda motor dinas kendaraan &amp; lainnya skuter 125 sk125-b5678qr parkir timur area luar bagus santoso">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Sepeda motor dinas"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1264">AST-26-1264</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1264">Sepeda motor dinas</a></td>
+                <td>Kendaraan &amp; lainnya</td>
+                <td>Parkir Timur<span class="nb-cell-sub">Area luar</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="21500000">Rp21.500.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-12"><time datetime="2026-09-12">12 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1264" aria-label="Lihat Sepeda motor dinas"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1264" aria-label="Ubah Sepeda motor dinas"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Sepeda motor dinas" data-crud-delete="AST-26-1264"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1263" data-status="baik" data-category="elektronik" data-building="gedung-d" data-search="ast-26-1263 kabel hdmi 10 m (5 buah) elektronik linkr hd10 lh10-5p gudang ti gd-d/014 dimas pratama">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Kabel HDMI 10 m (5 buah)"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1263">AST-26-1263</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1263">Kabel HDMI 10 m (5 buah)</a></td>
+                <td>Elektronik</td>
+                <td>Gudang TI<span class="nb-cell-sub">GD-D/014</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="750000">Rp750.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-08"><time datetime="2026-09-08">8 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1263" aria-label="Lihat Kabel HDMI 10 m (5 buah)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1263" aria-label="Ubah Kabel HDMI 10 m (5 buah)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Kabel HDMI 10 m (5 buah)" data-crud-delete="AST-26-1263"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1262" data-status="baik" data-category="olahraga" data-building="gedung-c" data-search="ast-26-1262 net bulu tangkis peralatan olahraga smash pro spn-14 gudang olahraga gd-c/015 yoga saputra">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Net bulu tangkis"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1262">AST-26-1262</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1262">Net bulu tangkis</a></td>
+                <td>Peralatan olahraga</td>
+                <td>Gudang Olahraga<span class="nb-cell-sub">GD-C/015</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="420000">Rp420.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-09-03"><time datetime="2026-09-03">3 Sep 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1262" aria-label="Lihat Net bulu tangkis"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1262" aria-label="Ubah Net bulu tangkis"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Net bulu tangkis" data-crud-delete="AST-26-1262"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+              <tr data-id="AST-26-1261" data-status="baik" data-category="furnitur" data-building="gedung-b" data-search="ast-26-1261 sofa tunggu 3 dudukan furnitur comfy l3 cl3-0091 tata usaha gd-b/102 rani ardiani">
+                <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Sofa tunggu 3 dudukan"><span class="nb-sr-only">Pilih</span></label></td>
+                <td class="nb-cell-id"><a href="assets-detail.html?id=AST-26-1261">AST-26-1261</a></td>
+                <td class="nb-cell-strong"><a class="nb-cell-link" href="assets-detail.html?id=AST-26-1261">Sofa tunggu 3 dudukan</a></td>
+                <td>Furnitur</td>
+                <td>Tata Usaha<span class="nb-cell-sub">GD-B/102</span></td>
+                <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                <td class="nb-cell-num" data-sort-value="4250000">Rp4.250.000</td>
+                <td class="nb-cell-muted" data-sort-value="2026-08-29"><time datetime="2026-08-29">29 Agu 2026</time></td>
+                <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="assets-detail.html?id=AST-26-1261" aria-label="Lihat Sofa tunggu 3 dudukan"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-eye"></use></svg></a><a class="nb-icon-btn" href="assets-edit.html?id=AST-26-1261" aria-label="Ubah Sofa tunggu 3 dudukan"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Sofa tunggu 3 dudukan" data-crud-delete="AST-26-1261"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-trash"></use></svg></button></div></td>
+              </tr>
+            </tbody>
+            <tbody class="nb-table__empty" data-table-empty hidden>
+              <tr><td colspan="9"><strong>Tidak ada aset yang cocok</strong>Ubah kata kunci atau filter, tekan Reset, atau <a href="assets-create.html">tambah aset baru</a>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="nb-table-footer nb-pagination">
+          <p class="nb-pagination__info" data-table-info aria-live="polite"></p>
+          <ul class="nb-pagination__list" data-table-pagination aria-label="Paginasi daftar aset"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+  <div class="nb-modal nb-modal--sm" id="modal-delete-asset" hidden>
+    <div class="nb-modal__dialog" role="alertdialog" aria-modal="true" aria-labelledby="modal-delete-asset-title" aria-describedby="modal-delete-asset-desc">
+      <div class="nb-modal__header">
+        <h2 class="nb-modal__title" id="modal-delete-asset-title">Hapus aset?</h2>
+        <button class="nb-icon-btn" type="button" data-modal-close aria-label="Tutup dialog"><svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+      </div>
+      <div class="nb-modal__body" id="modal-delete-asset-desc">
+        <p data-crud-delete-text>Aset <strong data-crud-delete-name>ini</strong> akan dihapus dari daftar.</p>
+        <div class="nb-field" style="margin-top: var(--space-4)">
+          <label class="nb-label" for="modal-delete-asset-input">Ketik <strong>HAPUS</strong> untuk konfirmasi</label>
+          <input class="nb-input" id="modal-delete-asset-input" type="text" autocomplete="off" data-confirm-input="HAPUS" aria-describedby="modal-delete-asset-help">
+          <p class="nb-help" id="modal-delete-asset-help">Demo: baris hanya hilang dari tampilan sesi ini.</p>
+        </div>
+      </div>
+      <div class="nb-modal__footer">
+        <button class="nb-btn nb-btn--outline" type="button" data-modal-close data-autofocus>Batal</button>
+        <button class="nb-btn nb-btn--danger" type="button" disabled data-confirm-target data-crud-delete-confirm><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg>Hapus aset</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

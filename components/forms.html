@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulir — BLOK Admin UI Kit</title>
+  <meta name="description" content="Galeri formulir BLOK: input, kata sandi, select, combobox, checkbox, radio, switch, tanggal, rentang, slider, dropzone, validasi, wizard dan tata letak.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/charts.js" defer></script>
+  <script src="../assets/js/pages/gallery.js" defer></script>
+</head>
+<body class="nb-app" data-page="c-forms">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>UI Kit</li>
+            <li><span aria-current="page">Formulir</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>UI Kit</li>
+          <li><span aria-current="page">Formulir</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">UI Kit · Komponen</p>
+          <h1 class="nb-page-header__title">Formulir</h1>
+          <p class="nb-page-header__desc">Kontrol formulir lengkap dengan validasi yang ramah pembaca layar. Tidak ada data yang dikirim ke server.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <a class="nb-btn nb-btn--outline" href="#wizard"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg>Wizard</a>
+          <a class="nb-btn nb-btn--yellow" href="#validasi"><svg class="nb-icon" aria-hidden="true"><use href="#i-check"></use></svg>Coba validasi</a>
+        </div>
+      </header>
+
+      <nav aria-label="Daftar isi halaman">
+        <ul class="nb-toc">
+          <li><a href="#input">Input teks, email, angka &amp; textarea</a></li>
+          <li><a href="#password">Kata sandi dengan tombol tampilkan</a></li>
+          <li><a href="#pilihan">Select, checkbox, radio &amp; switch</a></li>
+          <li><a href="#combobox">Select yang bisa dicari (combobox)</a></li>
+          <li><a href="#tanggal">Tanggal, waktu, rentang &amp; slider</a></li>
+          <li><a href="#upload">Dropzone unggah file</a></li>
+          <li><a href="#validasi">Validasi &amp; ringkasan error</a></li>
+          <li><a href="#wizard">Wizard multi-langkah</a></li>
+          <li><a href="#tata-letak">Tata letak: inline, grid &amp; fieldset</a></li>
+        </ul>
+      </nav>
+
+      <section class="nb-demo" id="input" aria-labelledby="input-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="input-title">Input teks, email, angka &amp; textarea</h2>
+            <p class="nb-demo__desc">Setiap kontrol punya <code class="nb-inline-code">label</code> yang terhubung, teks bantuan lewat <code class="nb-inline-code">aria-describedby</code>, dan state disabled/read-only yang tetap terbaca. Penanda * disertai teks "wajib" di deskripsi formulir.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-form-grid">
+            <div class="nb-field">
+              <label class="nb-label" for="f-name">Nama aset <span class="nb-req" aria-hidden="true">*</span></label>
+              <input class="nb-input" id="f-name" type="text" placeholder="mis. Proyektor LCD" aria-describedby="f-name-help" required>
+              <p class="nb-help" id="f-name-help">Gunakan nama yang mudah dicari.</p>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="f-email">Email penanggung jawab</label>
+              <input class="nb-input" id="f-email" type="email" placeholder="nama@contoh.id" autocomplete="email">
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="f-qty">Jumlah unit</label>
+              <div class="nb-input-group">
+                <input class="nb-input" id="f-qty" type="number" min="1" max="500" value="12" inputmode="numeric">
+                <span class="nb-input-group__addon">unit</span>
+              </div>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="f-price">Nilai perolehan</label>
+              <div class="nb-input-group">
+                <span class="nb-input-group__addon">Rp</span>
+                <input class="nb-input" id="f-price" type="text" inputmode="numeric" value="8.500.000">
+              </div>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="f-code">Kode aset (read-only)</label>
+              <input class="nb-input" id="f-code" type="text" value="AST-26-1285" readonly aria-describedby="f-code-help">
+              <p class="nb-help" id="f-code-help">Dibuat otomatis oleh sistem.</p>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="f-disabled">Lokasi induk (disabled)</label>
+              <input class="nb-input" id="f-disabled" type="text" value="Gedung A" disabled>
+            </div>
+            <div class="nb-field nb-field--full">
+              <label class="nb-label" for="f-notes">Catatan</label>
+              <textarea class="nb-textarea" id="f-notes" maxlength="200" data-char-count="f-notes-count" aria-describedby="f-notes-count">Lampu sering mati setelah 10 menit.</textarea>
+              <p class="nb-help" id="f-notes-count" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Input teks, email, angka &amp; textarea"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Input teks, email, angka &amp; textarea"><code>&lt;div class="nb-form-grid"&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-name"&gt;Nama aset &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+    &lt;input class="nb-input" id="f-name" type="text" placeholder="mis. Proyektor LCD" aria-describedby="f-name-help" required&gt;
+    &lt;p class="nb-help" id="f-name-help"&gt;Gunakan nama yang mudah dicari.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-email"&gt;Email penanggung jawab&lt;/label&gt;
+    &lt;input class="nb-input" id="f-email" type="email" placeholder="nama@contoh.id" autocomplete="email"&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-qty"&gt;Jumlah unit&lt;/label&gt;
+    &lt;div class="nb-input-group"&gt;
+      &lt;input class="nb-input" id="f-qty" type="number" min="1" max="500" value="12" inputmode="numeric"&gt;
+      &lt;span class="nb-input-group__addon"&gt;unit&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-price"&gt;Nilai perolehan&lt;/label&gt;
+    &lt;div class="nb-input-group"&gt;
+      &lt;span class="nb-input-group__addon"&gt;Rp&lt;/span&gt;
+      &lt;input class="nb-input" id="f-price" type="text" inputmode="numeric" value="8.500.000"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-code"&gt;Kode aset (read-only)&lt;/label&gt;
+    &lt;input class="nb-input" id="f-code" type="text" value="AST-26-1285" readonly aria-describedby="f-code-help"&gt;
+    &lt;p class="nb-help" id="f-code-help"&gt;Dibuat otomatis oleh sistem.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-disabled"&gt;Lokasi induk (disabled)&lt;/label&gt;
+    &lt;input class="nb-input" id="f-disabled" type="text" value="Gedung A" disabled&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field nb-field--full"&gt;
+    &lt;label class="nb-label" for="f-notes"&gt;Catatan&lt;/label&gt;
+    &lt;textarea class="nb-textarea" id="f-notes" maxlength="200" data-char-count="f-notes-count" aria-describedby="f-notes-count"&gt;Lampu sering mati setelah 10 menit.&lt;/textarea&gt;
+    &lt;p class="nb-help" id="f-notes-count" aria-live="polite"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="password" aria-labelledby="password-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="password-title">Kata sandi dengan tombol tampilkan</h2>
+            <p class="nb-demo__desc">Tombol mata adalah <code class="nb-inline-code">button</code> dengan <code class="nb-inline-code">aria-pressed</code> dan label yang berubah (Tampilkan/Sembunyikan). Kolom konfirmasi divalidasi dengan <code class="nb-inline-code">data-match</code>.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <form class="nb-form-grid" data-validate data-demo-submit="Kata sandi valid (demo)" aria-label="Contoh kata sandi">
+            <div class="nb-field">
+              <label class="nb-label" for="pw-1">Kata sandi baru <span class="nb-req" aria-hidden="true">*</span></label>
+              <div class="nb-input-group">
+                <input class="nb-input" id="pw-1" name="pw" type="password" required minlength="8" autocomplete="new-password" aria-describedby="pw-1-help">
+                <button class="nb-icon-btn" type="button" data-password-toggle aria-controls="pw-1" aria-label="Tampilkan kata sandi"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg></button>
+              </div>
+              <p class="nb-help" id="pw-1-help">Minimal 8 karakter.</p>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="pw-2">Ulangi kata sandi <span class="nb-req" aria-hidden="true">*</span></label>
+              <div class="nb-input-group">
+                <input class="nb-input" id="pw-2" name="pw2" type="password" required data-match="pw-1" data-match-message="Kata sandi tidak sama dengan kolom sebelumnya." autocomplete="new-password">
+                <button class="nb-icon-btn" type="button" data-password-toggle aria-controls="pw-2" aria-label="Tampilkan kata sandi"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg></button>
+              </div>
+            </div>
+            <div class="nb-field nb-field--full">
+              <button class="nb-btn" type="submit"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-lock"></use></svg>Periksa kata sandi</button>
+            </div>
+          </form>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Kata sandi dengan tombol tampilkan"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Kata sandi dengan tombol tampilkan"><code>&lt;form class="nb-form-grid" data-validate data-demo-submit="Kata sandi valid (demo)" aria-label="Contoh kata sandi"&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="pw-1"&gt;Kata sandi baru &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+    &lt;div class="nb-input-group"&gt;
+      &lt;input class="nb-input" id="pw-1" name="pw" type="password" required minlength="8" autocomplete="new-password" aria-describedby="pw-1-help"&gt;
+      &lt;button class="nb-icon-btn" type="button" data-password-toggle aria-controls="pw-1" aria-label="Tampilkan kata sandi"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-eye"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p class="nb-help" id="pw-1-help"&gt;Minimal 8 karakter.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="pw-2"&gt;Ulangi kata sandi &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+    &lt;div class="nb-input-group"&gt;
+      &lt;input class="nb-input" id="pw-2" name="pw2" type="password" required data-match="pw-1" data-match-message="Kata sandi tidak sama dengan kolom sebelumnya." autocomplete="new-password"&gt;
+      &lt;button class="nb-icon-btn" type="button" data-password-toggle aria-controls="pw-2" aria-label="Tampilkan kata sandi"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-eye"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field nb-field--full"&gt;
+    &lt;button class="nb-btn" type="submit"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-lock"&gt;&lt;/use&gt;&lt;/svg&gt;Periksa kata sandi&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="pilihan" aria-labelledby="pilihan-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="pilihan-title">Select, checkbox, radio &amp; switch</h2>
+            <p class="nb-demo__desc">Grup pilihan dibungkus <code class="nb-inline-code">fieldset</code> + <code class="nb-inline-code">legend</code>. Switch adalah checkbox dengan <code class="nb-inline-code">role="switch"</code> dan teks status yang ikut berubah. Checkbox induk bisa berstatus <em>indeterminate</em>.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-form-grid">
+            <div class="nb-field">
+              <label class="nb-label" for="f-cat">Kategori</label>
+              <select class="nb-select" id="f-cat">
+                <option value="">Pilih kategori…</option>
+                <option>Elektronik</option>
+                <option>Furnitur</option>
+                <option>Alat laboratorium</option>
+                <option>Peralatan olahraga</option>
+              </select>
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="f-cat-dis">Sub-kategori (disabled)</label>
+              <select class="nb-select" id="f-cat-dis" disabled><option>Pilih kategori dulu</option></select>
+            </div>
+            <fieldset class="nb-fieldset">
+              <legend>Kondisi</legend>
+              <div class="nb-choice-list">
+                <label class="nb-check"><input type="radio" name="f-cond" value="baik" checked> Baik</label>
+                <label class="nb-check"><input type="radio" name="f-cond" value="servis"> Perlu servis</label>
+                <label class="nb-check"><input type="radio" name="f-cond" value="rusak"> Rusak berat</label>
+                <label class="nb-check"><input type="radio" name="f-cond" value="hilang" disabled> Hilang (tidak tersedia)</label>
+              </div>
+            </fieldset>
+            <fieldset class="nb-fieldset">
+              <legend>Kelengkapan</legend>
+              <div class="nb-choice-list" data-check-parent-group>
+                <label class="nb-check"><input type="checkbox" data-check-parent> <strong>Semua kelengkapan</strong></label>
+                <label class="nb-check"><input type="checkbox" data-check-child checked> Kabel daya</label>
+                <label class="nb-check"><input type="checkbox" data-check-child> Remote</label>
+                <label class="nb-check"><input type="checkbox" data-check-child checked> Tas pelindung</label>
+              </div>
+            </fieldset>
+            <div class="nb-field nb-field--full">
+              <div class="nb-choice-list nb-choice-list--inline">
+                <label class="nb-check nb-switch"><input type="checkbox" role="switch" checked data-on="Aktif" data-off="Nonaktif"> Pengingat jatuh tempo <span class="nb-switch__state" aria-hidden="true"></span></label>
+                <label class="nb-check nb-switch"><input type="checkbox" role="switch" data-on="Publik" data-off="Privat"> Tampilkan di katalog <span class="nb-switch__state" aria-hidden="true"></span></label>
+                <label class="nb-check nb-switch"><input type="checkbox" role="switch" disabled> Sinkron SSO (disabled) <span class="nb-switch__state" aria-hidden="true"></span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Select, checkbox, radio &amp; switch"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Select, checkbox, radio &amp; switch"><code>&lt;div class="nb-form-grid"&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-cat"&gt;Kategori&lt;/label&gt;
+    &lt;select class="nb-select" id="f-cat"&gt;
+      &lt;option value=""&gt;Pilih kategori…&lt;/option&gt;
+      &lt;option&gt;Elektronik&lt;/option&gt;
+      &lt;option&gt;Furnitur&lt;/option&gt;
+      &lt;option&gt;Alat laboratorium&lt;/option&gt;
+      &lt;option&gt;Peralatan olahraga&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="f-cat-dis"&gt;Sub-kategori (disabled)&lt;/label&gt;
+    &lt;select class="nb-select" id="f-cat-dis" disabled&gt;&lt;option&gt;Pilih kategori dulu&lt;/option&gt;&lt;/select&gt;
+  &lt;/div&gt;
+  &lt;fieldset class="nb-fieldset"&gt;
+    &lt;legend&gt;Kondisi&lt;/legend&gt;
+    &lt;div class="nb-choice-list"&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="radio" name="f-cond" value="baik" checked&gt; Baik&lt;/label&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="radio" name="f-cond" value="servis"&gt; Perlu servis&lt;/label&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="radio" name="f-cond" value="rusak"&gt; Rusak berat&lt;/label&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="radio" name="f-cond" value="hilang" disabled&gt; Hilang (tidak tersedia)&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset class="nb-fieldset"&gt;
+    &lt;legend&gt;Kelengkapan&lt;/legend&gt;
+    &lt;div class="nb-choice-list" data-check-parent-group&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="checkbox" data-check-parent&gt; &lt;strong&gt;Semua kelengkapan&lt;/strong&gt;&lt;/label&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="checkbox" data-check-child checked&gt; Kabel daya&lt;/label&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="checkbox" data-check-child&gt; Remote&lt;/label&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="checkbox" data-check-child checked&gt; Tas pelindung&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;div class="nb-field nb-field--full"&gt;
+    &lt;div class="nb-choice-list nb-choice-list--inline"&gt;
+      &lt;label class="nb-check nb-switch"&gt;&lt;input type="checkbox" role="switch" checked data-on="Aktif" data-off="Nonaktif"&gt; Pengingat jatuh tempo &lt;span class="nb-switch__state" aria-hidden="true"&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label class="nb-check nb-switch"&gt;&lt;input type="checkbox" role="switch" data-on="Publik" data-off="Privat"&gt; Tampilkan di katalog &lt;span class="nb-switch__state" aria-hidden="true"&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label class="nb-check nb-switch"&gt;&lt;input type="checkbox" role="switch" disabled&gt; Sinkron SSO (disabled) &lt;span class="nb-switch__state" aria-hidden="true"&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="combobox" aria-labelledby="combobox-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="combobox-title">Select yang bisa dicari (combobox)</h2>
+            <p class="nb-demo__desc">Pola WAI-ARIA combobox: ketik untuk menyaring, panah atas/bawah memilih, Enter mengonfirmasi, Esc menutup. Opsi aktif diumumkan lewat <code class="nb-inline-code">aria-activedescendant</code>.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-field nb-combo" data-combobox style="max-width: 420px">
+            <label class="nb-label" for="f-loc">Lokasi</label>
+            <input class="nb-input" id="f-loc" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="f-loc-list" autocomplete="off" placeholder="Ketik mis. lab, gudang…">
+            <input type="hidden" name="loc" data-combobox-value>
+            <ul class="nb-combo__list" id="f-loc-list" role="listbox" aria-label="Pilihan lokasi" hidden>
+              <li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-A-201" data-label="Lab Multimedia">Lab Multimedia <small>GD-A/201</small></li>
+              <li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-A-105" data-label="Lab Biologi">Lab Biologi <small>GD-A/105</small></li>
+              <li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-A-106" data-label="Lab Kimia">Lab Kimia <small>GD-A/106</small></li>
+              <li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-B-001" data-label="Gudang TI">Gudang TI <small>GD-B/001</small></li>
+              <li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-B-002" data-label="Gudang Olahraga">Gudang Olahraga <small>GD-B/002</small></li>
+              <li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-C-100" data-label="Aula Utama">Aula Utama <small>GD-C/100</small></li>
+              <li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-C-210" data-label="Ruang Rapat 2">Ruang Rapat 2 <small>GD-C/210</small></li>
+              <li class="nb-combo__empty" data-combobox-empty hidden>Tidak ada lokasi yang cocok.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Select yang bisa dicari (combobox)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Select yang bisa dicari (combobox)"><code>&lt;div class="nb-field nb-combo" data-combobox style="max-width: 420px"&gt;
+  &lt;label class="nb-label" for="f-loc"&gt;Lokasi&lt;/label&gt;
+  &lt;input class="nb-input" id="f-loc" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="f-loc-list" autocomplete="off" placeholder="Ketik mis. lab, gudang…"&gt;
+  &lt;input type="hidden" name="loc" data-combobox-value&gt;
+  &lt;ul class="nb-combo__list" id="f-loc-list" role="listbox" aria-label="Pilihan lokasi" hidden&gt;
+    &lt;li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-A-201" data-label="Lab Multimedia"&gt;Lab Multimedia &lt;small&gt;GD-A/201&lt;/small&gt;&lt;/li&gt;
+    &lt;li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-A-105" data-label="Lab Biologi"&gt;Lab Biologi &lt;small&gt;GD-A/105&lt;/small&gt;&lt;/li&gt;
+    &lt;li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-A-106" data-label="Lab Kimia"&gt;Lab Kimia &lt;small&gt;GD-A/106&lt;/small&gt;&lt;/li&gt;
+    &lt;li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-B-001" data-label="Gudang TI"&gt;Gudang TI &lt;small&gt;GD-B/001&lt;/small&gt;&lt;/li&gt;
+    &lt;li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-B-002" data-label="Gudang Olahraga"&gt;Gudang Olahraga &lt;small&gt;GD-B/002&lt;/small&gt;&lt;/li&gt;
+    &lt;li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-C-100" data-label="Aula Utama"&gt;Aula Utama &lt;small&gt;GD-C/100&lt;/small&gt;&lt;/li&gt;
+    &lt;li class="nb-combo__option" role="option" aria-selected="false" data-value="GD-C-210" data-label="Ruang Rapat 2"&gt;Ruang Rapat 2 &lt;small&gt;GD-C/210&lt;/small&gt;&lt;/li&gt;
+    &lt;li class="nb-combo__empty" data-combobox-empty hidden&gt;Tidak ada lokasi yang cocok.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="tanggal" aria-labelledby="tanggal-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="tanggal-title">Tanggal, waktu, rentang &amp; slider</h2>
+            <p class="nb-demo__desc">Memakai kontrol bawaan browser (aksesibel dan dilokalkan). Tanggal kembali divalidasi agar setelah tanggal mulai (<code class="nb-inline-code">data-date-after</code>). Slider punya keluaran yang juga dibacakan via <code class="nb-inline-code">aria-valuetext</code>.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <form data-validate data-demo-submit="Jadwal valid (demo)" aria-label="Contoh tanggal dan waktu">
+            <div class="nb-form-grid nb-form-grid--3">
+              <div class="nb-field">
+                <label class="nb-label" for="d-start">Tanggal mulai <span class="nb-req" aria-hidden="true">*</span></label>
+                <input class="nb-input" id="d-start" name="start" type="date" value="2026-10-26" required>
+              </div>
+              <div class="nb-field">
+                <label class="nb-label" for="d-end">Tanggal kembali <span class="nb-req" aria-hidden="true">*</span></label>
+                <input class="nb-input" id="d-end" name="end" type="date" value="2026-10-24" required data-date-after="d-start" aria-describedby="d-end-help">
+                <p class="nb-help" id="d-end-help">Coba kirim: nilai awalnya sengaja salah.</p>
+              </div>
+              <div class="nb-field">
+                <label class="nb-label" for="d-time">Jam ambil</label>
+                <input class="nb-input" id="d-time" name="time" type="time" value="09:30" min="07:00" max="16:00" aria-describedby="d-time-help">
+                <p class="nb-help" id="d-time-help">Jam kerja 07.00–16.00.</p>
+              </div>
+              <div class="nb-field nb-field--full">
+                <label class="nb-label" for="d-range">Batas pengingat sebelum jatuh tempo</label>
+                <div class="nb-range-field">
+                  <input class="nb-range" id="d-range" name="remind" type="range" min="0" max="14" value="3" data-range-output="d-range-out" data-range-suffix=" hari">
+                  <output class="nb-range-output" id="d-range-out" for="d-range" aria-hidden="true"></output>
+                </div>
+              </div>
+            </div>
+            <div class="nb-form-actions">
+              <button class="nb-btn" type="submit"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Periksa jadwal</button>
+            </div>
+          </form>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Tanggal, waktu, rentang &amp; slider"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Tanggal, waktu, rentang &amp; slider"><code>&lt;form data-validate data-demo-submit="Jadwal valid (demo)" aria-label="Contoh tanggal dan waktu"&gt;
+  &lt;div class="nb-form-grid nb-form-grid--3"&gt;
+    &lt;div class="nb-field"&gt;
+      &lt;label class="nb-label" for="d-start"&gt;Tanggal mulai &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input class="nb-input" id="d-start" name="start" type="date" value="2026-10-26" required&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-field"&gt;
+      &lt;label class="nb-label" for="d-end"&gt;Tanggal kembali &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input class="nb-input" id="d-end" name="end" type="date" value="2026-10-24" required data-date-after="d-start" aria-describedby="d-end-help"&gt;
+      &lt;p class="nb-help" id="d-end-help"&gt;Coba kirim: nilai awalnya sengaja salah.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-field"&gt;
+      &lt;label class="nb-label" for="d-time"&gt;Jam ambil&lt;/label&gt;
+      &lt;input class="nb-input" id="d-time" name="time" type="time" value="09:30" min="07:00" max="16:00" aria-describedby="d-time-help"&gt;
+      &lt;p class="nb-help" id="d-time-help"&gt;Jam kerja 07.00–16.00.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-field nb-field--full"&gt;
+      &lt;label class="nb-label" for="d-range"&gt;Batas pengingat sebelum jatuh tempo&lt;/label&gt;
+      &lt;div class="nb-range-field"&gt;
+        &lt;input class="nb-range" id="d-range" name="remind" type="range" min="0" max="14" value="3" data-range-output="d-range-out" data-range-suffix=" hari"&gt;
+        &lt;output class="nb-range-output" id="d-range-out" for="d-range" aria-hidden="true"&gt;&lt;/output&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-form-actions"&gt;
+    &lt;button class="nb-btn" type="submit"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-calendar"&gt;&lt;/use&gt;&lt;/svg&gt;Periksa jadwal&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="upload" aria-labelledby="upload-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="upload-title">Dropzone unggah file</h2>
+            <p class="nb-demo__desc">Input file asli tetap ada (dapat difokus dan dipakai keyboard) di atas area seret-lepas. File di atas 2 MB ditolak; progres unggah hanya simulasi — tidak ada yang dikirim.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-dropzone" data-dropzone="f-files" data-dropzone-status="f-files-status" data-max-size="2" data-simulate-upload>
+            <span class="nb-dropzone__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+            <label class="nb-dropzone__title" for="f-file">Seret file ke sini atau pilih file</label>
+            <p class="nb-help" id="f-file-help">PDF, PNG, JPG atau CSV · maks. 2 MB per file</p>
+            <input id="f-file" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.csv" aria-describedby="f-file-help">
+          </div>
+          <p class="nb-help" id="f-files-status" role="status" aria-live="polite" style="margin-top: var(--space-2)"></p>
+          <ul class="nb-file-list" id="f-files" role="list" aria-label="File yang dipilih" style="margin-top: var(--space-3)"></ul>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Dropzone unggah file"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Dropzone unggah file"><code>&lt;div class="nb-dropzone" data-dropzone="f-files" data-dropzone-status="f-files-status" data-max-size="2" data-simulate-upload&gt;
+  &lt;span class="nb-dropzone__icon" aria-hidden="true"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-download"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;label class="nb-dropzone__title" for="f-file"&gt;Seret file ke sini atau pilih file&lt;/label&gt;
+  &lt;p class="nb-help" id="f-file-help"&gt;PDF, PNG, JPG atau CSV · maks. 2 MB per file&lt;/p&gt;
+  &lt;input id="f-file" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.csv" aria-describedby="f-file-help"&gt;
+&lt;/div&gt;
+&lt;p class="nb-help" id="f-files-status" role="status" aria-live="polite" style="margin-top: var(--space-2)"&gt;&lt;/p&gt;
+&lt;ul class="nb-file-list" id="f-files" role="list" aria-label="File yang dipilih" style="margin-top: var(--space-3)"&gt;&lt;/ul&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="validasi" aria-labelledby="validasi-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="validasi-title">Validasi &amp; ringkasan error</h2>
+            <p class="nb-demo__desc">Pesan error muncul di bawah kolom (bukan hanya warna merah), terhubung lewat <code class="nb-inline-code">aria-describedby</code>, dan fokus pindah ke kolom invalid pertama. Validasi ulang berjalan saat mengetik setelah percobaan kirim pertama. Indikator "belum disimpan" muncul saat ada perubahan.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <form data-validate data-dirty-warn data-demo-submit="Permintaan perbaikan terkirim (demo)" aria-labelledby="val-legend" novalidate>
+            <p class="nb-help" id="val-legend">Kolom bertanda <span class="nb-req" aria-hidden="true">*</span><span class="nb-sr-only">bintang</span> wajib diisi. <span class="nb-dirty-flag" data-dirty-flag hidden><span class="nb-status-dot" style="--dot: var(--status-warning)" aria-hidden="true"></span>Ada perubahan belum disimpan</span></p>
+            <div class="nb-form-grid" style="margin-top: var(--space-4)">
+              <div class="nb-field">
+                <label class="nb-label" for="v-name">Nama pelapor <span class="nb-req" aria-hidden="true">*</span></label>
+                <input class="nb-input" id="v-name" name="name" type="text" required minlength="3" autocomplete="name">
+              </div>
+              <div class="nb-field">
+                <label class="nb-label" for="v-email">Email <span class="nb-req" aria-hidden="true">*</span></label>
+                <input class="nb-input" id="v-email" name="email" type="email" required autocomplete="email">
+              </div>
+              <div class="nb-field">
+                <label class="nb-label" for="v-asset">Kode aset <span class="nb-req" aria-hidden="true">*</span></label>
+                <input class="nb-input" id="v-asset" name="asset" type="text" required pattern="AST-[0-9]{2}-[0-9]{4}" data-pattern-message="Format kode: AST-26-1234." placeholder="AST-26-1234" aria-describedby="v-asset-help">
+                <p class="nb-help" id="v-asset-help">Tertera di label aset.</p>
+              </div>
+              <div class="nb-field">
+                <label class="nb-label" for="v-prio">Prioritas <span class="nb-req" aria-hidden="true">*</span></label>
+                <select class="nb-select" id="v-prio" name="prio" required>
+                  <option value="">Pilih prioritas…</option>
+                  <option value="rendah">Rendah</option>
+                  <option value="normal">Normal</option>
+                  <option value="tinggi">Tinggi</option>
+                </select>
+              </div>
+              <fieldset class="nb-fieldset nb-field--full">
+                <legend>Jenis kerusakan <span class="nb-req" aria-hidden="true">*</span></legend>
+                <div class="nb-choice-list nb-choice-list--inline">
+                  <label class="nb-check"><input type="checkbox" name="kind" value="daya" data-group="v-kind" data-group-min="1"> Daya</label>
+                  <label class="nb-check"><input type="checkbox" name="kind" value="tampilan" data-group="v-kind" data-group-min="1"> Tampilan</label>
+                  <label class="nb-check"><input type="checkbox" name="kind" value="fisik" data-group="v-kind" data-group-min="1"> Fisik</label>
+                </div>
+              </fieldset>
+              <div class="nb-field nb-field--full">
+                <label class="nb-label" for="v-desc">Deskripsi <span class="nb-req" aria-hidden="true">*</span></label>
+                <textarea class="nb-textarea" id="v-desc" name="desc" required minlength="10" maxlength="300" data-char-count="v-desc-count" aria-describedby="v-desc-count"></textarea>
+                <p class="nb-help" id="v-desc-count" aria-live="polite"></p>
+              </div>
+              <div class="nb-field nb-field--full">
+                <label class="nb-check"><input type="checkbox" name="agree" required data-required-message="Persetujuan wajib dicentang."> Saya menyatakan data di atas benar <span class="nb-req" aria-hidden="true">*</span></label>
+              </div>
+            </div>
+            <div class="nb-form-actions">
+              <button class="nb-btn nb-btn--ghost" type="reset">Kosongkan</button>
+              <button class="nb-btn nb-btn--yellow" type="submit"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg>Kirim permintaan</button>
+            </div>
+          </form>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Validasi &amp; ringkasan error"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Validasi &amp; ringkasan error"><code>&lt;form data-validate data-dirty-warn data-demo-submit="Permintaan perbaikan terkirim (demo)" aria-labelledby="val-legend" novalidate&gt;
+  &lt;p class="nb-help" id="val-legend"&gt;Kolom bertanda &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;span class="nb-sr-only"&gt;bintang&lt;/span&gt; wajib diisi. &lt;span class="nb-dirty-flag" data-dirty-flag hidden&gt;&lt;span class="nb-status-dot" style="--dot: var(--status-warning)" aria-hidden="true"&gt;&lt;/span&gt;Ada perubahan belum disimpan&lt;/span&gt;&lt;/p&gt;
+  &lt;div class="nb-form-grid" style="margin-top: var(--space-4)"&gt;
+    &lt;div class="nb-field"&gt;
+      &lt;label class="nb-label" for="v-name"&gt;Nama pelapor &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input class="nb-input" id="v-name" name="name" type="text" required minlength="3" autocomplete="name"&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-field"&gt;
+      &lt;label class="nb-label" for="v-email"&gt;Email &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input class="nb-input" id="v-email" name="email" type="email" required autocomplete="email"&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-field"&gt;
+      &lt;label class="nb-label" for="v-asset"&gt;Kode aset &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input class="nb-input" id="v-asset" name="asset" type="text" required pattern="AST-[0-9]{2}-[0-9]{4}" data-pattern-message="Format kode: AST-26-1234." placeholder="AST-26-1234" aria-describedby="v-asset-help"&gt;
+      &lt;p class="nb-help" id="v-asset-help"&gt;Tertera di label aset.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-field"&gt;
+      &lt;label class="nb-label" for="v-prio"&gt;Prioritas &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;select class="nb-select" id="v-prio" name="prio" required&gt;
+        &lt;option value=""&gt;Pilih prioritas…&lt;/option&gt;
+        &lt;option value="rendah"&gt;Rendah&lt;/option&gt;
+        &lt;option value="normal"&gt;Normal&lt;/option&gt;
+        &lt;option value="tinggi"&gt;Tinggi&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;fieldset class="nb-fieldset nb-field--full"&gt;
+      &lt;legend&gt;Jenis kerusakan &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/legend&gt;
+      &lt;div class="nb-choice-list nb-choice-list--inline"&gt;
+        &lt;label class="nb-check"&gt;&lt;input type="checkbox" name="kind" value="daya" data-group="v-kind" data-group-min="1"&gt; Daya&lt;/label&gt;
+        &lt;label class="nb-check"&gt;&lt;input type="checkbox" name="kind" value="tampilan" data-group="v-kind" data-group-min="1"&gt; Tampilan&lt;/label&gt;
+        &lt;label class="nb-check"&gt;&lt;input type="checkbox" name="kind" value="fisik" data-group="v-kind" data-group-min="1"&gt; Fisik&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;div class="nb-field nb-field--full"&gt;
+      &lt;label class="nb-label" for="v-desc"&gt;Deskripsi &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;textarea class="nb-textarea" id="v-desc" name="desc" required minlength="10" maxlength="300" data-char-count="v-desc-count" aria-describedby="v-desc-count"&gt;&lt;/textarea&gt;
+      &lt;p class="nb-help" id="v-desc-count" aria-live="polite"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-field nb-field--full"&gt;
+      &lt;label class="nb-check"&gt;&lt;input type="checkbox" name="agree" required data-required-message="Persetujuan wajib dicentang."&gt; Saya menyatakan data di atas benar &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-form-actions"&gt;
+    &lt;button class="nb-btn nb-btn--ghost" type="reset"&gt;Kosongkan&lt;/button&gt;
+    &lt;button class="nb-btn nb-btn--yellow" type="submit"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-wrench"&gt;&lt;/use&gt;&lt;/svg&gt;Kirim permintaan&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="wizard" aria-labelledby="wizard-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="wizard-title">Wizard multi-langkah</h2>
+            <p class="nb-demo__desc">Setiap langkah divalidasi sebelum lanjut; penanda langkah memakai <code class="nb-inline-code">aria-current="step"</code> dan fokus pindah ke judul langkah. Langkah terakhir menampilkan ringkasan isian.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <form class="nb-card" data-validate data-wizard data-demo-submit="Aset baru tercatat (demo)" aria-labelledby="wz-title">
+            <div class="nb-card__header">
+              <h3 class="nb-card__title" id="wz-title">Tambah aset</h3>
+              <span class="nb-card__subtitle" data-wizard-counter aria-live="polite"></span>
+            </div>
+            <div class="nb-card__body">
+              <ol class="nb-stepper" data-wizard-steps aria-label="Langkah">
+                <li class="nb-stepper__item">Identitas</li>
+                <li class="nb-stepper__item">Lokasi</li>
+                <li class="nb-stepper__item">Tinjau</li>
+              </ol>
+              <fieldset class="nb-fieldset" data-wizard-step style="margin-top: var(--space-5)">
+                <legend data-wizard-heading>1. Identitas aset</legend>
+                <div class="nb-form-grid">
+                  <div class="nb-field">
+                    <label class="nb-label" for="wz-name">Nama aset <span class="nb-req" aria-hidden="true">*</span></label>
+                    <input class="nb-input" id="wz-name" name="name" type="text" required minlength="3">
+                  </div>
+                  <div class="nb-field">
+                    <label class="nb-label" for="wz-cat">Kategori <span class="nb-req" aria-hidden="true">*</span></label>
+                    <select class="nb-select" id="wz-cat" name="cat" required>
+                      <option value="">Pilih…</option>
+                      <option>Elektronik</option>
+                      <option>Furnitur</option>
+                      <option>Alat laboratorium</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="nb-fieldset" data-wizard-step style="margin-top: var(--space-5)" hidden>
+                <legend data-wizard-heading>2. Lokasi &amp; kondisi</legend>
+                <div class="nb-form-grid">
+                  <div class="nb-field">
+                    <label class="nb-label" for="wz-loc">Ruangan <span class="nb-req" aria-hidden="true">*</span></label>
+                    <input class="nb-input" id="wz-loc" name="loc" type="text" required placeholder="mis. Lab Multimedia">
+                  </div>
+                  <div class="nb-field">
+                    <label class="nb-label" for="wz-cond">Kondisi <span class="nb-req" aria-hidden="true">*</span></label>
+                    <select class="nb-select" id="wz-cond" name="cond" required>
+                      <option value="">Pilih…</option>
+                      <option>Baik</option>
+                      <option>Perlu servis</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="nb-fieldset" data-wizard-step style="margin-top: var(--space-5)" hidden>
+                <legend data-wizard-heading>3. Tinjau sebelum menyimpan</legend>
+                <dl class="nb-dl" data-wizard-summary></dl>
+              </fieldset>
+            </div>
+            <div class="nb-card__footer">
+              <button class="nb-btn nb-btn--outline" type="button" data-wizard-prev>Kembali</button>
+              <button class="nb-btn" type="button" data-wizard-next>Lanjut<svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+              <button class="nb-btn nb-btn--yellow" type="submit" data-wizard-submit hidden><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>Simpan aset</button>
+            </div>
+          </form>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Wizard multi-langkah"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Wizard multi-langkah"><code>&lt;form class="nb-card" data-validate data-wizard data-demo-submit="Aset baru tercatat (demo)" aria-labelledby="wz-title"&gt;
+  &lt;div class="nb-card__header"&gt;
+    &lt;h3 class="nb-card__title" id="wz-title"&gt;Tambah aset&lt;/h3&gt;
+    &lt;span class="nb-card__subtitle" data-wizard-counter aria-live="polite"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-card__body"&gt;
+    &lt;ol class="nb-stepper" data-wizard-steps aria-label="Langkah"&gt;
+      &lt;li class="nb-stepper__item"&gt;Identitas&lt;/li&gt;
+      &lt;li class="nb-stepper__item"&gt;Lokasi&lt;/li&gt;
+      &lt;li class="nb-stepper__item"&gt;Tinjau&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;fieldset class="nb-fieldset" data-wizard-step style="margin-top: var(--space-5)"&gt;
+      &lt;legend data-wizard-heading&gt;1. Identitas aset&lt;/legend&gt;
+      &lt;div class="nb-form-grid"&gt;
+        &lt;div class="nb-field"&gt;
+          &lt;label class="nb-label" for="wz-name"&gt;Nama aset &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+          &lt;input class="nb-input" id="wz-name" name="name" type="text" required minlength="3"&gt;
+        &lt;/div&gt;
+        &lt;div class="nb-field"&gt;
+          &lt;label class="nb-label" for="wz-cat"&gt;Kategori &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+          &lt;select class="nb-select" id="wz-cat" name="cat" required&gt;
+            &lt;option value=""&gt;Pilih…&lt;/option&gt;
+            &lt;option&gt;Elektronik&lt;/option&gt;
+            &lt;option&gt;Furnitur&lt;/option&gt;
+            &lt;option&gt;Alat laboratorium&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="nb-fieldset" data-wizard-step style="margin-top: var(--space-5)" hidden&gt;
+      &lt;legend data-wizard-heading&gt;2. Lokasi &amp;amp; kondisi&lt;/legend&gt;
+      &lt;div class="nb-form-grid"&gt;
+        &lt;div class="nb-field"&gt;
+          &lt;label class="nb-label" for="wz-loc"&gt;Ruangan &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+          &lt;input class="nb-input" id="wz-loc" name="loc" type="text" required placeholder="mis. Lab Multimedia"&gt;
+        &lt;/div&gt;
+        &lt;div class="nb-field"&gt;
+          &lt;label class="nb-label" for="wz-cond"&gt;Kondisi &lt;span class="nb-req" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+          &lt;select class="nb-select" id="wz-cond" name="cond" required&gt;
+            &lt;option value=""&gt;Pilih…&lt;/option&gt;
+            &lt;option&gt;Baik&lt;/option&gt;
+            &lt;option&gt;Perlu servis&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="nb-fieldset" data-wizard-step style="margin-top: var(--space-5)" hidden&gt;
+      &lt;legend data-wizard-heading&gt;3. Tinjau sebelum menyimpan&lt;/legend&gt;
+      &lt;dl class="nb-dl" data-wizard-summary&gt;&lt;/dl&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-card__footer"&gt;
+    &lt;button class="nb-btn nb-btn--outline" type="button" data-wizard-prev&gt;Kembali&lt;/button&gt;
+    &lt;button class="nb-btn" type="button" data-wizard-next&gt;Lanjut&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-arrow-right"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;button class="nb-btn nb-btn--yellow" type="submit" data-wizard-submit hidden&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;Simpan aset&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="tata-letak" aria-labelledby="tata-letak-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="tata-letak-title">Tata letak: inline, grid &amp; fieldset</h2>
+            <p class="nb-demo__desc">Form inline untuk filter singkat; grid 2/3 kolom yang menjadi 1 kolom di layar kecil; <code class="nb-inline-code">fieldset</code> untuk mengelompokkan isian terkait.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <span class="nb-demo-label">.nb-inline-form</span>
+          <form class="nb-inline-form" role="search" aria-label="Filter peminjaman" data-demo-filter>
+            <div class="nb-field">
+              <label class="nb-label" for="i-q">Peminjam</label>
+              <input class="nb-input" id="i-q" type="search" placeholder="Nama…">
+            </div>
+            <div class="nb-field">
+              <label class="nb-label" for="i-month">Bulan</label>
+              <input class="nb-input" id="i-month" type="month" value="2026-10">
+            </div>
+            <button class="nb-btn" type="submit"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-filter"></use></svg>Terapkan</button>
+          </form>
+          <span class="nb-demo-label" style="margin-top: var(--space-6)">.nb-form-grid--3 dalam .nb-fieldset</span>
+          <fieldset class="nb-fieldset">
+            <legend>Alamat gudang</legend>
+            <div class="nb-form-grid nb-form-grid--3">
+              <div class="nb-field"><label class="nb-label" for="g-bld">Gedung</label><input class="nb-input" id="g-bld" type="text" value="B"></div>
+              <div class="nb-field"><label class="nb-label" for="g-floor">Lantai</label><input class="nb-input" id="g-floor" type="number" value="1" min="0"></div>
+              <div class="nb-field"><label class="nb-label" for="g-room">Ruang</label><input class="nb-input" id="g-room" type="text" value="001"></div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Tata letak: inline, grid &amp; fieldset"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Tata letak: inline, grid &amp; fieldset"><code>&lt;span class="nb-demo-label"&gt;.nb-inline-form&lt;/span&gt;
+&lt;form class="nb-inline-form" role="search" aria-label="Filter peminjaman" data-demo-filter&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="i-q"&gt;Peminjam&lt;/label&gt;
+    &lt;input class="nb-input" id="i-q" type="search" placeholder="Nama…"&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-field"&gt;
+    &lt;label class="nb-label" for="i-month"&gt;Bulan&lt;/label&gt;
+    &lt;input class="nb-input" id="i-month" type="month" value="2026-10"&gt;
+  &lt;/div&gt;
+  &lt;button class="nb-btn" type="submit"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-filter"&gt;&lt;/use&gt;&lt;/svg&gt;Terapkan&lt;/button&gt;
+&lt;/form&gt;
+&lt;span class="nb-demo-label" style="margin-top: var(--space-6)"&gt;.nb-form-grid--3 dalam .nb-fieldset&lt;/span&gt;
+&lt;fieldset class="nb-fieldset"&gt;
+  &lt;legend&gt;Alamat gudang&lt;/legend&gt;
+  &lt;div class="nb-form-grid nb-form-grid--3"&gt;
+    &lt;div class="nb-field"&gt;&lt;label class="nb-label" for="g-bld"&gt;Gedung&lt;/label&gt;&lt;input class="nb-input" id="g-bld" type="text" value="B"&gt;&lt;/div&gt;
+    &lt;div class="nb-field"&gt;&lt;label class="nb-label" for="g-floor"&gt;Lantai&lt;/label&gt;&lt;input class="nb-input" id="g-floor" type="number" value="1" min="0"&gt;&lt;/div&gt;
+    &lt;div class="nb-field"&gt;&lt;label class="nb-label" for="g-room"&gt;Ruang&lt;/label&gt;&lt;input class="nb-input" id="g-room" type="text" value="001"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+        </div>
+      </section>
+
+      <nav class="nb-gallery-pager" aria-label="Halaman komponen lain">
+          <a class="nb-btn nb-btn--outline" href="tables.html"><svg class="nb-icon nb-icon--flip" aria-hidden="true"><use href="#i-chevron-right"></use></svg><span>Sebelumnya: Tabel</span></a>
+          <a class="nb-btn nb-btn--ghost" href="../index.html"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+          <a class="nb-btn nb-btn--outline" href="charts.html"><span>Berikutnya: Chart &amp; KPI</span><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+      </nav>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

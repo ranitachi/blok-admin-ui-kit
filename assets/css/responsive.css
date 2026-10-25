@@ -1,0 +1,480 @@
+/* ==========================================================================
+   Responsive — mobile 320–767, tablet 768–1023, desktop 1024+, wide 1440+
+   ========================================================================== */
+
+/* ---- Wide (≥1440px) --------------------------------------------------- */
+@media (min-width: 1440px) {
+  :root {
+    --gutter: var(--space-10);
+  }
+}
+
+/* ---- Desktop kecil (1024–1279px) ------------------------------------- */
+@media (max-width: 1279px) {
+  .nb-launch-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nb-grid--3,
+  .nb-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nb-dash-row--analytics,
+  .nb-dash-row--data {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  }
+
+  .nb-hero__title {
+    font-size: 48px;
+  }
+}
+
+/* ---- Tablet & mobile (<1024px): sidebar menjadi drawer --------------- */
+@media (max-width: 1023px) {
+  /* Target sentuh minimal 44px untuk kontrol ringkas */
+  .nb-segmented__btn {
+    min-width: var(--tap-min);
+    min-height: var(--tap-min);
+  }
+
+  :root {
+    --gutter: var(--space-6);
+  }
+
+  .nb-main,
+  .nb-app.is-sidebar-collapsed .nb-main {
+    margin-left: 0;
+  }
+
+  .nb-sidebar,
+  .nb-app.is-sidebar-collapsed .nb-sidebar {
+    width: min(var(--sidebar-w), 86vw);
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform var(--dur-slow) var(--ease), visibility 0s linear var(--dur-slow);
+  }
+
+  .nb-app.is-drawer-open .nb-sidebar {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--dur-slow) var(--ease), visibility 0s;
+  }
+
+  /* Drawer selalu tampil penuh walau preferensi desktop "terciut". */
+  .nb-app.is-sidebar-collapsed .nb-brand__text,
+  .nb-app.is-sidebar-collapsed .nb-nav__label,
+  .nb-app.is-sidebar-collapsed .nb-nav__tag,
+  .nb-app.is-sidebar-collapsed .nb-nav__count,
+  .nb-app.is-sidebar-collapsed .nb-nav__chevron {
+    display: initial;
+  }
+
+  .nb-app.is-sidebar-collapsed .nb-brand__text {
+    display: flex;
+  }
+
+  .nb-app.is-sidebar-collapsed .nb-sidebar__footer {
+    display: block;
+  }
+
+  .nb-app.is-sidebar-collapsed .nb-sidebar__brand {
+    justify-content: space-between;
+    padding: 0 var(--space-4) 0 var(--space-5);
+  }
+
+  .nb-app.is-sidebar-collapsed .nb-nav-group__title {
+    height: auto;
+    margin: 0 var(--space-3) var(--space-2);
+    font-size: var(--fs-2xs);
+    background: none;
+  }
+
+  .nb-app.is-sidebar-collapsed .nb-nav__link {
+    justify-content: flex-start;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .nb-app.is-sidebar-collapsed .nb-nav--sub:not([hidden]) {
+    display: flex;
+  }
+
+  .nb-sidebar .nb-sidebar__close {
+    display: inline-grid;
+  }
+
+  .nb-topbar {
+    padding: 0 var(--gutter);
+  }
+
+  .nb-topbar__brand {
+    display: inline-flex;
+  }
+
+  .nb-topbar .nb-breadcrumb {
+    display: none;
+  }
+
+  .nb-page-breadcrumb {
+    display: block;
+  }
+
+  .nb-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+
+  .nb-hero__deco--circle {
+    right: -50px;
+    bottom: auto;
+    top: -60px;
+  }
+
+  .nb-hero__deco--square {
+    display: none;
+  }
+
+  .nb-dash-row--analytics,
+  .nb-dash-row--data,
+  .nb-grid--main-aside,
+  .nb-grid--aside-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nb-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nb-user-btn__text {
+    display: none;
+  }
+
+  .nb-user-btn {
+    padding: 0;
+  }
+
+  .nb-user-btn .nb-avatar {
+    border-right: 0;
+  }
+
+  .nb-user-btn > .nb-icon {
+    display: none;
+  }
+}
+
+/* Breadcrumb di dalam konten hanya tampil saat breadcrumb topbar disembunyikan. */
+@media (min-width: 1024px) {
+  .nb-page-breadcrumb {
+    display: none;
+  }
+}
+
+/* ---- Mobile (<768px) -------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --gutter: var(--space-4);
+    --topbar-h: 64px;
+  }
+
+  .nb-content > * + * {
+    margin-top: var(--space-6);
+  }
+
+  .nb-topbar {
+    gap: var(--space-2);
+  }
+
+  .nb-topbar__actions {
+    gap: var(--space-2);
+    margin-left: auto;
+  }
+
+  .nb-topbar .nb-topbar__search-toggle {
+    display: inline-grid;
+  }
+
+  .nb-topbar__search {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-width: none;
+    margin: 0;
+    padding: var(--space-3) var(--gutter);
+    background: var(--surface-page);
+    border-bottom: var(--border);
+    display: none;
+  }
+
+  .nb-topbar.is-search-open .nb-topbar__search {
+    display: block;
+  }
+
+  .nb-search__kbd {
+    display: none;
+  }
+
+  .nb-search__input {
+    padding-right: var(--space-3);
+  }
+
+  .nb-brand__text small {
+    display: none;
+  }
+
+  .nb-page-header__title {
+    font-size: var(--fs-3xl);
+  }
+
+  .nb-page-header__actions,
+  .nb-page-header__actions .nb-btn {
+    width: 100%;
+  }
+
+  .nb-page-header__actions .nb-btn {
+    flex: 1 1 auto;
+  }
+
+  .nb-section__title {
+    font-size: var(--fs-xl);
+  }
+
+  .nb-grid,
+  .nb-dash-row {
+    gap: var(--space-5);
+  }
+
+  .nb-grid--2,
+  .nb-grid--3,
+  .nb-grid--4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nb-hero {
+    padding: var(--space-5);
+    box-shadow: var(--shadow);
+  }
+
+  .nb-hero__title {
+    font-size: var(--fs-3xl);
+  }
+
+  .nb-hero__score,
+  .nb-launch-progress__num {
+    font-size: var(--fs-4xl);
+  }
+
+  .nb-hero__actions {
+    width: 100%;
+  }
+
+  .nb-hero__actions .nb-btn {
+    flex: 1 1 auto;
+  }
+
+  .nb-hero__deco--circle {
+    width: 120px;
+    height: 120px;
+    top: -70px;
+    right: -40px;
+  }
+
+  .nb-kpi__value {
+    font-size: var(--fs-3xl);
+  }
+
+  .nb-card__header,
+  .nb-card__body,
+  .nb-card__footer {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .nb-table th:first-child,
+  .nb-table td:first-child {
+    padding-left: var(--space-4);
+  }
+
+  .nb-analytics__stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nb-analytics__stat {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .nb-analytics__chart {
+    padding: var(--space-3) var(--space-2) var(--space-1);
+  }
+
+  .nb-donut {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+
+  .nb-donut .nb-legend {
+    width: 100%;
+  }
+
+  .nb-donut__svg {
+    max-width: 180px;
+  }
+
+  .nb-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nb-modal {
+    align-items: end;
+    padding: var(--space-3);
+  }
+
+  .nb-modal__footer .nb-btn {
+    flex: 1 1 auto;
+  }
+
+  .nb-toast-stack {
+    right: var(--space-4);
+    bottom: var(--space-4);
+  }
+
+  /* Drawer selebar layar: toast naik ke atas, menjauh dari tombol footer */
+  body:has(.nb-modal--drawer:not([hidden])) .nb-toast-stack {
+    top: var(--space-4);
+    right: var(--space-4);
+    bottom: auto;
+    width: calc(100vw - 32px);
+  }
+
+  .nb-footer {
+    flex-direction: column;
+  }
+
+  .nb-type-sample__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-1);
+  }
+}
+
+/* ---- Mobile sangat kecil (≤374px) ------------------------------------ */
+@media (max-width: 374px) {
+  .nb-topbar__brand .nb-brand__text {
+    display: none;
+  }
+
+  .nb-hero__title {
+    font-size: 30px;
+  }
+
+  .nb-hero__mini dd {
+    font-size: var(--fs-lg);
+  }
+
+  .nb-quick-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---- Print ------------------------------------------------------------ */
+@media print {
+  .nb-sidebar,
+  .nb-topbar,
+  .nb-overlay,
+  .nb-toast-stack,
+  .nb-skip-link {
+    display: none !important;
+  }
+
+  .nb-main {
+    margin-left: 0 !important;
+    transition: none;
+  }
+
+  .nb-card,
+  .nb-hero {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+/* ---- Phase B: pustaka komponen ---------------------------------------- */
+@media (max-width: 1023px) {
+  .nb-nav--sub .nb-nav__link {
+    min-height: var(--tap-min);
+  }
+
+  .nb-form-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .nb-form-grid,
+  .nb-form-grid--3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nb-demo__preview {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .nb-demo__head,
+  .nb-table-toolbar,
+  .nb-bulkbar,
+  .nb-table-footer {
+    padding-inline: var(--space-4);
+  }
+
+  .nb-type-scale__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-1);
+  }
+
+  .nb-dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nb-dl dt {
+    border-right: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .nb-pagination__btn {
+    min-width: var(--tap-min);
+    height: var(--tap-min);
+  }
+
+  .nb-error-block__code {
+    font-size: var(--fs-4xl);
+  }
+
+  .nb-kanban {
+    grid-template-columns: repeat(3, minmax(220px, 80%));
+  }
+}
+
+/* ---- Phase F: target sentuh >= 44px pada layar sentuh/sempit ------------ */
+@media (max-width: 1023px), (pointer: coarse) {
+  .nb-btn,
+  .nb-btn--sm,
+  .nb-icon-btn,
+  .nb-sort,
+  .nb-link-btn {
+    min-height: var(--tap-min);
+  }
+
+  .nb-icon-btn {
+    min-width: var(--tap-min);
+  }
+
+  .nb-sort {
+    display: inline-flex;
+    align-items: center;
+    min-width: var(--tap-min);
+  }
+}

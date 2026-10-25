@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog Halaman — BLOK Admin UI Kit</title>
+  <meta name="description" content="Katalog halaman BLOK Admin UI Kit: progres pembangunan, daftar halaman, token desain, dan cara menjalankan.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <script src="assets/js/icons.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+</head>
+<body class="nb-app" data-page="index">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><span aria-current="page">Katalog halaman</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="index.html">Beranda</a></li>
+          <li><span aria-current="page">Katalog halaman</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <section class="nb-hero nb-launch-hero" aria-labelledby="launch-title">
+        <span class="nb-hero__deco nb-hero__deco--square" aria-hidden="true"></span>
+        <span class="nb-hero__deco nb-hero__deco--circle" aria-hidden="true"></span>
+        <div class="nb-hero__content">
+          <span class="nb-hero__date">
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-tag"></use></svg>
+            Template statis · HTML, CSS, JavaScript murni
+          </span>
+          <h1 class="nb-hero__title" id="launch-title">BLOK Admin UI Kit: <mark>neo-brutalist</mark>, tegas, siap pakai.</h1>
+          <p class="nb-hero__lead">Kit dashboard admin untuk inventaris dan operasional. Tanpa build step, tanpa framework. Buka file HTML langsung atau jalankan server statis lokal.</p>
+          <div class="nb-hero__actions">
+            <a class="nb-btn nb-btn--yellow" href="dashboard.html">
+              Buka dashboard<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a class="nb-btn nb-btn--outline" href="#cara-pakai">Cara menjalankan</a>
+          </div>
+        </div>
+
+        <!-- nb:progress -->
+        <div class="nb-hero__panel nb-launch-progress">
+          <div class="nb-hero__panel-head">
+            <span class="nb-kpi__label" id="progress-label">Progres pembangunan</span>
+            <span class="nb-badge nb-badge--warning nb-badge--dot">Phase F</span>
+          </div>
+          <p class="nb-launch-progress__num">47<small style="font-size: var(--fs-xl)"> / 47 halaman</small></p>
+          <div class="nb-progress" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="47" aria-valuenow="47" aria-valuetext="47 dari 47 halaman selesai">
+            <div class="nb-progress__bar" style="--value: 100.0%; --progress-color: var(--color-yellow)"></div>
+          </div>
+          <ol class="nb-phase-list">
+            <li><span>A · Fondasi, shell &amp; dashboard</span><span class="nb-badge nb-badge--success">Selesai</span></li>
+            <li><span>B · Pustaka komponen</span><span class="nb-badge nb-badge--success">Selesai</span></li>
+            <li><span>C · Demo CRUD</span><span class="nb-badge nb-badge--success">Selesai</span></li>
+            <li><span>D · Halaman bisnis tambahan</span><span class="nb-badge nb-badge--success">Selesai</span></li>
+            <li><span>E · Autentikasi &amp; error</span><span class="nb-badge nb-badge--success">Selesai</span></li>
+            <li><span>F · Pemantapan &amp; dokumentasi</span><span class="nb-badge nb-badge--success">Selesai</span></li>
+          </ol>
+        </div>
+        <!-- /nb:progress -->
+      </section>
+
+      <section aria-labelledby="catalog-title">
+        <div class="nb-section__head">
+          <h2 class="nb-section__title" id="catalog-title">Katalog halaman</h2>
+          <p class="nb-section__desc">Halaman bertautan sudah dapat dibuka. Sisanya ditandai dengan fase pembangunannya, bukan tautan.</p>
+        </div>
+        <!-- nb:catalog -->
+        <div class="nb-grid nb-grid--3">
+          <article class="nb-card nb-category">
+            <header class="nb-card__header">
+              <div class="nb-category__head">
+                <span class="nb-category__icon" style="background: var(--color-yellow)" aria-hidden="true"><svg class="nb-icon"><use href="#i-home"></use></svg></span>
+                <div><h3 class="nb-card__title">Dashboard</h3><p class="nb-card__subtitle">4 dari 4 siap · Phase A/D</p></div>
+              </div>
+            </header>
+            <ul class="nb-page-list">
+              <li><a class="nb-page-list__item" href="index.html"><span><span class="nb-page-list__name">Katalog halaman</span><span class="nb-page-list__file">index.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="dashboard.html"><span><span class="nb-page-list__name">Ringkasan inventaris</span><span class="nb-page-list__file">dashboard.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="dashboard-analytics.html"><span><span class="nb-page-list__name">Dashboard analitik</span><span class="nb-page-list__file">dashboard-analytics.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="dashboard-operations.html"><span><span class="nb-page-list__name">Dashboard operasional</span><span class="nb-page-list__file">dashboard-operations.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+            </ul>
+          </article>
+          <article class="nb-card nb-category">
+            <header class="nb-card__header">
+              <div class="nb-category__head">
+                <span class="nb-category__icon" style="background: var(--color-mint)" aria-hidden="true"><svg class="nb-icon"><use href="#i-box"></use></svg></span>
+                <div><h3 class="nb-card__title">Data &amp; CRUD</h3><p class="nb-card__subtitle">7 dari 7 siap · Phase C</p></div>
+              </div>
+            </header>
+            <ul class="nb-page-list">
+              <li><a class="nb-page-list__item" href="pages/assets-list.html"><span><span class="nb-page-list__name">Daftar aset</span><span class="nb-page-list__file">pages/assets-list.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/assets-create.html"><span><span class="nb-page-list__name">Tambah aset</span><span class="nb-page-list__file">pages/assets-create.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/assets-edit.html"><span><span class="nb-page-list__name">Ubah aset</span><span class="nb-page-list__file">pages/assets-edit.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/assets-detail.html"><span><span class="nb-page-list__name">Detail aset</span><span class="nb-page-list__file">pages/assets-detail.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/users-list.html"><span><span class="nb-page-list__name">Daftar pengguna</span><span class="nb-page-list__file">pages/users-list.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/users-detail.html"><span><span class="nb-page-list__name">Detail pengguna</span><span class="nb-page-list__file">pages/users-detail.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/rooms-list.html"><span><span class="nb-page-list__name">Daftar ruangan</span><span class="nb-page-list__file">pages/rooms-list.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+            </ul>
+          </article>
+          <article class="nb-card nb-category">
+            <header class="nb-card__header">
+              <div class="nb-category__head">
+                <span class="nb-category__icon" style="background: var(--color-blue)" aria-hidden="true"><svg class="nb-icon"><use href="#i-calendar"></use></svg></span>
+                <div><h3 class="nb-card__title">Operasional</h3><p class="nb-card__subtitle">4 dari 4 siap · Phase C/D</p></div>
+              </div>
+            </header>
+            <ul class="nb-page-list">
+              <li><a class="nb-page-list__item" href="pages/bookings.html"><span><span class="nb-page-list__name">Peminjaman</span><span class="nb-page-list__file">pages/bookings.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/maintenance.html"><span><span class="nb-page-list__name">Perawatan</span><span class="nb-page-list__file">pages/maintenance.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/tasks-kanban.html"><span><span class="nb-page-list__name">Tugas (Kanban)</span><span class="nb-page-list__file">pages/tasks-kanban.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/calendar.html"><span><span class="nb-page-list__name">Kalender</span><span class="nb-page-list__file">pages/calendar.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+            </ul>
+          </article>
+          <article class="nb-card nb-category">
+            <header class="nb-card__header">
+              <div class="nb-category__head">
+                <span class="nb-category__icon" style="background: var(--color-lavender)" aria-hidden="true"><svg class="nb-icon"><use href="#i-layers"></use></svg></span>
+                <div><h3 class="nb-card__title">Komponen UI Kit</h3><p class="nb-card__subtitle">14 dari 14 siap · Phase B</p></div>
+              </div>
+            </header>
+            <ul class="nb-page-list">
+              <li><a class="nb-page-list__item" href="components/buttons.html"><span><span class="nb-page-list__name">Tombol</span><span class="nb-page-list__file">components/buttons.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/cards.html"><span><span class="nb-page-list__name">Kartu</span><span class="nb-page-list__file">components/cards.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/badges.html"><span><span class="nb-page-list__name">Badge &amp; status</span><span class="nb-page-list__file">components/badges.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/alerts.html"><span><span class="nb-page-list__name">Alert &amp; toast</span><span class="nb-page-list__file">components/alerts.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/modals.html"><span><span class="nb-page-list__name">Modal &amp; drawer</span><span class="nb-page-list__file">components/modals.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/dropdowns.html"><span><span class="nb-page-list__name">Dropdown &amp; popover</span><span class="nb-page-list__file">components/dropdowns.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/tabs-accordion.html"><span><span class="nb-page-list__name">Tab &amp; akordeon</span><span class="nb-page-list__file">components/tabs-accordion.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/navigation.html"><span><span class="nb-page-list__name">Navigasi</span><span class="nb-page-list__file">components/navigation.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/tables.html"><span><span class="nb-page-list__name">Tabel</span><span class="nb-page-list__file">components/tables.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/forms.html"><span><span class="nb-page-list__name">Formulir</span><span class="nb-page-list__file">components/forms.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/charts.html"><span><span class="nb-page-list__name">Chart &amp; KPI</span><span class="nb-page-list__file">components/charts.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/timelines.html"><span><span class="nb-page-list__name">Timeline &amp; konten</span><span class="nb-page-list__file">components/timelines.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/empty-loading.html"><span><span class="nb-page-list__name">Empty &amp; loading</span><span class="nb-page-list__file">components/empty-loading.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="components/icons-typography.html"><span><span class="nb-page-list__name">Ikon &amp; tipografi</span><span class="nb-page-list__file">components/icons-typography.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+            </ul>
+          </article>
+          <article class="nb-card nb-category">
+            <header class="nb-card__header">
+              <div class="nb-category__head">
+                <span class="nb-category__icon" style="background: var(--color-pink)" aria-hidden="true"><svg class="nb-icon"><use href="#i-file"></use></svg></span>
+                <div><h3 class="nb-card__title">Halaman umum</h3><p class="nb-card__subtitle">6 dari 6 siap · Phase D</p></div>
+              </div>
+            </header>
+            <ul class="nb-page-list">
+              <li><a class="nb-page-list__item" href="pages/reports.html"><span><span class="nb-page-list__name">Laporan</span><span class="nb-page-list__file">pages/reports.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/notifications.html"><span><span class="nb-page-list__name">Notifikasi</span><span class="nb-page-list__file">pages/notifications.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/profile.html"><span><span class="nb-page-list__name">Profil</span><span class="nb-page-list__file">pages/profile.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/settings.html"><span><span class="nb-page-list__name">Pengaturan</span><span class="nb-page-list__file">pages/settings.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/pricing.html"><span><span class="nb-page-list__name">Harga</span><span class="nb-page-list__file">pages/pricing.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="pages/help-center.html"><span><span class="nb-page-list__name">Pusat bantuan</span><span class="nb-page-list__file">pages/help-center.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+            </ul>
+          </article>
+          <article class="nb-card nb-category">
+            <header class="nb-card__header">
+              <div class="nb-category__head">
+                <span class="nb-category__icon" style="background: var(--color-sage)" aria-hidden="true"><svg class="nb-icon"><use href="#i-lock"></use></svg></span>
+                <div><h3 class="nb-card__title">Auth &amp; error</h3><p class="nb-card__subtitle">7 dari 7 siap · Phase E</p></div>
+              </div>
+            </header>
+            <ul class="nb-page-list">
+              <li><a class="nb-page-list__item" href="auth/login.html"><span><span class="nb-page-list__name">Masuk</span><span class="nb-page-list__file">auth/login.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="auth/register.html"><span><span class="nb-page-list__name">Daftar</span><span class="nb-page-list__file">auth/register.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="auth/forgot-password.html"><span><span class="nb-page-list__name">Lupa kata sandi</span><span class="nb-page-list__file">auth/forgot-password.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="auth/reset-password.html"><span><span class="nb-page-list__name">Atur ulang kata sandi</span><span class="nb-page-list__file">auth/reset-password.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="errors/403.html"><span><span class="nb-page-list__name">Error 403</span><span class="nb-page-list__file">errors/403.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="errors/404.html"><span><span class="nb-page-list__name">Error 404</span><span class="nb-page-list__file">errors/404.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="errors/500.html"><span><span class="nb-page-list__name">Error 500</span><span class="nb-page-list__file">errors/500.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+            </ul>
+          </article>
+          <article class="nb-card nb-category">
+            <header class="nb-card__header">
+              <div class="nb-category__head">
+                <span class="nb-category__icon" style="background: var(--color-lavender-soft)" aria-hidden="true"><svg class="nb-icon"><use href="#i-file"></use></svg></span>
+                <div><h3 class="nb-card__title">Dokumentasi</h3><p class="nb-card__subtitle">5 dari 5 siap · Phase F</p></div>
+              </div>
+            </header>
+            <ul class="nb-page-list">
+              <li><a class="nb-page-list__item" href="documentation/index.html"><span><span class="nb-page-list__name">Mulai di sini</span><span class="nb-page-list__file">documentation/index.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="documentation/components.html"><span><span class="nb-page-list__name">Indeks komponen</span><span class="nb-page-list__file">documentation/components.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="documentation/tokens.html"><span><span class="nb-page-list__name">Design token</span><span class="nb-page-list__file">documentation/tokens.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="documentation/javascript.html"><span><span class="nb-page-list__name">API JavaScript</span><span class="nb-page-list__file">documentation/javascript.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+              <li><a class="nb-page-list__item" href="documentation/accessibility.html"><span><span class="nb-page-list__name">Aksesibilitas</span><span class="nb-page-list__file">documentation/accessibility.html</span></span><span class="nb-badge nb-badge--success">Siap</span></a></li>
+            </ul>
+          </article>
+        </div>
+        <!-- /nb:catalog -->
+      </section>
+
+      <div class="nb-grid nb-grid--main-aside">
+        <section class="nb-card" aria-labelledby="tokens-title">
+          <header class="nb-card__header">
+            <div>
+              <h2 class="nb-card__title" id="tokens-title">Token desain</h2>
+              <p class="nb-card__subtitle">Didefinisikan di <code>assets/css/tokens.css</code>.</p>
+            </div>
+          </header>
+          <div class="nb-card__body nb-stack">
+            <div class="nb-swatch-grid" role="list" aria-label="Palet warna">
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-ink)"></span><span class="nb-swatch__label"><strong>ink</strong><br>#151515</span></div>
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-canvas)"></span><span class="nb-swatch__label"><strong>canvas</strong><br>#FFFCF5</span></div>
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-sage)"></span><span class="nb-swatch__label"><strong>sage</strong><br>#B9D9C6</span></div>
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-yellow)"></span><span class="nb-swatch__label"><strong>yellow</strong><br>#FFD447</span></div>
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-lavender)"></span><span class="nb-swatch__label"><strong>lavender</strong><br>#E6B8F0</span></div>
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-mint)"></span><span class="nb-swatch__label"><strong>mint</strong><br>#C6E8D4</span></div>
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-pink)"></span><span class="nb-swatch__label"><strong>pink</strong><br>#FFC4D6</span></div>
+              <div class="nb-swatch" role="listitem"><span class="nb-swatch__chip" style="background: var(--color-blue)"></span><span class="nb-swatch__label"><strong>blue</strong><br>#BBDCF7</span></div>
+            </div>
+            <div class="nb-type-sample">
+              <div class="nb-type-sample__row"><span class="nb-type-sample__label">Space Grotesk</span><span style="font-family: var(--font-heading); font-size: var(--fs-2xl); font-weight: var(--fw-bold)">Judul tegas 1.284</span></div>
+              <div class="nb-type-sample__row"><span class="nb-type-sample__label">Inter</span><span>Teks isi yang nyaman dibaca pada ukuran 16px.</span></div>
+              <div class="nb-type-sample__row"><span class="nb-type-sample__label">Space Mono</span><span style="font-family: var(--font-mono)">AST-26-1284 · 24 Okt 2026</span></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="nb-stack" aria-label="Pratinjau dan cara pakai">
+          <a class="nb-card nb-card--interactive" href="dashboard.html" aria-label="Pratinjau dashboard — buka halaman Ringkasan inventaris" style="display: block; padding: var(--space-4); text-decoration: none">
+            <div class="nb-mini-dash" aria-hidden="true">
+              <div class="nb-mini-dash__side"><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="nb-mini-dash__main">
+                <div class="nb-mini-dash__hero"></div>
+                <div class="nb-mini-dash__kpis"><span></span><span></span><span></span><span></span></div>
+                <div class="nb-mini-dash__bottom"><span><i style="height: 40%"></i><i style="height: 70%"></i><i style="height: 55%"></i><i style="height: 90%"></i><i style="height: 65%"></i></span><span></span></div>
+              </div>
+            </div>
+            <p class="nb-card__title" style="margin-top: var(--space-3)">Ringkasan inventaris →</p>
+          </a>
+
+          <section class="nb-card nb-card--canvas" id="cara-pakai" aria-labelledby="run-title" tabindex="-1">
+            <header class="nb-card__header"><h2 class="nb-card__title" id="run-title">Cara menjalankan</h2></header>
+            <div class="nb-card__body nb-stack">
+              <p class="nb-kpi__meta">Buka <code>index.html</code> langsung di browser, atau jalankan server statis dari folder proyek:</p>
+              <pre class="nb-code"><code>cd neo-brutal-html
+python3 -m http.server 8000
+# buka http://localhost:8000</code></pre>
+              <p class="nb-kpi__meta">Font dimuat dari Google Fonts; tanpa internet, font cadangan sistem dipakai.</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif.</p>
+      <p><a href="dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

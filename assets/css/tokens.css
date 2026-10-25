@@ -1,0 +1,139 @@
+/* ==========================================================================
+   BLOK Admin UI Kit — Design tokens
+   Satu-satunya sumber nilai warna, garis, bayangan, spasi, tipografi,
+   z-index dan transisi. Jangan menulis nilai warna mentah di file lain.
+   ========================================================================== */
+
+:root {
+  /* ---- Palet dasar ---------------------------------------------------- */
+  --color-ink: #151515;
+  --color-canvas: #FFFCF5;
+  --color-paper: #FFFFFF;
+  --color-sage: #B9D9C6;
+  --color-sage-strong: #9CC7AE;
+  --color-yellow: #FFD447;
+  --color-yellow-soft: #FFF1BF;
+  --color-lavender: #E6B8F0;
+  --color-lavender-soft: #F5E3F9;
+  --color-mint: #C6E8D4;
+  --color-pink: #FFC4D6;
+  --color-blue: #BBDCF7;
+  --color-muted: #5E5E5E;          /* 6.4:1 di atas canvas, lolos WCAG AA */
+  --color-line-soft: #E4DFD3;      /* garis tipis non-struktural (grid chart) */
+  --color-danger: #D64A4A;
+  --color-danger-soft: #FFD6D1;
+
+  /* ---- Alias semantik ------------------------------------------------- */
+  --text: var(--color-ink);
+  --text-muted: var(--color-muted);
+  --text-inverse: var(--color-paper);
+  --surface-page: var(--color-canvas);
+  --surface-panel: var(--color-paper);
+  --surface-sidebar: var(--color-sage);
+  --surface-hover: var(--color-yellow-soft);
+
+  --status-success: var(--color-mint);
+  --status-warning: var(--color-yellow);
+  --status-danger: var(--color-danger-soft);
+  --status-info: var(--color-blue);
+  --status-neutral: var(--color-paper);
+
+  /* ---- Garis ---------------------------------------------------------- */
+  --border-w: 2px;
+  --border-w-strong: 3px;
+  --border: var(--border-w) solid var(--color-ink);
+  --border-strong: var(--border-w-strong) solid var(--color-ink);
+  --border-dashed: var(--border-w) dashed var(--color-ink);
+
+  /* ---- Bayangan keras (tanpa blur) ------------------------------------ */
+  --shadow-xs: 2px 2px 0 var(--color-ink);
+  --shadow-sm: 3px 3px 0 var(--color-ink);
+  --shadow: 4px 4px 0 var(--color-ink);
+  --shadow-lg: 6px 6px 0 var(--color-ink);
+  --shadow-none: 0 0 0 var(--color-ink);
+  --press-offset: 2px;
+
+  /* ---- Radius --------------------------------------------------------- */
+  --radius-0: 0;
+  --radius-sm: 2px;
+  --radius: 4px;
+  --radius-pill: 999px;            /* hanya untuk badge/dot */
+
+  /* ---- Spasi (skala 4px) ---------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ---- Layout --------------------------------------------------------- */
+  --sidebar-w: 272px;
+  --sidebar-w-collapsed: 80px;
+  --topbar-h: 72px;
+  --content-max: 1600px;
+  --reading-max: 72ch;
+  --gutter: var(--space-8);
+  --tap-min: 44px;
+
+  /* ---- Tipografi ------------------------------------------------------ */
+  --font-heading: "Space Grotesk", "Arial Black", Arial, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-2xs: 11px;
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 15px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+  --fs-3xl: 34px;
+  --fs-4xl: 40px;
+  --fs-display: 56px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-base: 1.55;
+  --tracking-label: 0.08em;
+
+  /* ---- Z-index -------------------------------------------------------- */
+  --z-base: 1;
+  --z-sticky: 20;
+  --z-topbar: 30;
+  --z-overlay: 40;
+  --z-sidebar: 50;
+  --z-dropdown: 60;
+  --z-modal: 70;
+  --z-toast: 80;
+
+  /* ---- Transisi ------------------------------------------------------- */
+  --dur-press: 120ms;
+  --dur: 160ms;
+  --dur-slow: 240ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+
+  /* ---- Fokus ---------------------------------------------------------- */
+  --focus-ring: 0 0 0 3px var(--color-paper), 0 0 0 6px var(--color-ink);
+  --focus-outline: 3px solid var(--color-ink);
+  --focus-offset: 3px;
+
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-press: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+  }
+}

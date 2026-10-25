@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kartu — BLOK Admin UI Kit</title>
+  <meta name="description" content="Galeri kartu BLOK: dasar, aksen, KPI, hero, profil, media, fitur, aksi, harga, chart, kosong dan varian warna.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/charts.js" defer></script>
+</head>
+<body class="nb-app" data-page="c-cards">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>UI Kit</li>
+            <li><span aria-current="page">Kartu</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>UI Kit</li>
+          <li><span aria-current="page">Kartu</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">UI Kit · Komponen</p>
+          <h1 class="nb-page-header__title">Kartu</h1>
+          <p class="nb-page-header__desc">Kartu adalah wadah utama di BLOK. Satu kartu, satu topik; header dan footer opsional.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <a class="nb-btn nb-btn--outline" href="../dashboard.html"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg>Kartu di dashboard</a>
+          <a class="nb-btn nb-btn--yellow" href="#warna"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg>Varian warna</a>
+        </div>
+      </header>
+
+      <nav aria-label="Daftar isi halaman">
+        <ul class="nb-toc">
+          <li><a href="#dasar">Kartu dasar &amp; struktur</a></li>
+          <li><a href="#kpi">Kartu KPI</a></li>
+          <li><a href="#hero">Kartu hero &amp; aksi</a></li>
+          <li><a href="#profil-media">Kartu profil, media &amp; fitur</a></li>
+          <li><a href="#harga">Kartu harga</a></li>
+          <li><a href="#chart-empty">Kartu chart &amp; kartu kosong</a></li>
+          <li><a href="#warna">Varian warna</a></li>
+        </ul>
+      </nav>
+
+      <section class="nb-demo" id="dasar" aria-labelledby="dasar-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="dasar-title">Kartu dasar &amp; struktur</h2>
+            <p class="nb-demo__desc">Kartu terdiri dari <code class="nb-inline-code">__header</code>, <code class="nb-inline-code">__body</code> dan <code class="nb-inline-code">__footer</code> yang semuanya opsional. Gunakan heading sesuai hierarki halaman (di sini h3).</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-demo-grid">
+            <article class="nb-card">
+              <div class="nb-card__body">
+                <h3 class="nb-card__title">Kartu dasar</h3>
+                <p class="nb-card__subtitle">Hanya isi. Cocok untuk catatan singkat atau ringkasan.</p>
+              </div>
+            </article>
+            <article class="nb-card">
+              <header class="nb-card__header">
+                <div>
+                  <h3 class="nb-card__title">Header + footer</h3>
+                  <p class="nb-card__subtitle">Diperbarui 24 Okt 2026</p>
+                </div>
+                <span class="nb-badge nb-badge--info">Baru</span>
+              </header>
+              <div class="nb-card__body">
+                <p>Inventaris Gedung A sudah diaudit; 3 aset belum ditemukan.</p>
+              </div>
+              <footer class="nb-card__footer">
+                <span class="nb-kpi__meta">Oleh Dimas P.</span>
+                <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-toast="Detail audit (demo)" data-toast-message="Halaman detail audit tersedia di fase berikutnya.">Detail</button>
+              </footer>
+            </article>
+            <article class="nb-card nb-card--accent">
+              <div class="nb-card__body">
+                <h3 class="nb-card__title">Kartu aksen</h3>
+                <p class="nb-card__subtitle">Garis atas 8px untuk menandai item yang dipilih atau penting.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Kartu dasar &amp; struktur"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Kartu dasar &amp; struktur"><code>&lt;div class="nb-demo-grid"&gt;
+  &lt;article class="nb-card"&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;h3 class="nb-card__title"&gt;Kartu dasar&lt;/h3&gt;
+      &lt;p class="nb-card__subtitle"&gt;Hanya isi. Cocok untuk catatan singkat atau ringkasan.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="nb-card"&gt;
+    &lt;header class="nb-card__header"&gt;
+      &lt;div&gt;
+        &lt;h3 class="nb-card__title"&gt;Header + footer&lt;/h3&gt;
+        &lt;p class="nb-card__subtitle"&gt;Diperbarui 24 Okt 2026&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;span class="nb-badge nb-badge--info"&gt;Baru&lt;/span&gt;
+    &lt;/header&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;p&gt;Inventaris Gedung A sudah diaudit; 3 aset belum ditemukan.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;footer class="nb-card__footer"&gt;
+      &lt;span class="nb-kpi__meta"&gt;Oleh Dimas P.&lt;/span&gt;
+      &lt;button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-toast="Detail audit (demo)" data-toast-message="Halaman detail audit tersedia di fase berikutnya."&gt;Detail&lt;/button&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+  &lt;article class="nb-card nb-card--accent"&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;h3 class="nb-card__title"&gt;Kartu aksen&lt;/h3&gt;
+      &lt;p class="nb-card__subtitle"&gt;Garis atas 8px untuk menandai item yang dipilih atau penting.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="kpi" aria-labelledby="kpi-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="kpi-title">Kartu KPI</h2>
+            <p class="nb-demo__desc">Angka besar dengan label, perubahan (delta) dan sparkline. Arah tren ditulis sebagai teks, bukan hanya warna atau panah.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-demo-grid">
+            <article class="nb-card nb-kpi">
+              <div class="nb-kpi__top">
+                <h3 class="nb-kpi__label">Total aset</h3>
+                <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg></span>
+              </div>
+              <p class="nb-kpi__value">1.284</p>
+              <div class="nb-kpi__bottom">
+                <p class="nb-kpi__meta"><span class="nb-delta"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-arrow-up"></use></svg>3,2%</span> naik vs bulan lalu</p>
+                <span class="nb-kpi__spark" data-sparkline="1180,1196,1205,1221,1238,1244,1262,1284"></span>
+              </div>
+            </article>
+            <article class="nb-card nb-card--pink nb-kpi">
+              <div class="nb-kpi__top">
+                <h3 class="nb-kpi__label">Perlu perbaikan</h3>
+                <span class="nb-kpi__icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+              </div>
+              <p class="nb-kpi__value">23</p>
+              <div class="nb-kpi__bottom">
+                <p class="nb-kpi__meta"><span class="nb-delta"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-arrow-down"></use></svg>4</span> turun dari minggu lalu</p>
+                <span class="nb-kpi__spark" data-sparkline="31,30,29,27,27,25,24,23"></span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Kartu KPI"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Kartu KPI"><code>&lt;div class="nb-demo-grid"&gt;
+  &lt;article class="nb-card nb-kpi"&gt;
+    &lt;div class="nb-kpi__top"&gt;
+      &lt;h3 class="nb-kpi__label"&gt;Total aset&lt;/h3&gt;
+      &lt;span class="nb-kpi__icon" aria-hidden="true"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-box"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;p class="nb-kpi__value"&gt;1.284&lt;/p&gt;
+    &lt;div class="nb-kpi__bottom"&gt;
+      &lt;p class="nb-kpi__meta"&gt;&lt;span class="nb-delta"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-arrow-up"&gt;&lt;/use&gt;&lt;/svg&gt;3,2%&lt;/span&gt; naik vs bulan lalu&lt;/p&gt;
+      &lt;span class="nb-kpi__spark" data-sparkline="1180,1196,1205,1221,1238,1244,1262,1284"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="nb-card nb-card--pink nb-kpi"&gt;
+    &lt;div class="nb-kpi__top"&gt;
+      &lt;h3 class="nb-kpi__label"&gt;Perlu perbaikan&lt;/h3&gt;
+      &lt;span class="nb-kpi__icon" aria-hidden="true"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-wrench"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;p class="nb-kpi__value"&gt;23&lt;/p&gt;
+    &lt;div class="nb-kpi__bottom"&gt;
+      &lt;p class="nb-kpi__meta"&gt;&lt;span class="nb-delta"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-arrow-down"&gt;&lt;/use&gt;&lt;/svg&gt;4&lt;/span&gt; turun dari minggu lalu&lt;/p&gt;
+      &lt;span class="nb-kpi__spark" data-sparkline="31,30,29,27,27,25,24,23"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="hero" aria-labelledby="hero-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="hero-title">Kartu hero &amp; aksi</h2>
+            <p class="nb-demo__desc">Kartu besar dengan border tebal untuk sambutan atau ajakan utama, dan kartu aksi yang seluruh permukaannya adalah tautan.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <article class="nb-card nb-card--yellow nb-card--feature">
+            <div class="nb-card__body">
+              <p class="nb-eyebrow">Senin, 26 Oktober 2026</p>
+              <h3 style="font-size: var(--fs-3xl); line-height: 1.1; margin-top: var(--space-2)">Selamat pagi, Rani.</h3>
+              <p style="max-width: 52ch; margin-top: var(--space-3)">12 peminjaman jatuh tempo minggu ini dan 3 tiket perbaikan menunggu persetujuan Anda.</p>
+              <div class="nb-btn-row" style="margin-top: var(--space-5)">
+                <a class="nb-btn" href="../dashboard.html">Buka dashboard<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+                <a class="nb-btn nb-btn--outline" href="badges.html">Lihat status</a>
+              </div>
+            </div>
+          </article>
+          <div class="nb-demo-grid">
+            <a class="nb-card nb-card--interactive nb-card--mint" href="buttons.html">
+              <div class="nb-card__body">
+                <span class="nb-feature-icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg></span>
+                <h3 class="nb-card__title" style="margin-top: var(--space-3)">Kartu aksi</h3>
+                <p class="nb-card__subtitle">Seluruh kartu adalah satu tautan. Arahkan kursor: kartu tertekan.</p>
+              </div>
+            </a>
+            <a class="nb-card nb-card--interactive nb-card--lavender" href="forms.html">
+              <div class="nb-card__body">
+                <span class="nb-feature-icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg></span>
+                <h3 class="nb-card__title" style="margin-top: var(--space-3)">Buka formulir</h3>
+                <p class="nb-card__subtitle">Satu tautan per kartu, tanpa tombol bersarang di dalamnya.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Kartu hero &amp; aksi"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Kartu hero &amp; aksi"><code>&lt;article class="nb-card nb-card--yellow nb-card--feature"&gt;
+  &lt;div class="nb-card__body"&gt;
+    &lt;p class="nb-eyebrow"&gt;Senin, 26 Oktober 2026&lt;/p&gt;
+    &lt;h3 style="font-size: var(--fs-3xl); line-height: 1.1; margin-top: var(--space-2)"&gt;Selamat pagi, Rani.&lt;/h3&gt;
+    &lt;p style="max-width: 52ch; margin-top: var(--space-3)"&gt;12 peminjaman jatuh tempo minggu ini dan 3 tiket perbaikan menunggu persetujuan Anda.&lt;/p&gt;
+    &lt;div class="nb-btn-row" style="margin-top: var(--space-5)"&gt;
+      &lt;a class="nb-btn" href="../dashboard.html"&gt;Buka dashboard&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-arrow-right"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;
+      &lt;a class="nb-btn nb-btn--outline" href="badges.html"&gt;Lihat status&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+&lt;div class="nb-demo-grid"&gt;
+  &lt;a class="nb-card nb-card--interactive nb-card--mint" href="buttons.html"&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;span class="nb-feature-icon" aria-hidden="true"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-layers"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+      &lt;h3 class="nb-card__title" style="margin-top: var(--space-3)"&gt;Kartu aksi&lt;/h3&gt;
+      &lt;p class="nb-card__subtitle"&gt;Seluruh kartu adalah satu tautan. Arahkan kursor: kartu tertekan.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+  &lt;a class="nb-card nb-card--interactive nb-card--lavender" href="forms.html"&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;span class="nb-feature-icon" aria-hidden="true"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-file"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+      &lt;h3 class="nb-card__title" style="margin-top: var(--space-3)"&gt;Buka formulir&lt;/h3&gt;
+      &lt;p class="nb-card__subtitle"&gt;Satu tautan per kartu, tanpa tombol bersarang di dalamnya.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="profil-media" aria-labelledby="profil-media-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="profil-media-title">Kartu profil, media &amp; fitur</h2>
+            <p class="nb-demo__desc">Variasi konten: profil pengguna dengan statistik (daftar deskripsi), kartu media dengan ilustrasi CSS, dan kartu fitur dengan ikon.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-demo-grid">
+            <article class="nb-card">
+              <div class="nb-card__body nb-profile">
+                <span class="nb-avatar nb-avatar--lg nb-avatar--yellow" aria-hidden="true">RA</span>
+                <h3 class="nb-profile__name">Rani Ardiani</h3>
+                <p class="nb-profile__role">Administrator · Gedung A</p>
+                <dl class="nb-profile__stats">
+                  <div><dt>Aset</dt><dd>412</dd></div>
+                  <div><dt>Tiket</dt><dd>18</dd></div>
+                  <div><dt>Audit</dt><dd>6</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="nb-card">
+              <div class="nb-card__media" role="img" aria-label="Ilustrasi bentuk geometris">
+                <span class="nb-badge nb-badge--ink nb-card__media-label">Panduan</span>
+              </div>
+              <div class="nb-card__body">
+                <h3 class="nb-card__title">Merawat proyektor</h3>
+                <p class="nb-card__subtitle">5 menit baca · diperbarui 20 Okt</p>
+              </div>
+              <footer class="nb-card__footer">
+                <a class="nb-link-btn" href="timelines.html">Baca selengkapnya</a>
+              </footer>
+            </article>
+            <article class="nb-card nb-card--blue">
+              <div class="nb-card__body">
+                <span class="nb-feature-icon" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <h3 class="nb-card__title" style="margin-top: var(--space-3)">Audit otomatis</h3>
+                <p>Bandingkan stok fisik dan catatan setiap akhir bulan. Selisih ditandai merah.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Kartu profil, media &amp; fitur"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Kartu profil, media &amp; fitur"><code>&lt;div class="nb-demo-grid"&gt;
+  &lt;article class="nb-card"&gt;
+    &lt;div class="nb-card__body nb-profile"&gt;
+      &lt;span class="nb-avatar nb-avatar--lg nb-avatar--yellow" aria-hidden="true"&gt;RA&lt;/span&gt;
+      &lt;h3 class="nb-profile__name"&gt;Rani Ardiani&lt;/h3&gt;
+      &lt;p class="nb-profile__role"&gt;Administrator · Gedung A&lt;/p&gt;
+      &lt;dl class="nb-profile__stats"&gt;
+        &lt;div&gt;&lt;dt&gt;Aset&lt;/dt&gt;&lt;dd&gt;412&lt;/dd&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;dt&gt;Tiket&lt;/dt&gt;&lt;dd&gt;18&lt;/dd&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;dt&gt;Audit&lt;/dt&gt;&lt;dd&gt;6&lt;/dd&gt;&lt;/div&gt;
+      &lt;/dl&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="nb-card"&gt;
+    &lt;div class="nb-card__media" role="img" aria-label="Ilustrasi bentuk geometris"&gt;
+      &lt;span class="nb-badge nb-badge--ink nb-card__media-label"&gt;Panduan&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;h3 class="nb-card__title"&gt;Merawat proyektor&lt;/h3&gt;
+      &lt;p class="nb-card__subtitle"&gt;5 menit baca · diperbarui 20 Okt&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;footer class="nb-card__footer"&gt;
+      &lt;a class="nb-link-btn" href="timelines.html"&gt;Baca selengkapnya&lt;/a&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+  &lt;article class="nb-card nb-card--blue"&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;span class="nb-feature-icon" aria-hidden="true"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+      &lt;h3 class="nb-card__title" style="margin-top: var(--space-3)"&gt;Audit otomatis&lt;/h3&gt;
+      &lt;p&gt;Bandingkan stok fisik dan catatan setiap akhir bulan. Selisih ditandai merah.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="harga" aria-labelledby="harga-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="harga-title">Kartu harga</h2>
+            <p class="nb-demo__desc">Paket dengan daftar fitur. Paket yang direkomendasikan memakai border tebal dan badge, bukan sekadar warna.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-demo-grid">
+            <article class="nb-card">
+              <header class="nb-card__header"><h3 class="nb-card__title">Dasar</h3></header>
+              <div class="nb-card__body">
+                <p class="nb-price"><strong>Rp0</strong><span>/ bulan</span></p>
+                <ul class="nb-check-list" role="list" style="margin-top: var(--space-4)">
+                  <li><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>500 aset</li>
+                  <li><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>3 pengguna</li>
+                  <li><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>Ekspor CSV</li>
+                </ul>
+              </div>
+              <footer class="nb-card__footer">
+                <button class="nb-btn nb-btn--outline nb-btn--block" type="button" data-toast="Paket Dasar dipilih (demo)" data-toast-message="Tidak ada pembayaran atau langganan yang dibuat.">Pilih Dasar</button>
+              </footer>
+            </article>
+            <article class="nb-card nb-card--yellow nb-card--feature">
+              <header class="nb-card__header"><h3 class="nb-card__title">Tim</h3><span class="nb-badge nb-badge--ink">Rekomendasi</span></header>
+              <div class="nb-card__body">
+                <p class="nb-price"><strong>Rp249rb</strong><span>/ bulan</span></p>
+                <ul class="nb-check-list" role="list" style="margin-top: var(--space-4)">
+                  <li><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>Aset tanpa batas</li>
+                  <li><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>25 pengguna</li>
+                  <li><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>Audit &amp; laporan PDF</li>
+                </ul>
+              </div>
+              <footer class="nb-card__footer">
+                <button class="nb-btn nb-btn--block" type="button" data-toast="Paket Tim dipilih (demo)" data-toast-message="Tidak ada pembayaran atau langganan yang dibuat.">Pilih Tim</button>
+              </footer>
+            </article>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Kartu harga"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Kartu harga"><code>&lt;div class="nb-demo-grid"&gt;
+  &lt;article class="nb-card"&gt;
+    &lt;header class="nb-card__header"&gt;&lt;h3 class="nb-card__title"&gt;Dasar&lt;/h3&gt;&lt;/header&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;p class="nb-price"&gt;&lt;strong&gt;Rp0&lt;/strong&gt;&lt;span&gt;/ bulan&lt;/span&gt;&lt;/p&gt;
+      &lt;ul class="nb-check-list" role="list" style="margin-top: var(--space-4)"&gt;
+        &lt;li&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;500 aset&lt;/li&gt;
+        &lt;li&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;3 pengguna&lt;/li&gt;
+        &lt;li&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;Ekspor CSV&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;footer class="nb-card__footer"&gt;
+      &lt;button class="nb-btn nb-btn--outline nb-btn--block" type="button" data-toast="Paket Dasar dipilih (demo)" data-toast-message="Tidak ada pembayaran atau langganan yang dibuat."&gt;Pilih Dasar&lt;/button&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+  &lt;article class="nb-card nb-card--yellow nb-card--feature"&gt;
+    &lt;header class="nb-card__header"&gt;&lt;h3 class="nb-card__title"&gt;Tim&lt;/h3&gt;&lt;span class="nb-badge nb-badge--ink"&gt;Rekomendasi&lt;/span&gt;&lt;/header&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;p class="nb-price"&gt;&lt;strong&gt;Rp249rb&lt;/strong&gt;&lt;span&gt;/ bulan&lt;/span&gt;&lt;/p&gt;
+      &lt;ul class="nb-check-list" role="list" style="margin-top: var(--space-4)"&gt;
+        &lt;li&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;Aset tanpa batas&lt;/li&gt;
+        &lt;li&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;25 pengguna&lt;/li&gt;
+        &lt;li&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;Audit &amp;amp; laporan PDF&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;footer class="nb-card__footer"&gt;
+      &lt;button class="nb-btn nb-btn--block" type="button" data-toast="Paket Tim dipilih (demo)" data-toast-message="Tidak ada pembayaran atau langganan yang dibuat."&gt;Pilih Tim&lt;/button&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="chart-empty" aria-labelledby="chart-empty-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="chart-empty-title">Kartu chart &amp; kartu kosong</h2>
+            <p class="nb-demo__desc">Kartu berisi grafik selalu menyertakan ringkasan teks. Kartu kosong menjelaskan sebabnya dan memberi satu aksi lanjutan.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-demo-grid nb-demo-grid--wide">
+            <article class="nb-card">
+              <header class="nb-card__header">
+                <div>
+                  <h3 class="nb-card__title">Peminjaman 7 hari</h3>
+                  <p class="nb-card__subtitle">Total 136 transaksi</p>
+                </div>
+              </header>
+              <div class="nb-card__body">
+                <div class="nb-chart" data-chart="bar" data-chart-source="loans" data-chart-range="7h" aria-label="Peminjaman 7 hari terakhir">
+                  <p class="nb-chart-fallback">Sen 18, Sel 24, Rab 21, Kam 31, Jum 27, Sab 9, Min 6.</p>
+                </div>
+              </div>
+            </article>
+            <article class="nb-card nb-card--canvas">
+              <div class="nb-card__body">
+                <div class="nb-empty">
+                  <span class="nb-empty__icon" aria-hidden="true"><svg class="nb-icon nb-icon--lg" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                  <h3 class="nb-empty__title">Belum ada tiket</h3>
+                  <p class="nb-empty__text">Tiket perbaikan yang Anda buat akan muncul di sini.</p>
+                  <div class="nb-empty__actions">
+                    <button class="nb-btn nb-btn--yellow nb-btn--sm" type="button" data-toast="Buat tiket (demo)" data-toast-message="Formulir tiket tersedia di fase operasional."><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-plus"></use></svg>Buat tiket</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Kartu chart &amp; kartu kosong"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Kartu chart &amp; kartu kosong"><code>&lt;div class="nb-demo-grid nb-demo-grid--wide"&gt;
+  &lt;article class="nb-card"&gt;
+    &lt;header class="nb-card__header"&gt;
+      &lt;div&gt;
+        &lt;h3 class="nb-card__title"&gt;Peminjaman 7 hari&lt;/h3&gt;
+        &lt;p class="nb-card__subtitle"&gt;Total 136 transaksi&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;div class="nb-chart" data-chart="bar" data-chart-source="loans" data-chart-range="7h" aria-label="Peminjaman 7 hari terakhir"&gt;
+        &lt;p class="nb-chart-fallback"&gt;Sen 18, Sel 24, Rab 21, Kam 31, Jum 27, Sab 9, Min 6.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="nb-card nb-card--canvas"&gt;
+    &lt;div class="nb-card__body"&gt;
+      &lt;div class="nb-empty"&gt;
+        &lt;span class="nb-empty__icon" aria-hidden="true"&gt;&lt;svg class="nb-icon nb-icon--lg" aria-hidden="true"&gt;&lt;use href="#i-wrench"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+        &lt;h3 class="nb-empty__title"&gt;Belum ada tiket&lt;/h3&gt;
+        &lt;p class="nb-empty__text"&gt;Tiket perbaikan yang Anda buat akan muncul di sini.&lt;/p&gt;
+        &lt;div class="nb-empty__actions"&gt;
+          &lt;button class="nb-btn nb-btn--yellow nb-btn--sm" type="button" data-toast="Buat tiket (demo)" data-toast-message="Formulir tiket tersedia di fase operasional."&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-plus"&gt;&lt;/use&gt;&lt;/svg&gt;Buat tiket&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="warna" aria-labelledby="warna-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="warna-title">Varian warna</h2>
+            <p class="nb-demo__desc">Tujuh latar kartu dari token warna. Semua kombinasi teks hitam di atas warna ini lolos kontras WCAG AA.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-color-row">
+            <div class="nb-card">--paper</div>
+            <div class="nb-card nb-card--canvas">--canvas</div>
+            <div class="nb-card nb-card--yellow">--yellow</div>
+            <div class="nb-card nb-card--sage">--sage</div>
+            <div class="nb-card nb-card--mint">--mint</div>
+            <div class="nb-card nb-card--lavender">--lavender</div>
+            <div class="nb-card nb-card--pink">--pink</div>
+            <div class="nb-card nb-card--blue">--blue</div>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Varian warna"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Varian warna"><code>&lt;div class="nb-color-row"&gt;
+  &lt;div class="nb-card"&gt;--paper&lt;/div&gt;
+  &lt;div class="nb-card nb-card--canvas"&gt;--canvas&lt;/div&gt;
+  &lt;div class="nb-card nb-card--yellow"&gt;--yellow&lt;/div&gt;
+  &lt;div class="nb-card nb-card--sage"&gt;--sage&lt;/div&gt;
+  &lt;div class="nb-card nb-card--mint"&gt;--mint&lt;/div&gt;
+  &lt;div class="nb-card nb-card--lavender"&gt;--lavender&lt;/div&gt;
+  &lt;div class="nb-card nb-card--pink"&gt;--pink&lt;/div&gt;
+  &lt;div class="nb-card nb-card--blue"&gt;--blue&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <nav class="nb-gallery-pager" aria-label="Halaman komponen lain">
+          <a class="nb-btn nb-btn--outline" href="buttons.html"><svg class="nb-icon nb-icon--flip" aria-hidden="true"><use href="#i-chevron-right"></use></svg><span>Sebelumnya: Tombol</span></a>
+          <a class="nb-btn nb-btn--ghost" href="../index.html"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+          <a class="nb-btn nb-btn--outline" href="badges.html"><span>Berikutnya: Badge &amp; status</span><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+      </nav>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

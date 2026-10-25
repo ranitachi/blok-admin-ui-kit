@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laporan — BLOK Admin UI Kit</title>
+  <meta name="description" content="Laporan sarana: jenis laporan, grafik tiket &amp; biaya, tabel per periode yang bisa dicetak, dan unduhan CSV demo.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/records.js" defer></script>
+  <script src="../assets/js/charts.js" defer></script>
+  <script src="../assets/js/pages/reports.js" defer></script>
+</head>
+<body class="nb-app" data-page="reports">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Halaman</li>
+            <li><span aria-current="page">Laporan</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Halaman</li>
+          <li><span aria-current="page">Laporan</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Analitik · Laporan</p>
+          <h1 class="nb-page-header__title">Laporan</h1>
+          <p class="nb-page-header__desc">Pilih periode, pratinjau tabel, lalu cetak atau unduh CSV. Bagian di bawah garis <strong>Rekap sarana</strong> adalah area yang tercetak.</p>
+        </div>
+        <div class="nb-page-header__actions">
+
+        </div>
+      </header>
+
+      <section class="nb-section nb-no-print" aria-labelledby="rc-title">
+        <div class="nb-section__head">
+          <h2 class="nb-section__title" id="rc-title">Jenis laporan</h2>
+          <p class="nb-section__desc">Unduhan CSV dibuat langsung di browser dari tabel periode terpilih — tidak ada data yang dikirim.</p>
+        </div>
+        <div class="nb-grid nb-grid--4">
+          <article class="nb-card nb-report-card" aria-labelledby="rc-0">
+            <div class="nb-card__body nb-stack">
+              <span class="nb-report-card__icon" style="background: var(--color-yellow)" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg></span>
+              <h2 class="nb-report-card__title" id="rc-0">Rekap peminjaman</h2>
+              <p class="nb-report-card__desc">Jumlah transaksi dan ketepatan pengembalian per kategori.</p>
+            </div>
+            <footer class="nb-card__footer nb-btn-row">
+              <a class="nb-btn nb-btn--sm" href="bookings.html">Buka peminjaman</a>
+              <button class="nb-btn nb-btn--outline nb-btn--sm" type="button" data-report-csv="0,2,3" data-report-name="rekap-peminjaman"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-download"></use></svg>CSV (demo)</button>
+            </footer>
+          </article>
+
+          <article class="nb-card nb-report-card" aria-labelledby="rc-1">
+            <div class="nb-card__body nb-stack">
+              <span class="nb-report-card__icon" style="background: var(--color-pink)" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+              <h2 class="nb-report-card__title" id="rc-1">Tiket perawatan</h2>
+              <p class="nb-report-card__desc">Tiket per kategori beserta biaya perbaikan.</p>
+            </div>
+            <footer class="nb-card__footer nb-btn-row">
+              <a class="nb-btn nb-btn--sm" href="maintenance.html">Buka perawatan</a>
+              <button class="nb-btn nb-btn--outline nb-btn--sm" type="button" data-report-csv="0,4,5" data-report-name="tiket-perawatan"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-download"></use></svg>CSV (demo)</button>
+            </footer>
+          </article>
+
+          <article class="nb-card nb-report-card" aria-labelledby="rc-2">
+            <div class="nb-card__body nb-stack">
+              <span class="nb-report-card__icon" style="background: var(--color-sage)" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg></span>
+              <h2 class="nb-report-card__title" id="rc-2">Inventaris aset</h2>
+              <p class="nb-report-card__desc">Aset aktif per kategori untuk lampiran stok opname.</p>
+            </div>
+            <footer class="nb-card__footer nb-btn-row">
+              <a class="nb-btn nb-btn--sm" href="assets-list.html">Buka daftar aset</a>
+              <button class="nb-btn nb-btn--outline nb-btn--sm" type="button" data-report-csv="0,1" data-report-name="inventaris-aset"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-download"></use></svg>CSV (demo)</button>
+            </footer>
+          </article>
+
+          <article class="nb-card nb-report-card" aria-labelledby="rc-3">
+            <div class="nb-card__body nb-stack">
+              <span class="nb-report-card__icon" style="background: var(--color-lavender)" aria-hidden="true"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg></span>
+              <h2 class="nb-report-card__title" id="rc-3">Jadwal audit</h2>
+              <p class="nb-report-card__desc">Tutup buku dan audit berikutnya tercatat di kalender.</p>
+            </div>
+            <footer class="nb-card__footer nb-btn-row">
+              <a class="nb-btn nb-btn--sm" href="calendar.html">Buka kalender</a>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <div class="nb-grid nb-grid--main-aside nb-no-print">
+        <section class="nb-card" aria-labelledby="rp-tix-title">
+          <header class="nb-card__header">
+            <div>
+              <h2 class="nb-card__title" id="rp-tix-title">Tiket perawatan</h2>
+                  <p class="nb-card__subtitle">Tiket dibuka per bulan, <span data-chart-for="rpTickets" data-chart-caption>6 bulan terakhir</span>.</p>
+            </div>
+                <div class="nb-segmented" role="group" aria-label="Rentang tiket" data-chart-range-for="rpTickets"><button class="nb-segmented__btn" type="button" data-range="6b" aria-pressed="true">6 bulan</button><button class="nb-segmented__btn" type="button" data-range="12b" aria-pressed="false">12 bulan</button></div>
+          </header>
+          <div class="nb-card__body">
+            <dl class="nb-analytics__stats">
+              <div class="nb-analytics__stat"><dt>Total</dt><dd data-chart-for="rpTickets" data-chart-stat="total">92</dd></div>
+              <div class="nb-analytics__stat"><dt>Puncak</dt><dd data-chart-for="rpTickets" data-chart-stat="peak">21</dd></div>
+              <div class="nb-analytics__stat"><dt>Selesai sesuai SLA</dt><dd data-chart-for="rpTickets" data-chart-stat="onTime">86%</dd></div>
+            </dl>
+            <div class="nb-analytics__chart">
+              <div class="nb-chart" id="rpTickets" data-chart="bar" data-chart-source="tickets" data-chart-range="6b" aria-label="Tiket perawatan per bulan">
+                <p class="nb-chart-fallback">Tiket perawatan Mei–Okt 2026: 17, 12, 9, 21, 19, 14. Total 92, tertinggi Agustus (21).</p>
+              </div>
+            </div>
+            <p class="nb-chart__summary" data-chart-for="rpTickets" data-chart-summary aria-live="polite">Total 92 tiket dalam 6 bulan terakhir. Tertinggi pada Agu (21).</p>
+          </div>
+        </section>
+
+        <section class="nb-card nb-card--mint" aria-labelledby="rp-cost-title">
+          <header class="nb-card__header">
+            <div>
+              <h2 class="nb-card__title" id="rp-cost-title">Biaya perawatan</h2>
+                  <p class="nb-card__subtitle">Oktober 2026, total Rp104 juta.</p>
+            </div>
+          </header>
+          <div class="nb-card__body">
+            <div class="nb-chart" data-chart="donut" data-chart-source="maintenanceCost" data-chart-center="juta Rp" aria-label="Biaya perawatan per kategori, Oktober">
+              <p class="nb-chart-fallback">Elektronik 46, peralatan olahraga 31, alat laboratorium 18, furnitur 9 (juta rupiah).</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="nb-report-tools nb-no-print">
+        <div class="nb-field">
+          <label class="nb-label" for="report-period">Periode laporan</label>
+          <select class="nb-select" id="report-period" data-report-select aria-controls="report-print">
+              <option value="2026-10" selected>Oktober 2026</option>
+              <option value="2026-09">September 2026</option>
+              <option value="2026-q3">Kuartal III 2026</option>
+          </select>
+        </div>
+        <div class="nb-btn-row">
+          <button class="nb-btn nb-btn--outline" type="button" data-report-csv="" data-report-name="laporan-sarana"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-download"></use></svg>Unduh CSV (demo)</button>
+          <button class="nb-btn nb-btn--yellow" type="button" data-print><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-print"></use></svg>Cetak laporan</button>
+        </div>
+        <p class="nb-sr-only" aria-live="polite" data-report-status></p>
+      </div>
+
+      <section class="nb-card nb-report" id="report-print" aria-labelledby="report-title" tabindex="-1">
+        <header class="nb-report__head">
+          <div>
+            <p class="nb-eyebrow">Laporan bulanan sarana · BLOK Admin (contoh)</p>
+            <h2 class="nb-report__title" id="report-title">Rekap sarana — <span data-report-label>Oktober 2026</span></h2>
+            <p class="nb-report__meta">Disusun oleh Rani Ardiani (Administrator) · dibuat 24 Okt 2026</p>
+          </div>
+          <span class="nb-badge nb-badge--outline">Data fiktif</span>
+        </header>
+        <div class="nb-report__period" data-report-period="2026-10" data-report-title="Oktober 2026">
+          <dl class="nb-report__summary">
+            <div><dt>Peminjaman</dt><dd>331</dd></div>
+            <div><dt>Kembali tepat waktu</dt><dd>89%</dd></div>
+            <div><dt>Tiket perawatan</dt><dd>14</dd></div>
+            <div><dt>Biaya perawatan</dt><dd>Rp104 jt</dd></div>
+          </dl>
+          <div class="nb-table-wrap" tabindex="0" role="region" aria-label="Tabel laporan Oktober 2026">
+            <table class="nb-table" data-report-table>
+              <caption class="nb-sr-only">Rekap per kategori aset, Oktober 2026 (1–24 Okt 2026)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col" class="nb-cell-num">Aset aktif</th>
+                  <th scope="col" class="nb-cell-num">Peminjaman</th>
+                  <th scope="col" class="nb-cell-num">Tepat waktu</th>
+                  <th scope="col" class="nb-cell-num">Tiket</th>
+                  <th scope="col" class="nb-cell-num">Biaya (juta Rp)</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">Elektronik</th>
+                <td class="nb-cell-num">412</td>
+                <td class="nb-cell-num">142</td>
+                <td class="nb-cell-num">87%</td>
+                <td class="nb-cell-num">6</td>
+                <td class="nb-cell-num">46</td>
+              </tr>
+              <tr>
+                <th scope="row">Furnitur</th>
+                <td class="nb-cell-num">356</td>
+                <td class="nb-cell-num">38</td>
+                <td class="nb-cell-num">94%</td>
+                <td class="nb-cell-num">1</td>
+                <td class="nb-cell-num">9</td>
+              </tr>
+              <tr>
+                <th scope="row">Alat laboratorium</th>
+                <td class="nb-cell-num">248</td>
+                <td class="nb-cell-num">96</td>
+                <td class="nb-cell-num">91%</td>
+                <td class="nb-cell-num">3</td>
+                <td class="nb-cell-num">18</td>
+              </tr>
+              <tr>
+                <th scope="row">Peralatan olahraga</th>
+                <td class="nb-cell-num">140</td>
+                <td class="nb-cell-num">41</td>
+                <td class="nb-cell-num">86%</td>
+                <td class="nb-cell-num">4</td>
+                <td class="nb-cell-num">31</td>
+              </tr>
+              <tr>
+                <th scope="row">Kendaraan &amp; lainnya</th>
+                <td class="nb-cell-num">128</td>
+                <td class="nb-cell-num">14</td>
+                <td class="nb-cell-num">93%</td>
+                <td class="nb-cell-num">0</td>
+                <td class="nb-cell-num">0</td>
+              </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Total</th>
+                  <td class="nb-cell-num">1.284</td>
+                  <td class="nb-cell-num">331</td>
+                  <td class="nb-cell-num">89%</td>
+                  <td class="nb-cell-num">14</td>
+                  <td class="nb-cell-num">104</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="nb-report__period" data-report-period="2026-09" data-report-title="September 2026" hidden>
+          <dl class="nb-report__summary">
+            <div><dt>Peminjaman</dt><dd>344</dd></div>
+            <div><dt>Kembali tepat waktu</dt><dd>91%</dd></div>
+            <div><dt>Tiket perawatan</dt><dd>19</dd></div>
+            <div><dt>Biaya perawatan</dt><dd>Rp106 jt</dd></div>
+          </dl>
+          <div class="nb-table-wrap" tabindex="0" role="region" aria-label="Tabel laporan September 2026">
+            <table class="nb-table" data-report-table>
+              <caption class="nb-sr-only">Rekap per kategori aset, September 2026 (1–30 Sep 2026)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col" class="nb-cell-num">Aset aktif</th>
+                  <th scope="col" class="nb-cell-num">Peminjaman</th>
+                  <th scope="col" class="nb-cell-num">Tepat waktu</th>
+                  <th scope="col" class="nb-cell-num">Tiket</th>
+                  <th scope="col" class="nb-cell-num">Biaya (juta Rp)</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">Elektronik</th>
+                <td class="nb-cell-num">412</td>
+                <td class="nb-cell-num">150</td>
+                <td class="nb-cell-num">90%</td>
+                <td class="nb-cell-num">8</td>
+                <td class="nb-cell-num">52</td>
+              </tr>
+              <tr>
+                <th scope="row">Furnitur</th>
+                <td class="nb-cell-num">356</td>
+                <td class="nb-cell-num">41</td>
+                <td class="nb-cell-num">95%</td>
+                <td class="nb-cell-num">2</td>
+                <td class="nb-cell-num">6</td>
+              </tr>
+              <tr>
+                <th scope="row">Alat laboratorium</th>
+                <td class="nb-cell-num">248</td>
+                <td class="nb-cell-num">99</td>
+                <td class="nb-cell-num">92%</td>
+                <td class="nb-cell-num">4</td>
+                <td class="nb-cell-num">21</td>
+              </tr>
+              <tr>
+                <th scope="row">Peralatan olahraga</th>
+                <td class="nb-cell-num">140</td>
+                <td class="nb-cell-num">40</td>
+                <td class="nb-cell-num">88%</td>
+                <td class="nb-cell-num">4</td>
+                <td class="nb-cell-num">24</td>
+              </tr>
+              <tr>
+                <th scope="row">Kendaraan &amp; lainnya</th>
+                <td class="nb-cell-num">128</td>
+                <td class="nb-cell-num">14</td>
+                <td class="nb-cell-num">93%</td>
+                <td class="nb-cell-num">1</td>
+                <td class="nb-cell-num">3</td>
+              </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Total</th>
+                  <td class="nb-cell-num">1.284</td>
+                  <td class="nb-cell-num">344</td>
+                  <td class="nb-cell-num">91%</td>
+                  <td class="nb-cell-num">19</td>
+                  <td class="nb-cell-num">106</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="nb-report__period" data-report-period="2026-q3" data-report-title="Kuartal III 2026" hidden>
+          <dl class="nb-report__summary">
+            <div><dt>Peminjaman</dt><dd>838</dd></div>
+            <div><dt>Kembali tepat waktu</dt><dd>89%</dd></div>
+            <div><dt>Tiket perawatan</dt><dd>49</dd></div>
+            <div><dt>Biaya perawatan</dt><dd>Rp290 jt</dd></div>
+          </dl>
+          <div class="nb-table-wrap" tabindex="0" role="region" aria-label="Tabel laporan Kuartal III 2026">
+            <table class="nb-table" data-report-table>
+              <caption class="nb-sr-only">Rekap per kategori aset, Kuartal III 2026 (Jul–Sep 2026)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col" class="nb-cell-num">Aset aktif</th>
+                  <th scope="col" class="nb-cell-num">Peminjaman</th>
+                  <th scope="col" class="nb-cell-num">Tepat waktu</th>
+                  <th scope="col" class="nb-cell-num">Tiket</th>
+                  <th scope="col" class="nb-cell-num">Biaya (juta Rp)</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">Elektronik</th>
+                <td class="nb-cell-num">412</td>
+                <td class="nb-cell-num">362</td>
+                <td class="nb-cell-num">88%</td>
+                <td class="nb-cell-num">20</td>
+                <td class="nb-cell-num">128</td>
+              </tr>
+              <tr>
+                <th scope="row">Furnitur</th>
+                <td class="nb-cell-num">356</td>
+                <td class="nb-cell-num">101</td>
+                <td class="nb-cell-num">93%</td>
+                <td class="nb-cell-num">6</td>
+                <td class="nb-cell-num">22</td>
+              </tr>
+              <tr>
+                <th scope="row">Alat laboratorium</th>
+                <td class="nb-cell-num">248</td>
+                <td class="nb-cell-num">241</td>
+                <td class="nb-cell-num">90%</td>
+                <td class="nb-cell-num">10</td>
+                <td class="nb-cell-num">58</td>
+              </tr>
+              <tr>
+                <th scope="row">Peralatan olahraga</th>
+                <td class="nb-cell-num">140</td>
+                <td class="nb-cell-num">104</td>
+                <td class="nb-cell-num">85%</td>
+                <td class="nb-cell-num">11</td>
+                <td class="nb-cell-num">71</td>
+              </tr>
+              <tr>
+                <th scope="row">Kendaraan &amp; lainnya</th>
+                <td class="nb-cell-num">128</td>
+                <td class="nb-cell-num">30</td>
+                <td class="nb-cell-num">90%</td>
+                <td class="nb-cell-num">2</td>
+                <td class="nb-cell-num">11</td>
+              </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Total</th>
+                  <td class="nb-cell-num">1.284</td>
+                  <td class="nb-cell-num">838</td>
+                  <td class="nb-cell-num">89%</td>
+                  <td class="nb-cell-num">49</td>
+                  <td class="nb-cell-num">290</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <footer class="nb-report__foot">
+          <p>Tepat waktu = persentase peminjaman yang kembali sebelum atau pada tanggal jatuh tempo. Biaya perawatan dalam juta rupiah, dibulatkan.</p>
+          <p class="nb-report__sign">Mengetahui,<br><strong>Rani Ardiani</strong><br>Administrator, Tata Usaha</p>
+        </footer>
+      </section>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

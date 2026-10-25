@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar — BLOK Admin UI Kit</title>
+  <meta name="description" content="Demo visual pendaftaran BLOK dengan meter kekuatan kata sandi.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/pages/auth.js" defer></script>
+</head>
+<body class="nb-auth-page" data-page="auth">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+  <header class="nb-standalone-head">
+    <a class="nb-brand" href="../index.html"><span class="nb-brand__mark" aria-hidden="true">B</span><span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span></a>
+    <nav aria-label="Pintasan"><a class="nb-btn nb-btn--ghost nb-btn--sm" href="../index.html">Katalog halaman</a></nav>
+  </header>
+  <main class="nb-auth" id="main" tabindex="-1">
+      <section class="nb-auth__brand" aria-labelledby="brand-title">
+        <span class="nb-badge">Demo visual</span>
+        <div>
+          <p class="nb-eyebrow">BLOK · Area akun</p>
+          <p class="nb-auth__brand-title" id="brand-title">Ruang kerja yang rapi, jelas, dan mudah diakses.</p>
+        </div>
+        <ul class="nb-auth__benefits">
+          <li>Formulir ramah keyboard dan pembaca layar.</li>
+          <li>Umpan balik lugas di setiap langkah.</li>
+          <li>Data contoh tidak dikirim ke mana pun.</li>
+        </ul>
+      </section>
+    <section class="nb-auth__panel">
+      <div class="nb-auth__heading"><p class="nb-eyebrow">Akun baru</p><h1>Daftar akun demo</h1><p>Lengkapi semua kolom wajib.</p></div>
+      <div class="nb-alert" role="note"><svg class="nb-icon" aria-hidden="true"><use href="#i-info"></use></svg><div><strong>Demo visual</strong><p>Demo visual — tidak ada autentikasi sungguhan; data tidak dikirim ke mana pun.</p></div></div>
+      <form class="nb-auth__form" data-validate data-auth-form="register" novalidate>
+        <div class="nb-field"><label class="nb-label" for="reg-name">Nama lengkap <span class="nb-req" aria-hidden="true">*</span></label><input class="nb-input" id="reg-name" name="name" type="text" required minlength="3" autocomplete="name" placeholder="Rani Ardiani"></div>
+        <div class="nb-field"><label class="nb-label" for="reg-email">Email <span class="nb-req" aria-hidden="true">*</span></label><input class="nb-input" id="reg-email" name="email" type="email" required autocomplete="email" placeholder="rani@contoh.sch.id"></div>
+        <div class="nb-field"><label class="nb-label" for="reg-unit">Unit kerja <span class="nb-req" aria-hidden="true">*</span></label><select class="nb-select" id="reg-unit" name="unit" required><option value="">Pilih unit kerja</option><option>Administrasi</option><option>Operasional</option><option>Teknologi informasi</option></select></div>
+        <div class="nb-field"><label class="nb-label" for="reg-password">Kata sandi <span class="nb-req" aria-hidden="true">*</span></label><div class="nb-input-group"><input class="nb-input" id="reg-password" name="password" type="password" required minlength="8" autocomplete="new-password" aria-describedby="reg-password-help"><button class="nb-icon-btn" type="button" data-password-toggle aria-controls="reg-password" aria-label="Tampilkan kata sandi"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg></button></div><p class="nb-help" id="reg-password-help">Minimal 8 karakter.</p></div>
+        <div class="nb-pwmeter" data-pw-meter="reg-password"><div class="nb-pwmeter__bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="nb-pwmeter__text">Kekuatan kata sandi: <strong data-pw-label aria-live="polite">Belum diisi</strong></p><ul class="nb-pwmeter__rules" aria-label="Aturan kata sandi"><li data-rule="len">Minimal 8 karakter</li><li data-rule="upper">Huruf besar</li><li data-rule="num">Angka</li><li data-rule="sym">Simbol</li></ul></div>
+        <div class="nb-field"><label class="nb-label" for="reg-confirm">Konfirmasi kata sandi <span class="nb-req" aria-hidden="true">*</span></label><div class="nb-input-group"><input class="nb-input" id="reg-confirm" name="confirm" type="password" required data-match="reg-password" data-match-message="Konfirmasi kata sandi tidak sama." autocomplete="new-password"><button class="nb-icon-btn" type="button" data-password-toggle aria-controls="reg-confirm" aria-label="Tampilkan kata sandi"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg></button></div></div>
+        <div class="nb-field"><label class="nb-check"><input id="reg-terms" type="checkbox" name="terms" required data-required-message="Syarat penggunaan demo wajib dicentang."> Saya menyetujui syarat penggunaan demo.</label></div>
+        <button class="nb-btn nb-btn--yellow nb-btn--lg nb-btn--block" type="submit">Buat akun (demo)</button>
+      </form>
+      <section class="nb-auth__success" data-auth-success aria-live="polite" hidden><svg class="nb-icon" aria-hidden="true"><use href="#i-check"></use></svg><h2 tabindex="-1" data-success-title>Pendaftaran berhasil (demo)</h2><p>Tidak ada akun nyata yang dibuat.</p><a class="nb-btn nb-btn--yellow" href="login.html">Ke halaman masuk</a></section>
+      <p class="nb-auth__links">Sudah punya akun? <a href="login.html">Masuk</a> · <a href="../index.html">Katalog halaman</a></p>
+    </section>
+  </main>
+  <footer class="nb-footer">
+    <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif.</p>
+    <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a></p>
+  </footer>
+</body>
+</html>

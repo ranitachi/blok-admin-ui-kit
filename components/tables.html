@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabel — BLOK Admin UI Kit</title>
+  <meta name="description" content="Galeri tabel BLOK: pencarian, filter, pengurutan, paginasi, pilih semua, toolbar massal, aksi baris, kepadatan, header lengket dan hasil kosong.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/charts.js" defer></script>
+  <script src="../assets/js/tables.js" defer></script>
+</head>
+<body class="nb-app" data-page="c-tables">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>UI Kit</li>
+            <li><span aria-current="page">Tabel</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>UI Kit</li>
+          <li><span aria-current="page">Tabel</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">UI Kit · Komponen</p>
+          <h1 class="nb-page-header__title">Tabel</h1>
+          <p class="nb-page-header__desc">Tabel data yang bisa dicari, disaring dan diurutkan tanpa build step. Data contoh fiktif; tidak ada yang disimpan.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <a class="nb-btn nb-btn--outline" href="../dashboard.html#aset-terbaru"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg>Tabel di dashboard</a>
+          <a class="nb-btn nb-btn--yellow" href="#interaktif"><svg class="nb-icon" aria-hidden="true"><use href="#i-filter"></use></svg>Coba tabel interaktif</a>
+        </div>
+      </header>
+
+      <nav aria-label="Daftar isi halaman">
+        <ul class="nb-toc">
+          <li><a href="#interaktif">Tabel data interaktif</a></li>
+          <li><a href="#varian">Padat, lega &amp; bergaris</a></li>
+          <li><a href="#sticky">Header lengket &amp; gulir horizontal</a></li>
+        </ul>
+      </nav>
+
+      <section class="nb-demo" id="interaktif">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="interaktif-title">Tabel data interaktif</h2>
+            <p class="nb-demo__desc">Cari, saring status/kategori, urutkan kolom (klik judul: naik → turun → asal), paginasi 5 baris, pilih baris (termasuk state <em>indeterminate</em>), aksi massal, ubah kepadatan, dan hasil kosong. Semua perubahan hanya di tampilan; tekan <strong>Reset</strong> untuk mengembalikan.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview nb-demo__preview--flush">
+          <div class="nb-card" data-table data-page-size="5" data-table-label="aset">
+            <div class="nb-table-toolbar" role="search" aria-label="Saring tabel aset">
+              <div class="nb-field nb-table-toolbar__search">
+                <label class="nb-label" for="tbl-search">Cari</label>
+                <div class="nb-search">
+                  <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                  <input class="nb-search__input" id="tbl-search" type="search" placeholder="Kode, nama, lokasi…" data-table-search autocomplete="off">
+                </div>
+              </div>
+              <div class="nb-field">
+                <label class="nb-label" for="tbl-status">Status</label>
+                <select class="nb-select" id="tbl-status" data-table-filter="status">
+                  <option value="">Semua status</option>
+                  <option value="baik">Baik</option>
+                  <option value="servis">Perlu servis</option>
+                  <option value="rusak">Rusak berat</option>
+                  <option value="dipinjam">Dipinjam</option>
+                </select>
+              </div>
+              <div class="nb-field">
+                <label class="nb-label" for="tbl-cat">Kategori</label>
+                <select class="nb-select" id="tbl-cat" data-table-filter="category">
+                  <option value="">Semua kategori</option>
+                  <option value="elektronik">Elektronik</option>
+                  <option value="furnitur">Furnitur</option>
+                  <option value="alat">Alat laboratorium</option>
+                  <option value="peralatan">Peralatan olahraga</option>
+                  <option value="kendaraan">Kendaraan &amp; lainnya</option>
+                </select>
+              </div>
+              <div class="nb-segmented" role="group" aria-label="Kepadatan baris" data-table-density>
+                <button class="nb-segmented__btn" type="button" aria-pressed="false" value="dense">Padat</button>
+                <button class="nb-segmented__btn" type="button" aria-pressed="true" value="default">Normal</button>
+                <button class="nb-segmented__btn" type="button" aria-pressed="false" value="comfortable">Lega</button>
+              </div>
+              <button class="nb-btn nb-btn--outline" type="button" data-table-reset><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-refresh"></use></svg>Reset</button>
+            </div>
+            <div class="nb-bulkbar" data-table-bulkbar hidden>
+              <span data-table-selected-count aria-live="polite">0 aset dipilih</span>
+              <div class="nb-bulkbar__actions">
+                <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-table-bulk="export" data-bulk-title="Ekspor terpilih (demo)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-download"></use></svg>Ekspor</button>
+                <button class="nb-btn nb-btn--sm nb-btn--danger" type="button" data-table-bulk="delete"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg>Hapus</button>
+                <button class="nb-btn nb-btn--sm nb-btn--ghost" type="button" data-table-bulk="clear">Batal pilih</button>
+              </div>
+            </div>
+            <div class="nb-table-wrap" tabindex="0" role="region" aria-labelledby="interaktif-title">
+              <table class="nb-table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select-all aria-label="Pilih semua baris di halaman ini"><span class="nb-sr-only">Pilih semua</span></label></th>
+                    <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Kode<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                    <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Nama aset<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                    <th scope="col" aria-sort="none" data-sort-type="text"><button class="nb-sort" type="button" data-sort>Kategori<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                    <th scope="col">Lokasi</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" aria-sort="none" data-sort-type="number"><button class="nb-sort" type="button" data-sort>Nilai<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                    <th scope="col" aria-sort="none" data-sort-type="date"><button class="nb-sort" type="button" data-sort>Diperbarui<svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button></th>
+                    <th scope="col"><span class="nb-sr-only">Aksi</span></th>
+                  </tr>
+                </thead>
+                <tbody data-table-body>
+                  <tr data-status="servis" data-category="elektronik">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Proyektor LCD 4.000 lumen"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1284</td>
+                    <td class="nb-cell-strong">Proyektor LCD 4.000 lumen</td>
+                    <td>Elektronik</td>
+                    <td>Lab Multimedia</td>
+                    <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                    <td class="nb-cell-num" data-sort-value="8500000">Rp8.500.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-24"><time datetime="2026-10-24">24 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1284" aria-label="Edit Proyektor LCD 4.000 lumen"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Proyektor LCD 4.000 lumen" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="baik" data-category="furnitur">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Kursi ergonomis (12 unit)"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1283</td>
+                    <td class="nb-cell-strong">Kursi ergonomis (12 unit)</td>
+                    <td>Furnitur</td>
+                    <td>Ruang Rapat 2</td>
+                    <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                    <td class="nb-cell-num" data-sort-value="14400000">Rp14.400.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-23"><time datetime="2026-10-23">23 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1283" aria-label="Edit Kursi ergonomis (12 unit)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Kursi ergonomis (12 unit)" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="dipinjam" data-category="alat">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Mikroskop binokuler"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1282</td>
+                    <td class="nb-cell-strong">Mikroskop binokuler</td>
+                    <td>Alat laboratorium</td>
+                    <td>Lab Biologi</td>
+                    <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                    <td class="nb-cell-num" data-sort-value="6200000">Rp6.200.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-22"><time datetime="2026-10-22">22 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1282" aria-label="Edit Mikroskop binokuler"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Mikroskop binokuler" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="baik" data-category="elektronik">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Laptop 14 inci (Core i5)"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1281</td>
+                    <td class="nb-cell-strong">Laptop 14 inci (Core i5)</td>
+                    <td>Elektronik</td>
+                    <td>Gudang TI</td>
+                    <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                    <td class="nb-cell-num" data-sort-value="11750000">Rp11.750.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-21"><time datetime="2026-10-21">21 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1281" aria-label="Edit Laptop 14 inci (Core i5)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Laptop 14 inci (Core i5)" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="rusak" data-category="peralatan">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Matras senam lipat"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1280</td>
+                    <td class="nb-cell-strong">Matras senam lipat</td>
+                    <td>Peralatan olahraga</td>
+                    <td>Aula Utama</td>
+                    <td><span class="nb-badge nb-badge--danger nb-badge--dot">Rusak berat</span></td>
+                    <td class="nb-cell-num" data-sort-value="950000">Rp950.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-20"><time datetime="2026-10-20">20 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1280" aria-label="Edit Matras senam lipat"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Matras senam lipat" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="baik" data-category="elektronik">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Router nirkabel Wi-Fi 6"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1279</td>
+                    <td class="nb-cell-strong">Router nirkabel Wi-Fi 6</td>
+                    <td>Elektronik</td>
+                    <td>Ruang Server</td>
+                    <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                    <td class="nb-cell-num" data-sort-value="2300000">Rp2.300.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-19"><time datetime="2026-10-19">19 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1279" aria-label="Edit Router nirkabel Wi-Fi 6"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Router nirkabel Wi-Fi 6" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="baik" data-category="furnitur">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Lemari arsip baja"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1278</td>
+                    <td class="nb-cell-strong">Lemari arsip baja</td>
+                    <td>Furnitur</td>
+                    <td>Tata Usaha</td>
+                    <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                    <td class="nb-cell-num" data-sort-value="3100000">Rp3.100.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-17"><time datetime="2026-10-17">17 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1278" aria-label="Edit Lemari arsip baja"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Lemari arsip baja" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="servis" data-category="alat">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Sentrifus mini"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1277</td>
+                    <td class="nb-cell-strong">Sentrifus mini</td>
+                    <td>Alat laboratorium</td>
+                    <td>Lab Kimia</td>
+                    <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                    <td class="nb-cell-num" data-sort-value="4800000">Rp4.800.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-15"><time datetime="2026-10-15">15 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1277" aria-label="Edit Sentrifus mini"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Sentrifus mini" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="dipinjam" data-category="peralatan">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Bola voli (10 buah)"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1276</td>
+                    <td class="nb-cell-strong">Bola voli (10 buah)</td>
+                    <td>Peralatan olahraga</td>
+                    <td>Gudang Olahraga</td>
+                    <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                    <td class="nb-cell-num" data-sort-value="1250000">Rp1.250.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-14"><time datetime="2026-10-14">14 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1276" aria-label="Edit Bola voli (10 buah)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Bola voli (10 buah)" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="baik" data-category="kendaraan">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Mobil operasional"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1275</td>
+                    <td class="nb-cell-strong">Mobil operasional</td>
+                    <td>Kendaraan &amp; lainnya</td>
+                    <td>Parkir Timur</td>
+                    <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                    <td class="nb-cell-num" data-sort-value="238000000">Rp238.000.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-11"><time datetime="2026-10-11">11 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1275" aria-label="Edit Mobil operasional"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Mobil operasional" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="servis" data-category="furnitur">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Meja lipat seminar"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1274</td>
+                    <td class="nb-cell-strong">Meja lipat seminar</td>
+                    <td>Furnitur</td>
+                    <td>Aula Utama</td>
+                    <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                    <td class="nb-cell-num" data-sort-value="780000">Rp780.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-09"><time datetime="2026-10-09">9 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1274" aria-label="Edit Meja lipat seminar"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Meja lipat seminar" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-status="dipinjam" data-category="elektronik">
+                    <td class="nb-cell-check"><label class="nb-check"><input type="checkbox" data-table-select aria-label="Pilih Kamera dokumentasi"><span class="nb-sr-only">Pilih</span></label></td>
+                    <td class="nb-cell-id">AST-26-1273</td>
+                    <td class="nb-cell-strong">Kamera dokumentasi</td>
+                    <td>Elektronik</td>
+                    <td>Humas</td>
+                    <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                    <td class="nb-cell-num" data-sort-value="9900000">Rp9.900.000</td>
+                    <td class="nb-cell-muted" data-sort-value="2026-10-06"><time datetime="2026-10-06">6 Okt 2026</time></td>
+                    <td class="nb-cell-actions"><div class="nb-row-actions"><a class="nb-icon-btn" href="../pages/assets-edit.html?id=AST-26-1273" aria-label="Edit Kamera dokumentasi"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-edit"></use></svg></a><button class="nb-icon-btn" type="button" aria-label="Hapus Kamera dokumentasi" data-table-row-delete><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-octagon"></use></svg></button></div></td>
+                  </tr>
+                </tbody>
+                <tbody class="nb-table__empty" data-table-empty hidden>
+                  <tr><td colspan="9"><strong>Tidak ada aset yang cocok</strong>Ubah kata kunci atau filter, atau tekan Reset.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="nb-table-footer nb-pagination">
+              <p class="nb-pagination__info" data-table-info aria-live="polite"></p>
+              <ul class="nb-pagination__list" data-table-pagination aria-label="Paginasi tabel aset"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Tabel data interaktif"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Tabel data interaktif"><code>&lt;div class="nb-card" data-table data-page-size="5" data-table-label="aset"&gt;
+  &lt;div class="nb-table-toolbar" role="search" aria-label="Saring tabel aset"&gt;
+    &lt;input class="nb-search__input" type="search" data-table-search aria-label="Cari"&gt;
+    &lt;select class="nb-select" data-table-filter="status" aria-label="Status"&gt;…&lt;/select&gt;
+    &lt;button class="nb-btn nb-btn--outline" type="button" data-table-reset&gt;Reset&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-bulkbar" data-table-bulkbar hidden&gt;
+    &lt;span data-table-selected-count aria-live="polite"&gt;&lt;/span&gt;
+    &lt;button class="nb-btn nb-btn--sm nb-btn--danger" type="button" data-table-bulk="delete"&gt;Hapus&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-table-wrap" tabindex="0" role="region" aria-label="Daftar aset"&gt;
+    &lt;table class="nb-table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;&lt;input type="checkbox" data-table-select-all aria-label="Pilih semua"&gt;&lt;/th&gt;
+          &lt;th scope="col" aria-sort="none" data-sort-type="text"&gt;
+            &lt;button class="nb-sort" type="button" data-sort&gt;Nama aset …&lt;/button&gt;
+          &lt;/th&gt;
+          &lt;th scope="col" aria-sort="none" data-sort-type="number"&gt;…&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody data-table-body&gt;
+        &lt;tr data-status="baik"&gt;
+          &lt;td&gt;&lt;input type="checkbox" data-table-select aria-label="Pilih Laptop 14 inci"&gt;&lt;/td&gt;
+          &lt;td&gt;Laptop 14 inci&lt;/td&gt;
+          &lt;td data-sort-value="11750000"&gt;Rp11.750.000&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tbody class="nb-table__empty" data-table-empty hidden&gt;…&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-table-footer nb-pagination"&gt;
+    &lt;p class="nb-pagination__info" data-table-info aria-live="polite"&gt;&lt;/p&gt;
+    &lt;ul class="nb-pagination__list" data-table-pagination&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src="assets/js/tables.js" defer&gt;&lt;/script&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="varian" aria-labelledby="varian-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="varian-title">Padat, lega &amp; bergaris</h2>
+            <p class="nb-demo__desc">Kelas pengubah: <code class="nb-inline-code">--dense</code> untuk data banyak, <code class="nb-inline-code">--comfortable</code> untuk bacaan santai, <code class="nb-inline-code">--striped</code> untuk baris panjang.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <span class="nb-demo-label">.nb-table--dense.nb-table--striped</span>
+          <div class="nb-table-wrap" tabindex="0" role="region" aria-label="Contoh tabel padat bergaris">
+            <table class="nb-table nb-table--dense nb-table--striped">
+              <thead>
+                <tr><th scope="col">Kode</th><th scope="col">Nama aset</th><th scope="col">Kategori</th><th scope="col">Lokasi</th><th scope="col">Status</th><th scope="col" class="nb-cell-num">Nilai</th><th scope="col">Diperbarui</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="servis" data-category="elektronik">
+                  <td class="nb-cell-id">AST-26-1284</td>
+                  <td class="nb-cell-strong">Proyektor LCD 4.000 lumen</td>
+                  <td>Elektronik</td>
+                  <td>Lab Multimedia</td>
+                  <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                  <td class="nb-cell-num" data-sort-value="8500000">Rp8.500.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-24"><time datetime="2026-10-24">24 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="furnitur">
+                  <td class="nb-cell-id">AST-26-1283</td>
+                  <td class="nb-cell-strong">Kursi ergonomis (12 unit)</td>
+                  <td>Furnitur</td>
+                  <td>Ruang Rapat 2</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="14400000">Rp14.400.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-23"><time datetime="2026-10-23">23 Okt 2026</time></td>
+                </tr>
+                <tr data-status="dipinjam" data-category="alat">
+                  <td class="nb-cell-id">AST-26-1282</td>
+                  <td class="nb-cell-strong">Mikroskop binokuler</td>
+                  <td>Alat laboratorium</td>
+                  <td>Lab Biologi</td>
+                  <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                  <td class="nb-cell-num" data-sort-value="6200000">Rp6.200.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-22"><time datetime="2026-10-22">22 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="elektronik">
+                  <td class="nb-cell-id">AST-26-1281</td>
+                  <td class="nb-cell-strong">Laptop 14 inci (Core i5)</td>
+                  <td>Elektronik</td>
+                  <td>Gudang TI</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="11750000">Rp11.750.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-21"><time datetime="2026-10-21">21 Okt 2026</time></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="nb-demo-label">.nb-table--comfortable</span>
+          <div class="nb-table-wrap" tabindex="0" role="region" aria-label="Contoh tabel lega">
+            <table class="nb-table nb-table--comfortable">
+              <thead>
+                <tr><th scope="col">Kode</th><th scope="col">Nama aset</th><th scope="col">Kategori</th><th scope="col">Lokasi</th><th scope="col">Status</th><th scope="col" class="nb-cell-num">Nilai</th><th scope="col">Diperbarui</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="rusak" data-category="peralatan">
+                  <td class="nb-cell-id">AST-26-1280</td>
+                  <td class="nb-cell-strong">Matras senam lipat</td>
+                  <td>Peralatan olahraga</td>
+                  <td>Aula Utama</td>
+                  <td><span class="nb-badge nb-badge--danger nb-badge--dot">Rusak berat</span></td>
+                  <td class="nb-cell-num" data-sort-value="950000">Rp950.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-20"><time datetime="2026-10-20">20 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="elektronik">
+                  <td class="nb-cell-id">AST-26-1279</td>
+                  <td class="nb-cell-strong">Router nirkabel Wi-Fi 6</td>
+                  <td>Elektronik</td>
+                  <td>Ruang Server</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="2300000">Rp2.300.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-19"><time datetime="2026-10-19">19 Okt 2026</time></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Padat, lega &amp; bergaris"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Padat, lega &amp; bergaris"><code>&lt;span class="nb-demo-label"&gt;.nb-table--dense.nb-table--striped&lt;/span&gt;
+&lt;div class="nb-table-wrap" tabindex="0" role="region" aria-label="Contoh tabel padat bergaris"&gt;
+  &lt;table class="nb-table nb-table--dense nb-table--striped"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Kode&lt;/th&gt;&lt;th scope="col"&gt;Nama aset&lt;/th&gt;&lt;th scope="col"&gt;Kategori&lt;/th&gt;&lt;th scope="col"&gt;Lokasi&lt;/th&gt;&lt;th scope="col"&gt;Status&lt;/th&gt;&lt;th scope="col" class="nb-cell-num"&gt;Nilai&lt;/th&gt;&lt;th scope="col"&gt;Diperbarui&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr data-status="servis" data-category="elektronik"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1284&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Proyektor LCD 4.000 lumen&lt;/td&gt;
+        &lt;td&gt;Elektronik&lt;/td&gt;
+        &lt;td&gt;Lab Multimedia&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--warning nb-badge--dot"&gt;Perlu servis&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="8500000"&gt;Rp8.500.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-24"&gt;&lt;time datetime="2026-10-24"&gt;24 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="furnitur"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1283&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Kursi ergonomis (12 unit)&lt;/td&gt;
+        &lt;td&gt;Furnitur&lt;/td&gt;
+        &lt;td&gt;Ruang Rapat 2&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="14400000"&gt;Rp14.400.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-23"&gt;&lt;time datetime="2026-10-23"&gt;23 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="dipinjam" data-category="alat"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1282&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Mikroskop binokuler&lt;/td&gt;
+        &lt;td&gt;Alat laboratorium&lt;/td&gt;
+        &lt;td&gt;Lab Biologi&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--info nb-badge--dot"&gt;Dipinjam&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="6200000"&gt;Rp6.200.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-22"&gt;&lt;time datetime="2026-10-22"&gt;22 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="elektronik"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1281&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Laptop 14 inci (Core i5)&lt;/td&gt;
+        &lt;td&gt;Elektronik&lt;/td&gt;
+        &lt;td&gt;Gudang TI&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="11750000"&gt;Rp11.750.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-21"&gt;&lt;time datetime="2026-10-21"&gt;21 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;span class="nb-demo-label"&gt;.nb-table--comfortable&lt;/span&gt;
+&lt;div class="nb-table-wrap" tabindex="0" role="region" aria-label="Contoh tabel lega"&gt;
+  &lt;table class="nb-table nb-table--comfortable"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Kode&lt;/th&gt;&lt;th scope="col"&gt;Nama aset&lt;/th&gt;&lt;th scope="col"&gt;Kategori&lt;/th&gt;&lt;th scope="col"&gt;Lokasi&lt;/th&gt;&lt;th scope="col"&gt;Status&lt;/th&gt;&lt;th scope="col" class="nb-cell-num"&gt;Nilai&lt;/th&gt;&lt;th scope="col"&gt;Diperbarui&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr data-status="rusak" data-category="peralatan"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1280&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Matras senam lipat&lt;/td&gt;
+        &lt;td&gt;Peralatan olahraga&lt;/td&gt;
+        &lt;td&gt;Aula Utama&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--danger nb-badge--dot"&gt;Rusak berat&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="950000"&gt;Rp950.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-20"&gt;&lt;time datetime="2026-10-20"&gt;20 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="elektronik"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1279&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Router nirkabel Wi-Fi 6&lt;/td&gt;
+        &lt;td&gt;Elektronik&lt;/td&gt;
+        &lt;td&gt;Ruang Server&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="2300000"&gt;Rp2.300.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-19"&gt;&lt;time datetime="2026-10-19"&gt;19 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="sticky" aria-labelledby="sticky-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="sticky-title">Header lengket &amp; gulir horizontal</h2>
+            <p class="nb-demo__desc">Wadah <code class="nb-inline-code">--sticky</code> membatasi tinggi 320px dan menahan header. Di layar kecil tabel digulir ke samping; wadahnya bisa difokus dengan keyboard (<code class="nb-inline-code">tabindex="0"</code>) dan punya label region.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-table-wrap nb-table-wrap--sticky" tabindex="0" role="region" aria-label="Contoh tabel dengan header lengket">
+            <table class="nb-table ">
+              <thead>
+                <tr><th scope="col">Kode</th><th scope="col">Nama aset</th><th scope="col">Kategori</th><th scope="col">Lokasi</th><th scope="col">Status</th><th scope="col" class="nb-cell-num">Nilai</th><th scope="col">Diperbarui</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="servis" data-category="elektronik">
+                  <td class="nb-cell-id">AST-26-1284</td>
+                  <td class="nb-cell-strong">Proyektor LCD 4.000 lumen</td>
+                  <td>Elektronik</td>
+                  <td>Lab Multimedia</td>
+                  <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                  <td class="nb-cell-num" data-sort-value="8500000">Rp8.500.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-24"><time datetime="2026-10-24">24 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="furnitur">
+                  <td class="nb-cell-id">AST-26-1283</td>
+                  <td class="nb-cell-strong">Kursi ergonomis (12 unit)</td>
+                  <td>Furnitur</td>
+                  <td>Ruang Rapat 2</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="14400000">Rp14.400.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-23"><time datetime="2026-10-23">23 Okt 2026</time></td>
+                </tr>
+                <tr data-status="dipinjam" data-category="alat">
+                  <td class="nb-cell-id">AST-26-1282</td>
+                  <td class="nb-cell-strong">Mikroskop binokuler</td>
+                  <td>Alat laboratorium</td>
+                  <td>Lab Biologi</td>
+                  <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                  <td class="nb-cell-num" data-sort-value="6200000">Rp6.200.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-22"><time datetime="2026-10-22">22 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="elektronik">
+                  <td class="nb-cell-id">AST-26-1281</td>
+                  <td class="nb-cell-strong">Laptop 14 inci (Core i5)</td>
+                  <td>Elektronik</td>
+                  <td>Gudang TI</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="11750000">Rp11.750.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-21"><time datetime="2026-10-21">21 Okt 2026</time></td>
+                </tr>
+                <tr data-status="rusak" data-category="peralatan">
+                  <td class="nb-cell-id">AST-26-1280</td>
+                  <td class="nb-cell-strong">Matras senam lipat</td>
+                  <td>Peralatan olahraga</td>
+                  <td>Aula Utama</td>
+                  <td><span class="nb-badge nb-badge--danger nb-badge--dot">Rusak berat</span></td>
+                  <td class="nb-cell-num" data-sort-value="950000">Rp950.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-20"><time datetime="2026-10-20">20 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="elektronik">
+                  <td class="nb-cell-id">AST-26-1279</td>
+                  <td class="nb-cell-strong">Router nirkabel Wi-Fi 6</td>
+                  <td>Elektronik</td>
+                  <td>Ruang Server</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="2300000">Rp2.300.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-19"><time datetime="2026-10-19">19 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="furnitur">
+                  <td class="nb-cell-id">AST-26-1278</td>
+                  <td class="nb-cell-strong">Lemari arsip baja</td>
+                  <td>Furnitur</td>
+                  <td>Tata Usaha</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="3100000">Rp3.100.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-17"><time datetime="2026-10-17">17 Okt 2026</time></td>
+                </tr>
+                <tr data-status="servis" data-category="alat">
+                  <td class="nb-cell-id">AST-26-1277</td>
+                  <td class="nb-cell-strong">Sentrifus mini</td>
+                  <td>Alat laboratorium</td>
+                  <td>Lab Kimia</td>
+                  <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                  <td class="nb-cell-num" data-sort-value="4800000">Rp4.800.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-15"><time datetime="2026-10-15">15 Okt 2026</time></td>
+                </tr>
+                <tr data-status="dipinjam" data-category="peralatan">
+                  <td class="nb-cell-id">AST-26-1276</td>
+                  <td class="nb-cell-strong">Bola voli (10 buah)</td>
+                  <td>Peralatan olahraga</td>
+                  <td>Gudang Olahraga</td>
+                  <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                  <td class="nb-cell-num" data-sort-value="1250000">Rp1.250.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-14"><time datetime="2026-10-14">14 Okt 2026</time></td>
+                </tr>
+                <tr data-status="baik" data-category="kendaraan">
+                  <td class="nb-cell-id">AST-26-1275</td>
+                  <td class="nb-cell-strong">Mobil operasional</td>
+                  <td>Kendaraan &amp; lainnya</td>
+                  <td>Parkir Timur</td>
+                  <td><span class="nb-badge nb-badge--success nb-badge--dot">Baik</span></td>
+                  <td class="nb-cell-num" data-sort-value="238000000">Rp238.000.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-11"><time datetime="2026-10-11">11 Okt 2026</time></td>
+                </tr>
+                <tr data-status="servis" data-category="furnitur">
+                  <td class="nb-cell-id">AST-26-1274</td>
+                  <td class="nb-cell-strong">Meja lipat seminar</td>
+                  <td>Furnitur</td>
+                  <td>Aula Utama</td>
+                  <td><span class="nb-badge nb-badge--warning nb-badge--dot">Perlu servis</span></td>
+                  <td class="nb-cell-num" data-sort-value="780000">Rp780.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-09"><time datetime="2026-10-09">9 Okt 2026</time></td>
+                </tr>
+                <tr data-status="dipinjam" data-category="elektronik">
+                  <td class="nb-cell-id">AST-26-1273</td>
+                  <td class="nb-cell-strong">Kamera dokumentasi</td>
+                  <td>Elektronik</td>
+                  <td>Humas</td>
+                  <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                  <td class="nb-cell-num" data-sort-value="9900000">Rp9.900.000</td>
+                  <td class="nb-cell-muted" data-sort-value="2026-10-06"><time datetime="2026-10-06">6 Okt 2026</time></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Header lengket &amp; gulir horizontal"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Header lengket &amp; gulir horizontal"><code>&lt;div class="nb-table-wrap nb-table-wrap--sticky" tabindex="0" role="region" aria-label="Contoh tabel dengan header lengket"&gt;
+  &lt;table class="nb-table "&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Kode&lt;/th&gt;&lt;th scope="col"&gt;Nama aset&lt;/th&gt;&lt;th scope="col"&gt;Kategori&lt;/th&gt;&lt;th scope="col"&gt;Lokasi&lt;/th&gt;&lt;th scope="col"&gt;Status&lt;/th&gt;&lt;th scope="col" class="nb-cell-num"&gt;Nilai&lt;/th&gt;&lt;th scope="col"&gt;Diperbarui&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr data-status="servis" data-category="elektronik"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1284&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Proyektor LCD 4.000 lumen&lt;/td&gt;
+        &lt;td&gt;Elektronik&lt;/td&gt;
+        &lt;td&gt;Lab Multimedia&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--warning nb-badge--dot"&gt;Perlu servis&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="8500000"&gt;Rp8.500.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-24"&gt;&lt;time datetime="2026-10-24"&gt;24 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="furnitur"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1283&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Kursi ergonomis (12 unit)&lt;/td&gt;
+        &lt;td&gt;Furnitur&lt;/td&gt;
+        &lt;td&gt;Ruang Rapat 2&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="14400000"&gt;Rp14.400.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-23"&gt;&lt;time datetime="2026-10-23"&gt;23 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="dipinjam" data-category="alat"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1282&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Mikroskop binokuler&lt;/td&gt;
+        &lt;td&gt;Alat laboratorium&lt;/td&gt;
+        &lt;td&gt;Lab Biologi&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--info nb-badge--dot"&gt;Dipinjam&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="6200000"&gt;Rp6.200.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-22"&gt;&lt;time datetime="2026-10-22"&gt;22 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="elektronik"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1281&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Laptop 14 inci (Core i5)&lt;/td&gt;
+        &lt;td&gt;Elektronik&lt;/td&gt;
+        &lt;td&gt;Gudang TI&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="11750000"&gt;Rp11.750.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-21"&gt;&lt;time datetime="2026-10-21"&gt;21 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="rusak" data-category="peralatan"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1280&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Matras senam lipat&lt;/td&gt;
+        &lt;td&gt;Peralatan olahraga&lt;/td&gt;
+        &lt;td&gt;Aula Utama&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--danger nb-badge--dot"&gt;Rusak berat&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="950000"&gt;Rp950.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-20"&gt;&lt;time datetime="2026-10-20"&gt;20 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="elektronik"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1279&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Router nirkabel Wi-Fi 6&lt;/td&gt;
+        &lt;td&gt;Elektronik&lt;/td&gt;
+        &lt;td&gt;Ruang Server&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="2300000"&gt;Rp2.300.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-19"&gt;&lt;time datetime="2026-10-19"&gt;19 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="furnitur"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1278&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Lemari arsip baja&lt;/td&gt;
+        &lt;td&gt;Furnitur&lt;/td&gt;
+        &lt;td&gt;Tata Usaha&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="3100000"&gt;Rp3.100.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-17"&gt;&lt;time datetime="2026-10-17"&gt;17 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="servis" data-category="alat"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1277&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Sentrifus mini&lt;/td&gt;
+        &lt;td&gt;Alat laboratorium&lt;/td&gt;
+        &lt;td&gt;Lab Kimia&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--warning nb-badge--dot"&gt;Perlu servis&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="4800000"&gt;Rp4.800.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-15"&gt;&lt;time datetime="2026-10-15"&gt;15 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="dipinjam" data-category="peralatan"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1276&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Bola voli (10 buah)&lt;/td&gt;
+        &lt;td&gt;Peralatan olahraga&lt;/td&gt;
+        &lt;td&gt;Gudang Olahraga&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--info nb-badge--dot"&gt;Dipinjam&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="1250000"&gt;Rp1.250.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-14"&gt;&lt;time datetime="2026-10-14"&gt;14 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="baik" data-category="kendaraan"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1275&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Mobil operasional&lt;/td&gt;
+        &lt;td&gt;Kendaraan &amp;amp; lainnya&lt;/td&gt;
+        &lt;td&gt;Parkir Timur&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Baik&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="238000000"&gt;Rp238.000.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-11"&gt;&lt;time datetime="2026-10-11"&gt;11 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="servis" data-category="furnitur"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1274&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Meja lipat seminar&lt;/td&gt;
+        &lt;td&gt;Furnitur&lt;/td&gt;
+        &lt;td&gt;Aula Utama&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--warning nb-badge--dot"&gt;Perlu servis&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="780000"&gt;Rp780.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-09"&gt;&lt;time datetime="2026-10-09"&gt;9 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr data-status="dipinjam" data-category="elektronik"&gt;
+        &lt;td class="nb-cell-id"&gt;AST-26-1273&lt;/td&gt;
+        &lt;td class="nb-cell-strong"&gt;Kamera dokumentasi&lt;/td&gt;
+        &lt;td&gt;Elektronik&lt;/td&gt;
+        &lt;td&gt;Humas&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--info nb-badge--dot"&gt;Dipinjam&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="nb-cell-num" data-sort-value="9900000"&gt;Rp9.900.000&lt;/td&gt;
+        &lt;td class="nb-cell-muted" data-sort-value="2026-10-06"&gt;&lt;time datetime="2026-10-06"&gt;6 Okt 2026&lt;/time&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <nav class="nb-gallery-pager" aria-label="Halaman komponen lain">
+          <a class="nb-btn nb-btn--outline" href="navigation.html"><svg class="nb-icon nb-icon--flip" aria-hidden="true"><use href="#i-chevron-right"></use></svg><span>Sebelumnya: Navigasi</span></a>
+          <a class="nb-btn nb-btn--ghost" href="../index.html"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+          <a class="nb-btn nb-btn--outline" href="forms.html"><span>Berikutnya: Formulir</span><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+      </nav>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

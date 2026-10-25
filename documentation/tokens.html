@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design token — BLOK Admin UI Kit</title>
+  <meta name="description" content="Daftar design token BLOK: warna, spasi, tipografi, garis, bayangan, z-index, gerak, dan breakpoint.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+</head>
+<body class="nb-app" data-page="docs-tokens">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Dokumentasi</li>
+            <li><span aria-current="page">Design token</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Dokumentasi</li>
+          <li><span aria-current="page">Design token</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Dokumentasi</p>
+          <h1 class="nb-page-header__title">Design token</h1>
+          <p class="nb-page-header__desc">Seluruh nilai dibaca dari <code class="nb-inline-code">assets/css/tokens.css</code>. Ubah di sana, bukan per halaman.</p>
+        </div>
+      </header>
+
+      <section class="nb-card" id="warna" aria-labelledby="warna-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="warna-title">Warna</h2></header>
+        <div class="nb-card__body nb-prose">
+<div class="nb-grid nb-grid--3"><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-ink)"></span><span class="nb-swatch__label"><strong>--color-ink</strong><br>#151515</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-canvas)"></span><span class="nb-swatch__label"><strong>--color-canvas</strong><br>#FFFCF5</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-paper)"></span><span class="nb-swatch__label"><strong>--color-paper</strong><br>#FFFFFF</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-sage)"></span><span class="nb-swatch__label"><strong>--color-sage</strong><br>#B9D9C6</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-sage-strong)"></span><span class="nb-swatch__label"><strong>--color-sage-strong</strong><br>#9CC7AE</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-yellow)"></span><span class="nb-swatch__label"><strong>--color-yellow</strong><br>#FFD447</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-yellow-soft)"></span><span class="nb-swatch__label"><strong>--color-yellow-soft</strong><br>#FFF1BF</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-lavender)"></span><span class="nb-swatch__label"><strong>--color-lavender</strong><br>#E6B8F0</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-lavender-soft)"></span><span class="nb-swatch__label"><strong>--color-lavender-soft</strong><br>#F5E3F9</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-mint)"></span><span class="nb-swatch__label"><strong>--color-mint</strong><br>#C6E8D4</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-pink)"></span><span class="nb-swatch__label"><strong>--color-pink</strong><br>#FFC4D6</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-blue)"></span><span class="nb-swatch__label"><strong>--color-blue</strong><br>#BBDCF7</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-muted)"></span><span class="nb-swatch__label"><strong>--color-muted</strong><br>#5E5E5E</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-line-soft)"></span><span class="nb-swatch__label"><strong>--color-line-soft</strong><br>#E4DFD3</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-danger)"></span><span class="nb-swatch__label"><strong>--color-danger</strong><br>#D64A4A</span></div><div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-danger-soft)"></span><span class="nb-swatch__label"><strong>--color-danger-soft</strong><br>#FFD6D1</span></div></div><p>Status: <code class="nb-inline-code">--status-success = var(--color-mint)</code> <code class="nb-inline-code">--status-warning = var(--color-yellow)</code> <code class="nb-inline-code">--status-danger = var(--color-danger-soft)</code> <code class="nb-inline-code">--status-info = var(--color-blue)</code> <code class="nb-inline-code">--status-neutral = var(--color-paper)</code></p><p>Permukaan dan teks: <code class="nb-inline-code">--text = var(--color-ink)</code> <code class="nb-inline-code">--text-muted = var(--color-muted)</code> <code class="nb-inline-code">--text-inverse = var(--color-paper)</code> <code class="nb-inline-code">--surface-page = var(--color-canvas)</code> <code class="nb-inline-code">--surface-panel = var(--color-paper)</code> <code class="nb-inline-code">--surface-sidebar = var(--color-sage)</code> <code class="nb-inline-code">--surface-hover = var(--color-yellow-soft)</code></p>
+        </div>
+      </section>
+      <section class="nb-card" id="spasi" aria-labelledby="spasi-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="spasi-title">Spasi</h2></header>
+        <div class="nb-card__body nb-prose">
+<div class="nb-table-wrap" tabindex="0" role="region" aria-label="Spasi (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Spasi</caption>
+<thead><tr><th scope="col">Token</th><th scope="col">Nilai</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">--space-1</code></td><td><code class="nb-inline-code">4px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-2</code></td><td><code class="nb-inline-code">8px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-3</code></td><td><code class="nb-inline-code">12px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-4</code></td><td><code class="nb-inline-code">16px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-5</code></td><td><code class="nb-inline-code">20px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-6</code></td><td><code class="nb-inline-code">24px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-8</code></td><td><code class="nb-inline-code">32px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-10</code></td><td><code class="nb-inline-code">40px</code></td></tr>
+<tr><td><code class="nb-inline-code">--space-12</code></td><td><code class="nb-inline-code">48px</code></td></tr>
+<tr><td><code class="nb-inline-code">--gutter</code></td><td><code class="nb-inline-code">var(--space-8)</code></td></tr>
+<tr><td><code class="nb-inline-code">--tap-min</code></td><td><code class="nb-inline-code">44px</code></td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="tipografi" aria-labelledby="tipografi-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="tipografi-title">Tipografi</h2></header>
+        <div class="nb-card__body nb-prose">
+<div class="nb-table-wrap" tabindex="0" role="region" aria-label="Tipografi (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Tipografi</caption>
+<thead><tr><th scope="col">Token</th><th scope="col">Nilai</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">--font-heading</code></td><td><code class="nb-inline-code">&quot;Space Grotesk&quot;, &quot;Arial Black&quot;, Arial, sans-serif</code></td></tr>
+<tr><td><code class="nb-inline-code">--font-body</code></td><td><code class="nb-inline-code">&quot;Inter&quot;, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Arial, sans-serif</code></td></tr>
+<tr><td><code class="nb-inline-code">--font-mono</code></td><td><code class="nb-inline-code">&quot;Space Mono&quot;, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-2xs</code></td><td><code class="nb-inline-code">11px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-xs</code></td><td><code class="nb-inline-code">12px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-sm</code></td><td><code class="nb-inline-code">13px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-base</code></td><td><code class="nb-inline-code">15px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-md</code></td><td><code class="nb-inline-code">16px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-lg</code></td><td><code class="nb-inline-code">18px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-xl</code></td><td><code class="nb-inline-code">22px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-2xl</code></td><td><code class="nb-inline-code">28px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-3xl</code></td><td><code class="nb-inline-code">34px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-4xl</code></td><td><code class="nb-inline-code">40px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fs-display</code></td><td><code class="nb-inline-code">56px</code></td></tr>
+<tr><td><code class="nb-inline-code">--fw-regular</code></td><td><code class="nb-inline-code">400</code></td></tr>
+<tr><td><code class="nb-inline-code">--fw-medium</code></td><td><code class="nb-inline-code">500</code></td></tr>
+<tr><td><code class="nb-inline-code">--fw-semibold</code></td><td><code class="nb-inline-code">600</code></td></tr>
+<tr><td><code class="nb-inline-code">--fw-bold</code></td><td><code class="nb-inline-code">700</code></td></tr>
+<tr><td><code class="nb-inline-code">--lh-tight</code></td><td><code class="nb-inline-code">1.1</code></td></tr>
+<tr><td><code class="nb-inline-code">--lh-snug</code></td><td><code class="nb-inline-code">1.3</code></td></tr>
+<tr><td><code class="nb-inline-code">--lh-base</code></td><td><code class="nb-inline-code">1.55</code></td></tr>
+<tr><td><code class="nb-inline-code">--tracking-label</code></td><td><code class="nb-inline-code">0.08em</code></td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="garis" aria-labelledby="garis-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="garis-title">Garis, bayangan, radius</h2></header>
+        <div class="nb-card__body nb-prose">
+<div class="nb-table-wrap" tabindex="0" role="region" aria-label="Garis, bayangan, radius (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Garis, bayangan, radius</caption>
+<thead><tr><th scope="col">Token</th><th scope="col">Nilai</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">--border-w</code></td><td><code class="nb-inline-code">2px</code></td></tr>
+<tr><td><code class="nb-inline-code">--border-w-strong</code></td><td><code class="nb-inline-code">3px</code></td></tr>
+<tr><td><code class="nb-inline-code">--border</code></td><td><code class="nb-inline-code">var(--border-w) solid var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--border-strong</code></td><td><code class="nb-inline-code">var(--border-w-strong) solid var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--border-dashed</code></td><td><code class="nb-inline-code">var(--border-w) dashed var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--shadow-xs</code></td><td><code class="nb-inline-code">2px 2px 0 var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--shadow-sm</code></td><td><code class="nb-inline-code">3px 3px 0 var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--shadow</code></td><td><code class="nb-inline-code">4px 4px 0 var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--shadow-lg</code></td><td><code class="nb-inline-code">6px 6px 0 var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--shadow-none</code></td><td><code class="nb-inline-code">0 0 0 var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--press-offset</code></td><td><code class="nb-inline-code">2px</code></td></tr>
+<tr><td><code class="nb-inline-code">--radius-0</code></td><td><code class="nb-inline-code">0</code></td></tr>
+<tr><td><code class="nb-inline-code">--radius-sm</code></td><td><code class="nb-inline-code">2px</code></td></tr>
+<tr><td><code class="nb-inline-code">--radius</code></td><td><code class="nb-inline-code">4px</code></td></tr>
+<tr><td><code class="nb-inline-code">--radius-pill</code></td><td><code class="nb-inline-code">999px</code></td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="layout" aria-labelledby="layout-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="layout-title">Dimensi layout</h2></header>
+        <div class="nb-card__body nb-prose">
+<div class="nb-table-wrap" tabindex="0" role="region" aria-label="Dimensi layout (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Dimensi layout</caption>
+<thead><tr><th scope="col">Token</th><th scope="col">Nilai</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">--sidebar-w</code></td><td><code class="nb-inline-code">272px</code></td></tr>
+<tr><td><code class="nb-inline-code">--sidebar-w-collapsed</code></td><td><code class="nb-inline-code">80px</code></td></tr>
+<tr><td><code class="nb-inline-code">--topbar-h</code></td><td><code class="nb-inline-code">72px</code></td></tr>
+<tr><td><code class="nb-inline-code">--content-max</code></td><td><code class="nb-inline-code">1600px</code></td></tr>
+<tr><td><code class="nb-inline-code">--reading-max</code></td><td><code class="nb-inline-code">72ch</code></td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="z" aria-labelledby="z-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="z-title">Z-index</h2></header>
+        <div class="nb-card__body nb-prose">
+<div class="nb-table-wrap" tabindex="0" role="region" aria-label="Z-index (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Z-index</caption>
+<thead><tr><th scope="col">Token</th><th scope="col">Nilai</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">--z-base</code></td><td><code class="nb-inline-code">1</code></td></tr>
+<tr><td><code class="nb-inline-code">--z-sticky</code></td><td><code class="nb-inline-code">20</code></td></tr>
+<tr><td><code class="nb-inline-code">--z-topbar</code></td><td><code class="nb-inline-code">30</code></td></tr>
+<tr><td><code class="nb-inline-code">--z-overlay</code></td><td><code class="nb-inline-code">40</code></td></tr>
+<tr><td><code class="nb-inline-code">--z-sidebar</code></td><td><code class="nb-inline-code">50</code></td></tr>
+<tr><td><code class="nb-inline-code">--z-dropdown</code></td><td><code class="nb-inline-code">60</code></td></tr>
+<tr><td><code class="nb-inline-code">--z-modal</code></td><td><code class="nb-inline-code">70</code></td></tr>
+<tr><td><code class="nb-inline-code">--z-toast</code></td><td><code class="nb-inline-code">80</code></td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="gerak" aria-labelledby="gerak-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="gerak-title">Gerak dan fokus</h2></header>
+        <div class="nb-card__body nb-prose">
+<div class="nb-table-wrap" tabindex="0" role="region" aria-label="Gerak dan fokus (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Gerak dan fokus</caption>
+<thead><tr><th scope="col">Token</th><th scope="col">Nilai</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">--dur-press</code></td><td><code class="nb-inline-code">120ms</code></td></tr>
+<tr><td><code class="nb-inline-code">--dur</code></td><td><code class="nb-inline-code">160ms</code></td></tr>
+<tr><td><code class="nb-inline-code">--dur-slow</code></td><td><code class="nb-inline-code">240ms</code></td></tr>
+<tr><td><code class="nb-inline-code">--ease</code></td><td><code class="nb-inline-code">cubic-bezier(0.2, 0.7, 0.3, 1)</code></td></tr>
+<tr><td><code class="nb-inline-code">--focus-ring</code></td><td><code class="nb-inline-code">0 0 0 3px var(--color-paper), 0 0 0 6px var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--focus-outline</code></td><td><code class="nb-inline-code">3px solid var(--color-ink)</code></td></tr>
+<tr><td><code class="nb-inline-code">--focus-offset</code></td><td><code class="nb-inline-code">3px</code></td></tr>
+<tr><td><code class="nb-inline-code">--dur-press</code></td><td><code class="nb-inline-code">0ms</code></td></tr>
+<tr><td><code class="nb-inline-code">--dur</code></td><td><code class="nb-inline-code">0ms</code></td></tr>
+<tr><td><code class="nb-inline-code">--dur-slow</code></td><td><code class="nb-inline-code">0ms</code></td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="breakpoint" aria-labelledby="breakpoint-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="breakpoint-title">Breakpoint</h2></header>
+        <div class="nb-card__body nb-prose">
+<p>Stylesheet di <code class="nb-inline-code">responsive.css</code> memakai media query berikut (CSS custom property tidak bisa dipakai di media query, jadi nilainya tertulis langsung).</p><div class="nb-table-wrap" tabindex="0" role="region" aria-label="Breakpoint (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Breakpoint</caption>
+<thead><tr><th scope="col">Kondisi</th><th scope="col">Perilaku</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">≥ 1440px</code></td><td>Layar lebar: konten sampai --content-max</td></tr>
+<tr><td><code class="nb-inline-code">≤ 1279px</code></td><td>Layar sedang: topbar dan kolom grid dirapatkan</td></tr>
+<tr><td><code class="nb-inline-code">≤ 1023px</code></td><td>Sidebar menjadi drawer; breadcrumb pindah ke konten</td></tr>
+<tr><td><code class="nb-inline-code">≤ 767px</code></td><td>Ponsel: satu kolom, --gutter dan --topbar-h mengecil</td></tr>
+<tr><td><code class="nb-inline-code">≤ 374px</code></td><td>Ponsel kecil (320–374px)</td></tr>
+<tr><td><code class="nb-inline-code">print</code></td><td>Sidebar, topbar, dan .nb-no-print disembunyikan</td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

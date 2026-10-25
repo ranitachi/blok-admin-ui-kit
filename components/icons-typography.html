@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ikon &amp; tipografi — BLOK Admin UI Kit</title>
+  <meta name="description" content="Galeri dasar visual BLOK: 55 ikon SVG yang bisa disaring dan disalin, skala tipografi, prosa, kode, pintasan keyboard dan palet warna.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/charts.js" defer></script>
+  <script src="../assets/js/pages/gallery.js" defer></script>
+</head>
+<body class="nb-app" data-page="c-icons">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>UI Kit</li>
+            <li><span aria-current="page">Ikon &amp; tipografi</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>UI Kit</li>
+          <li><span aria-current="page">Ikon &amp; tipografi</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">UI Kit · Fondasi</p>
+          <h1 class="nb-page-header__title">Ikon &amp; tipografi</h1>
+          <p class="nb-page-header__desc">Fondasi visual yang dipakai semua komponen: ikon, huruf dan warna.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <a class="nb-btn nb-btn--outline" href="#tipografi"><svg class="nb-icon" aria-hidden="true"><use href="#i-type"></use></svg>Tipografi</a>
+          <a class="nb-btn nb-btn--yellow" href="#warna"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg>Palet warna</a>
+        </div>
+      </header>
+
+      <nav aria-label="Daftar isi halaman">
+        <ul class="nb-toc">
+          <li><a href="#ikon">Galeri ikon</a></li>
+          <li><a href="#tipografi">Skala tipografi</a></li>
+          <li><a href="#prosa">Prosa, kode &amp; pintasan</a></li>
+          <li><a href="#warna">Palet warna</a></li>
+        </ul>
+      </nav>
+
+      <section class="nb-demo" id="ikon" aria-labelledby="ikon-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="ikon-title">Galeri ikon</h2>
+            <p class="nb-demo__desc">55 ikon garis 24px dari sprite SVG inline (<code class="nb-inline-code">assets/js/icons.js</code>), tanpa font ikon atau CDN. Ikon dekoratif memakai <code class="nb-inline-code">aria-hidden="true"</code>; tombol ikon wajib punya <code class="nb-inline-code">aria-label</code>. Klik ikon untuk menyalin kodenya.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-stack" data-icon-filter>
+            <div class="nb-field" style="max-width: 360px">
+              <label class="nb-label" for="ic-q">Saring ikon</label>
+              <div class="nb-search">
+                <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input class="nb-search__input" id="ic-q" type="search" placeholder="mis. arrow, user" data-icon-filter-input autocomplete="off">
+              </div>
+            </div>
+            <p class="nb-help" data-icon-filter-count aria-live="polite">55 ikon</p>
+            <ul class="nb-icon-grid" role="list" aria-label="Daftar ikon">
+              <li data-icon-name="home"><button class="nb-icon-tile" type="button" data-copy="ic-home" aria-label="Salin kode ikon home"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span>home</span></button><code id="ic-home" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-home"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="chart"><button class="nb-icon-tile" type="button" data-copy="ic-chart" aria-label="Salin kode ikon chart"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span>chart</span></button><code id="ic-chart" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-chart"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="activity"><button class="nb-icon-tile" type="button" data-copy="ic-activity" aria-label="Salin kode ikon activity"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span>activity</span></button><code id="ic-activity" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-activity"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="box"><button class="nb-icon-tile" type="button" data-copy="ic-box" aria-label="Salin kode ikon box"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span>box</span></button><code id="ic-box" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-box"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="users"><button class="nb-icon-tile" type="button" data-copy="ic-users" aria-label="Salin kode ikon users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span>users</span></button><code id="ic-users" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-users"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="door"><button class="nb-icon-tile" type="button" data-copy="ic-door" aria-label="Salin kode ikon door"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span>door</span></button><code id="ic-door" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-door"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="bookmark"><button class="nb-icon-tile" type="button" data-copy="ic-bookmark" aria-label="Salin kode ikon bookmark"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span>bookmark</span></button><code id="ic-bookmark" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-bookmark"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="wrench"><button class="nb-icon-tile" type="button" data-copy="ic-wrench" aria-label="Salin kode ikon wrench"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span>wrench</span></button><code id="ic-wrench" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-wrench"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="kanban"><button class="nb-icon-tile" type="button" data-copy="ic-kanban" aria-label="Salin kode ikon kanban"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span>kanban</span></button><code id="ic-kanban" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-kanban"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="calendar"><button class="nb-icon-tile" type="button" data-copy="ic-calendar" aria-label="Salin kode ikon calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span>calendar</span></button><code id="ic-calendar" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-calendar"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="file"><button class="nb-icon-tile" type="button" data-copy="ic-file" aria-label="Salin kode ikon file"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span>file</span></button><code id="ic-file" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-file"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="layers"><button class="nb-icon-tile" type="button" data-copy="ic-layers" aria-label="Salin kode ikon layers"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span>layers</span></button><code id="ic-layers" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-layers"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="layout"><button class="nb-icon-tile" type="button" data-copy="ic-layout" aria-label="Salin kode ikon layout"><svg class="nb-icon" aria-hidden="true"><use href="#i-layout"></use></svg><span>layout</span></button><code id="ic-layout" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-layout"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="bell"><button class="nb-icon-tile" type="button" data-copy="ic-bell" aria-label="Salin kode ikon bell"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span>bell</span></button><code id="ic-bell" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-bell"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="search"><button class="nb-icon-tile" type="button" data-copy="ic-search" aria-label="Salin kode ikon search"><svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg><span>search</span></button><code id="ic-search" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-search"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="menu"><button class="nb-icon-tile" type="button" data-copy="ic-menu" aria-label="Salin kode ikon menu"><svg class="nb-icon" aria-hidden="true"><use href="#i-menu"></use></svg><span>menu</span></button><code id="ic-menu" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-menu"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="x"><button class="nb-icon-tile" type="button" data-copy="ic-x" aria-label="Salin kode ikon x"><svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg><span>x</span></button><code id="ic-x" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-x"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="chevron-down"><button class="nb-icon-tile" type="button" data-copy="ic-chevron-down" aria-label="Salin kode ikon chevron-down"><svg class="nb-icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg><span>chevron-down</span></button><code id="ic-chevron-down" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-chevron-down"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="chevron-right"><button class="nb-icon-tile" type="button" data-copy="ic-chevron-right" aria-label="Salin kode ikon chevron-right"><svg class="nb-icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><span>chevron-right</span></button><code id="ic-chevron-right" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-chevron-right"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="sidebar-collapse"><button class="nb-icon-tile" type="button" data-copy="ic-sidebar-collapse" aria-label="Salin kode ikon sidebar-collapse"><svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg><span>sidebar-collapse</span></button><code id="ic-sidebar-collapse" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-sidebar-collapse"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="plus"><button class="nb-icon-tile" type="button" data-copy="ic-plus" aria-label="Salin kode ikon plus"><svg class="nb-icon" aria-hidden="true"><use href="#i-plus"></use></svg><span>plus</span></button><code id="ic-plus" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-plus"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="arrow-up"><button class="nb-icon-tile" type="button" data-copy="ic-arrow-up" aria-label="Salin kode ikon arrow-up"><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg><span>arrow-up</span></button><code id="ic-arrow-up" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-arrow-up"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="arrow-down"><button class="nb-icon-tile" type="button" data-copy="ic-arrow-down" aria-label="Salin kode ikon arrow-down"><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-down"></use></svg><span>arrow-down</span></button><code id="ic-arrow-down" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-arrow-down"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="arrow-right"><button class="nb-icon-tile" type="button" data-copy="ic-arrow-right" aria-label="Salin kode ikon arrow-right"><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>arrow-right</span></button><code id="ic-arrow-right" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-arrow-right"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="user"><button class="nb-icon-tile" type="button" data-copy="ic-user" aria-label="Salin kode ikon user"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span>user</span></button><code id="ic-user" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-user"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="settings"><button class="nb-icon-tile" type="button" data-copy="ic-settings" aria-label="Salin kode ikon settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span>settings</span></button><code id="ic-settings" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-settings"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="logout"><button class="nb-icon-tile" type="button" data-copy="ic-logout" aria-label="Salin kode ikon logout"><svg class="nb-icon" aria-hidden="true"><use href="#i-logout"></use></svg><span>logout</span></button><code id="ic-logout" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-logout"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="check"><button class="nb-icon-tile" type="button" data-copy="ic-check" aria-label="Salin kode ikon check"><svg class="nb-icon" aria-hidden="true"><use href="#i-check"></use></svg><span>check</span></button><code id="ic-check" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="alert"><button class="nb-icon-tile" type="button" data-copy="ic-alert" aria-label="Salin kode ikon alert"><svg class="nb-icon" aria-hidden="true"><use href="#i-alert"></use></svg><span>alert</span></button><code id="ic-alert" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-alert"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="info"><button class="nb-icon-tile" type="button" data-copy="ic-info" aria-label="Salin kode ikon info"><svg class="nb-icon" aria-hidden="true"><use href="#i-info"></use></svg><span>info</span></button><code id="ic-info" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-info"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="pin"><button class="nb-icon-tile" type="button" data-copy="ic-pin" aria-label="Salin kode ikon pin"><svg class="nb-icon" aria-hidden="true"><use href="#i-pin"></use></svg><span>pin</span></button><code id="ic-pin" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-pin"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="clock"><button class="nb-icon-tile" type="button" data-copy="ic-clock" aria-label="Salin kode ikon clock"><svg class="nb-icon" aria-hidden="true"><use href="#i-clock"></use></svg><span>clock</span></button><code id="ic-clock" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-clock"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="download"><button class="nb-icon-tile" type="button" data-copy="ic-download" aria-label="Salin kode ikon download"><svg class="nb-icon" aria-hidden="true"><use href="#i-download"></use></svg><span>download</span></button><code id="ic-download" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-download"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="external"><button class="nb-icon-tile" type="button" data-copy="ic-external" aria-label="Salin kode ikon external"><svg class="nb-icon" aria-hidden="true"><use href="#i-external"></use></svg><span>external</span></button><code id="ic-external" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-external"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="grid"><button class="nb-icon-tile" type="button" data-copy="ic-grid" aria-label="Salin kode ikon grid"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span>grid</span></button><code id="ic-grid" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-grid"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="help"><button class="nb-icon-tile" type="button" data-copy="ic-help" aria-label="Salin kode ikon help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span>help</span></button><code id="ic-help" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-help"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="tag"><button class="nb-icon-tile" type="button" data-copy="ic-tag" aria-label="Salin kode ikon tag"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span>tag</span></button><code id="ic-tag" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-tag"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="card"><button class="nb-icon-tile" type="button" data-copy="ic-card" aria-label="Salin kode ikon card"><svg class="nb-icon" aria-hidden="true"><use href="#i-card"></use></svg><span>card</span></button><code id="ic-card" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-card"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="lock"><button class="nb-icon-tile" type="button" data-copy="ic-lock" aria-label="Salin kode ikon lock"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span>lock</span></button><code id="ic-lock" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-lock"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="octagon"><button class="nb-icon-tile" type="button" data-copy="ic-octagon" aria-label="Salin kode ikon octagon"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span>octagon</span></button><code id="ic-octagon" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-octagon"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="palette"><button class="nb-icon-tile" type="button" data-copy="ic-palette" aria-label="Salin kode ikon palette"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span>palette</span></button><code id="ic-palette" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-palette"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="type"><button class="nb-icon-tile" type="button" data-copy="ic-type" aria-label="Salin kode ikon type"><svg class="nb-icon" aria-hidden="true"><use href="#i-type"></use></svg><span>type</span></button><code id="ic-type" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-type"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="code"><button class="nb-icon-tile" type="button" data-copy="ic-code" aria-label="Salin kode ikon code"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span>code</span></button><code id="ic-code" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-code"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="terminal"><button class="nb-icon-tile" type="button" data-copy="ic-terminal" aria-label="Salin kode ikon terminal"><svg class="nb-icon" aria-hidden="true"><use href="#i-terminal"></use></svg><span>terminal</span></button><code id="ic-terminal" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-terminal"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="swap"><button class="nb-icon-tile" type="button" data-copy="ic-swap" aria-label="Salin kode ikon swap"><svg class="nb-icon" aria-hidden="true"><use href="#i-swap"></use></svg><span>swap</span></button><code id="ic-swap" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-swap"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="mail"><button class="nb-icon-tile" type="button" data-copy="ic-mail" aria-label="Salin kode ikon mail"><svg class="nb-icon" aria-hidden="true"><use href="#i-mail"></use></svg><span>mail</span></button><code id="ic-mail" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-mail"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="refresh"><button class="nb-icon-tile" type="button" data-copy="ic-refresh" aria-label="Salin kode ikon refresh"><svg class="nb-icon" aria-hidden="true"><use href="#i-refresh"></use></svg><span>refresh</span></button><code id="ic-refresh" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-refresh"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="eye"><button class="nb-icon-tile" type="button" data-copy="ic-eye" aria-label="Salin kode ikon eye"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>eye</span></button><code id="ic-eye" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-eye"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="filter"><button class="nb-icon-tile" type="button" data-copy="ic-filter" aria-label="Salin kode ikon filter"><svg class="nb-icon" aria-hidden="true"><use href="#i-filter"></use></svg><span>filter</span></button><code id="ic-filter" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-filter"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="more"><button class="nb-icon-tile" type="button" data-copy="ic-more" aria-label="Salin kode ikon more"><svg class="nb-icon" aria-hidden="true"><use href="#i-more"></use></svg><span>more</span></button><code id="ic-more" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-more"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="edit"><button class="nb-icon-tile" type="button" data-copy="ic-edit" aria-label="Salin kode ikon edit"><svg class="nb-icon" aria-hidden="true"><use href="#i-edit"></use></svg><span>edit</span></button><code id="ic-edit" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-edit"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="list"><button class="nb-icon-tile" type="button" data-copy="ic-list" aria-label="Salin kode ikon list"><svg class="nb-icon" aria-hidden="true"><use href="#i-list"></use></svg><span>list</span></button><code id="ic-list" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-list"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="arrow-left"><button class="nb-icon-tile" type="button" data-copy="ic-arrow-left" aria-label="Salin kode ikon arrow-left"><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg><span>arrow-left</span></button><code id="ic-arrow-left" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-arrow-left"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="trash"><button class="nb-icon-tile" type="button" data-copy="ic-trash" aria-label="Salin kode ikon trash"><svg class="nb-icon" aria-hidden="true"><use href="#i-trash"></use></svg><span>trash</span></button><code id="ic-trash" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-trash"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+              <li data-icon-name="print"><button class="nb-icon-tile" type="button" data-copy="ic-print" aria-label="Salin kode ikon print"><svg class="nb-icon" aria-hidden="true"><use href="#i-print"></use></svg><span>print</span></button><code id="ic-print" hidden>&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-print"&gt;&lt;/use&gt;&lt;/svg&gt;</code></li>
+            </ul>
+            <p class="nb-help" data-icon-filter-empty hidden>Tidak ada ikon dengan nama itu.</p>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Galeri ikon"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Galeri ikon"><code>&lt;!-- Ikon dekoratif di samping teks --&gt;
+&lt;button class="nb-btn" type="button"&gt;
+  &lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-plus"&gt;&lt;/use&gt;&lt;/svg&gt;Tambah aset
+&lt;/button&gt;
+
+&lt;!-- Tombol ikon saja: wajib aria-label --&gt;
+&lt;button class="nb-icon-btn" type="button" aria-label="Unduh laporan"&gt;
+  &lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-download"&gt;&lt;/use&gt;&lt;/svg&gt;
+&lt;/button&gt;
+
+&lt;!-- Ukuran: nb-icon--sm (16px) · default (20px) · nb-icon--lg (28px) --&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="tipografi" aria-labelledby="tipografi-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="tipografi-title">Skala tipografi</h2>
+            <p class="nb-demo__desc">Space Grotesk untuk judul, Inter untuk isi, Space Mono untuk kode, label dan angka teknis. Ukuran berupa token di <code class="nb-inline-code">tokens.css</code>.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-type-scale">
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">Display · 56px<br>--fs-display</span><span class="nb-type-scale__sample" style="font-size: var(--fs-display)">Inventaris rapi</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">H1 · 40px<br>--fs-4xl</span><span class="nb-type-scale__sample" style="font-size: var(--fs-4xl)">Dashboard aset</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">H2 · 34px<br>--fs-3xl</span><span class="nb-type-scale__sample" style="font-size: var(--fs-3xl)">Tren peminjaman</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">H3 · 28px<br>--fs-2xl</span><span class="nb-type-scale__sample" style="font-size: var(--fs-2xl)">Komposisi kategori</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">H4 · 22px<br>--fs-xl</span><span class="nb-type-scale__sample" style="font-size: var(--fs-xl)">Aset terbaru</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">Lead · 18px<br>--fs-lg</span><span class="nb-type-scale__sample" style="font-size: var(--fs-lg); font-family: var(--font-body); font-weight: var(--fw-regular, 400)">Kelola 1.284 aset di 48 ruangan.</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">Body · 15px<br>--fs-base</span><span class="nb-type-scale__sample" style="font-size: var(--fs-base); font-family: var(--font-body); font-weight: var(--fw-regular, 400)">Teks paragraf default untuk deskripsi dan tabel.</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">Small · 13px<br>--fs-sm</span><span class="nb-type-scale__sample" style="font-size: var(--fs-sm); font-family: var(--font-body); font-weight: var(--fw-regular, 400)">Label, meta, teks bantuan.</span></div>
+            <div class="nb-type-scale__row"><span class="nb-type-scale__meta">Mono · 11px<br>--fs-2xs</span><span class="nb-type-scale__sample" style="font-size: var(--fs-2xs); font-family: var(--font-mono); font-weight: 400; text-transform: uppercase">AST-26-1284 · 24 OKT 2026</span></div>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Skala tipografi"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Skala tipografi"><code>&lt;div class="nb-type-scale"&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;Display · 56px&lt;br&gt;--fs-display&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-display)"&gt;Inventaris rapi&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;H1 · 40px&lt;br&gt;--fs-4xl&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-4xl)"&gt;Dashboard aset&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;H2 · 34px&lt;br&gt;--fs-3xl&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-3xl)"&gt;Tren peminjaman&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;H3 · 28px&lt;br&gt;--fs-2xl&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-2xl)"&gt;Komposisi kategori&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;H4 · 22px&lt;br&gt;--fs-xl&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-xl)"&gt;Aset terbaru&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;Lead · 18px&lt;br&gt;--fs-lg&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-lg); font-family: var(--font-body); font-weight: var(--fw-regular, 400)"&gt;Kelola 1.284 aset di 48 ruangan.&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;Body · 15px&lt;br&gt;--fs-base&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-base); font-family: var(--font-body); font-weight: var(--fw-regular, 400)"&gt;Teks paragraf default untuk deskripsi dan tabel.&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;Small · 13px&lt;br&gt;--fs-sm&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-sm); font-family: var(--font-body); font-weight: var(--fw-regular, 400)"&gt;Label, meta, teks bantuan.&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-type-scale__row"&gt;&lt;span class="nb-type-scale__meta"&gt;Mono · 11px&lt;br&gt;--fs-2xs&lt;/span&gt;&lt;span class="nb-type-scale__sample" style="font-size: var(--fs-2xs); font-family: var(--font-mono); font-weight: 400; text-transform: uppercase"&gt;AST-26-1284 · 24 OKT 2026&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="prosa" aria-labelledby="prosa-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="prosa-title">Prosa, kode &amp; pintasan</h2>
+            <p class="nb-demo__desc">Kelas <code class="nb-inline-code">.nb-prose</code> memberi jarak dan gaya untuk konten panjang (bantuan, kebijakan). Lebar baris dibatasi agar nyaman dibaca.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-prose">
+            <h3>Aturan peminjaman</h3>
+            <p>Aset dapat dipinjam maksimal <strong>14 hari</strong>. Perpanjangan diajukan paling lambat H-1 melalui menu <em>Peminjaman</em>. Lihat juga <a href="tables.html">daftar aset</a>.</p>
+            <ul>
+              <li>Periksa kondisi aset saat serah terima.</li>
+              <li>Laporkan kerusakan dalam 1×24 jam.</li>
+            </ul>
+            <ol>
+              <li>Pilih aset.</li>
+              <li>Isi tanggal mulai dan kembali.</li>
+              <li>Tunggu persetujuan petugas.</li>
+            </ol>
+            <blockquote><p>“Aset yang terawat adalah aset yang tercatat.”</p></blockquote>
+            <p>Kode aset berformat <code>AST-26-1234</code>. Tekan <kbd class="nb-kbd">/</kbd> untuk mencari dan <kbd class="nb-kbd">Esc</kbd> untuk menutup dialog.</p>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Prosa, kode &amp; pintasan"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Prosa, kode &amp; pintasan"><code>&lt;div class="nb-prose"&gt;
+  &lt;h3&gt;Aturan peminjaman&lt;/h3&gt;
+  &lt;p&gt;Aset dapat dipinjam maksimal &lt;strong&gt;14 hari&lt;/strong&gt;. Perpanjangan diajukan paling lambat H-1 melalui menu &lt;em&gt;Peminjaman&lt;/em&gt;. Lihat juga &lt;a href="tables.html"&gt;daftar aset&lt;/a&gt;.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Periksa kondisi aset saat serah terima.&lt;/li&gt;
+    &lt;li&gt;Laporkan kerusakan dalam 1×24 jam.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Pilih aset.&lt;/li&gt;
+    &lt;li&gt;Isi tanggal mulai dan kembali.&lt;/li&gt;
+    &lt;li&gt;Tunggu persetujuan petugas.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;blockquote&gt;&lt;p&gt;“Aset yang terawat adalah aset yang tercatat.”&lt;/p&gt;&lt;/blockquote&gt;
+  &lt;p&gt;Kode aset berformat &lt;code&gt;AST-26-1234&lt;/code&gt;. Tekan &lt;kbd class="nb-kbd"&gt;/&lt;/kbd&gt; untuk mencari dan &lt;kbd class="nb-kbd"&gt;Esc&lt;/kbd&gt; untuk menutup dialog.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="warna" aria-labelledby="warna-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="warna-title">Palet warna</h2>
+            <p class="nb-demo__desc">Token warna dari <code class="nb-inline-code">tokens.css</code>. Semua teks di atas warna-warna ini memakai tinta gelap #151515 (kontras ≥ 4.5:1), kecuali teks putih di atas tinta.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-grid nb-grid--4">
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-ink)"></span><span class="nb-swatch__label"><strong>--color-ink</strong><br>#151515 · Teks, garis, bayangan</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-canvas)"></span><span class="nb-swatch__label"><strong>--color-canvas</strong><br>#FFFCF5 · Latar halaman</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-paper)"></span><span class="nb-swatch__label"><strong>--color-paper</strong><br>#FFFFFF · Panel, kartu</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-sage)"></span><span class="nb-swatch__label"><strong>--color-sage</strong><br>#B9D9C6 · Sidebar</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-sage-strong)"></span><span class="nb-swatch__label"><strong>--color-sage-strong</strong><br>#9CC7AE · Sidebar aktif</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-yellow)"></span><span class="nb-swatch__label"><strong>--color-yellow</strong><br>#FFD447 · Aksen utama, fokus</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-yellow-soft)"></span><span class="nb-swatch__label"><strong>--color-yellow-soft</strong><br>#FFF1BF · Hover, fokus input</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-lavender)"></span><span class="nb-swatch__label"><strong>--color-lavender</strong><br>#E6B8F0 · Panel analitik</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-mint)"></span><span class="nb-swatch__label"><strong>--color-mint</strong><br>#C6E8D4 · Sukses</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-pink)"></span><span class="nb-swatch__label"><strong>--color-pink</strong><br>#FFC4D6 · Perhatian</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-blue)"></span><span class="nb-swatch__label"><strong>--color-blue</strong><br>#BBDCF7 · Info</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-danger)"></span><span class="nb-swatch__label"><strong>--color-danger</strong><br>#D64A4A · Bahaya (dengan teks gelap)</span></div>
+            <div class="nb-swatch"><span class="nb-swatch__chip" style="background: var(--color-muted)"></span><span class="nb-swatch__label"><strong>--color-muted</strong><br>#5E5E5E · Teks sekunder</span></div>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Palet warna"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Palet warna"><code>&lt;div class="nb-grid nb-grid--4"&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-ink)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-ink&lt;/strong&gt;&lt;br&gt;#151515 · Teks, garis, bayangan&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-canvas)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-canvas&lt;/strong&gt;&lt;br&gt;#FFFCF5 · Latar halaman&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-paper)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-paper&lt;/strong&gt;&lt;br&gt;#FFFFFF · Panel, kartu&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-sage)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-sage&lt;/strong&gt;&lt;br&gt;#B9D9C6 · Sidebar&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-sage-strong)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-sage-strong&lt;/strong&gt;&lt;br&gt;#9CC7AE · Sidebar aktif&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-yellow)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-yellow&lt;/strong&gt;&lt;br&gt;#FFD447 · Aksen utama, fokus&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-yellow-soft)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-yellow-soft&lt;/strong&gt;&lt;br&gt;#FFF1BF · Hover, fokus input&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-lavender)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-lavender&lt;/strong&gt;&lt;br&gt;#E6B8F0 · Panel analitik&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-mint)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-mint&lt;/strong&gt;&lt;br&gt;#C6E8D4 · Sukses&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-pink)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-pink&lt;/strong&gt;&lt;br&gt;#FFC4D6 · Perhatian&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-blue)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-blue&lt;/strong&gt;&lt;br&gt;#BBDCF7 · Info&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-danger)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-danger&lt;/strong&gt;&lt;br&gt;#D64A4A · Bahaya (dengan teks gelap)&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="nb-swatch"&gt;&lt;span class="nb-swatch__chip" style="background: var(--color-muted)"&gt;&lt;/span&gt;&lt;span class="nb-swatch__label"&gt;&lt;strong&gt;--color-muted&lt;/strong&gt;&lt;br&gt;#5E5E5E · Teks sekunder&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <nav class="nb-gallery-pager" aria-label="Halaman komponen lain">
+          <a class="nb-btn nb-btn--outline" href="empty-loading.html"><svg class="nb-icon nb-icon--flip" aria-hidden="true"><use href="#i-chevron-right"></use></svg><span>Sebelumnya: Empty &amp; loading</span></a>
+          <a class="nb-btn nb-btn--ghost" href="../index.html"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+      </nav>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

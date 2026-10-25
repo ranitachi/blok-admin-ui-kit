@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API JavaScript — BLOK Admin UI Kit</title>
+  <meta name="description" content="API global NB, hook data-*, event kustom, contoh kode, dan batasan demo statis BLOK.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+</head>
+<body class="nb-app" data-page="docs-js">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Dokumentasi</li>
+            <li><span aria-current="page">API JavaScript</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Dokumentasi</li>
+          <li><span aria-current="page">API JavaScript</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Dokumentasi</p>
+          <h1 class="nb-page-header__title">API JavaScript</h1>
+          <p class="nb-page-header__desc">Vanilla JS tanpa framework. Semua yang tampil di sini diambil dari berkas di <code class="nb-inline-code">assets/js/</code>.</p>
+        </div>
+      </header>
+
+      <section class="nb-card" id="global" aria-labelledby="global-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="global-title">API global NB</h2></header>
+        <div class="nb-card__body nb-prose">
+<p>Semua modul menempel pada objek global <code class="nb-inline-code">window.NB</code>.</p><div class="nb-table-wrap" tabindex="0" role="region" aria-label="API global NB (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">API global NB</caption>
+<thead><tr><th scope="col">API</th><th scope="col">Berkas</th><th scope="col">Fungsi</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">NB.ready(fn)</code></td><td><code class="nb-inline-code">app.js</code></td><td>Jalankan fn setelah DOM siap (langsung bila sudah siap).</td></tr>
+<tr><td><code class="nb-inline-code">NB.qs(sel, root?)</code></td><td><code class="nb-inline-code">app.js</code></td><td>Pintasan querySelector.</td></tr>
+<tr><td><code class="nb-inline-code">NB.qsa(sel, root?)</code></td><td><code class="nb-inline-code">app.js</code></td><td>querySelectorAll sebagai Array.</td></tr>
+<tr><td><code class="nb-inline-code">NB.escapeHtml(str)</code></td><td><code class="nb-inline-code">app.js</code></td><td>Escape &amp; &lt; &gt; &quot; &#39; sebelum disisipkan ke innerHTML.</td></tr>
+<tr><td><code class="nb-inline-code">NB.storage.get/set(key, value)</code></td><td><code class="nb-inline-code">app.js</code></td><td>Pembungkus localStorage yang aman bila storage diblokir.</td></tr>
+<tr><td><code class="nb-inline-code">NB.display.get/set/clear/apply</code></td><td><code class="nb-inline-code">app.js</code></td><td>Preferensi tampilan (density, textsize, motion) di sessionStorage; menulis atribut data-density, data-text, data-motion pada &lt;html&gt;.</td></tr>
+<tr><td><code class="nb-inline-code">NB.focus.list(root) / NB.focus.trap(root)</code></td><td><code class="nb-inline-code">app.js</code></td><td>Daftar elemen fokusabel dan jebakan Tab.</td></tr>
+<tr><td><code class="nb-inline-code">NB.isDesktop()</code></td><td><code class="nb-inline-code">app.js</code></td><td>True bila lebar viewport ≥ 1024px.</td></tr>
+<tr><td><code class="nb-inline-code">NB.sidebar</code></td><td><code class="nb-inline-code">app.js</code></td><td>Kontrol sidebar (collapse desktop, drawer mobile).</td></tr>
+<tr><td><code class="nb-inline-code">NB.toast({type, title, message, timeout})</code></td><td><code class="nb-inline-code">components.js</code></td><td>Tampilkan toast; type: success | info | warning | danger.</td></tr>
+<tr><td><code class="nb-inline-code">NB.modal.open(id, opener?) / NB.modal.close(id)</code></td><td><code class="nb-inline-code">components.js</code></td><td>Buka/tutup modal atau drawer; fokus kembali ke pemicu.</td></tr>
+<tr><td><code class="nb-inline-code">NB.copyText(text)</code></td><td><code class="nb-inline-code">components.js</code></td><td>Salin teks ke clipboard.</td></tr>
+<tr><td><code class="nb-inline-code">NB.forms.validate(root) / validateField(field) / reset(form)</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Validasi dan reset form.</td></tr>
+<tr><td><code class="nb-inline-code">NB.tables.init(root)</code></td><td><code class="nb-inline-code">tables.js</code></td><td>Inisialisasi tabel interaktif.</td></tr>
+<tr><td><code class="nb-inline-code">NB.charts.bar/line/donut/sparkline/stats</code></td><td><code class="nb-inline-code">charts.js</code></td><td>Renderer SVG.</td></tr>
+<tr><td><code class="nb-inline-code">NB.countUp(scope)</code></td><td><code class="nb-inline-code">charts.js</code></td><td>Animasi hitung angka (data-count-to).</td></tr>
+<tr><td><code class="nb-inline-code">NB.icons.svg(name, extraClass?) / NB.icons.names</code></td><td><code class="nb-inline-code">icons.js</code></td><td>Markup ikon dan daftar nama.</td></tr>
+<tr><td><code class="nb-inline-code">NB.data, NB.records, NB.crud</code></td><td><code class="nb-inline-code">data.js, records.js, pages/crud.js</code></td><td>Data fiktif dan penyimpanan sesi untuk demo CRUD.</td></tr>
+<tr><td><code class="nb-inline-code">NB.passwordScore(pw)</code></td><td><code class="nb-inline-code">pages/auth.js</code></td><td>Skor kekuatan kata sandi untuk meter.</td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="hook" aria-labelledby="hook-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="hook-title">Hook data-*</h2></header>
+        <div class="nb-card__body nb-prose">
+<p>Perilaku dipasang secara deklaratif lewat atribut; JS aman bila elemennya tidak ada.</p><div class="nb-table-wrap" tabindex="0" role="region" aria-label="Hook data-* (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Hook data-*</caption>
+<thead><tr><th scope="col">Atribut</th><th scope="col">Berkas</th><th scope="col">Efek</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">data-modal-open=&quot;id&quot;</code></td><td><code class="nb-inline-code">components.js</code></td><td>Tombol pembuka modal/drawer dengan id tersebut.</td></tr>
+<tr><td><code class="nb-inline-code">data-modal-close</code></td><td><code class="nb-inline-code">components.js</code></td><td>Tombol penutup modal terdekat.</td></tr>
+<tr><td><code class="nb-inline-code">data-dropdown / data-dropdown-trigger</code></td><td><code class="nb-inline-code">components.js</code></td><td>Dropdown, menu, dan popover; Esc menutup lalu fokus kembali ke pemicu.</td></tr>
+<tr><td><code class="nb-inline-code">data-tabs</code></td><td><code class="nb-inline-code">components.js</code></td><td>Wadah tab (role tablist, panah/Home/End).</td></tr>
+<tr><td><code class="nb-inline-code">data-accordion-trigger / data-accordion-single</code></td><td><code class="nb-inline-code">components.js</code></td><td>Akordeon; single = satu panel terbuka.</td></tr>
+<tr><td><code class="nb-inline-code">data-toast, data-toast-message, data-toast-type</code></td><td><code class="nb-inline-code">components.js</code></td><td>Tombol yang memunculkan toast demo.</td></tr>
+<tr><td><code class="nb-inline-code">data-dismiss / data-undismiss / data-dismiss-focus</code></td><td><code class="nb-inline-code">components.js</code></td><td>Menutup dan memulihkan alert; fokus tujuan setelah ditutup.</td></tr>
+<tr><td><code class="nb-inline-code">data-copy / data-copy-label</code></td><td><code class="nb-inline-code">components.js</code></td><td>Tombol salin kode contoh.</td></tr>
+<tr><td><code class="nb-inline-code">data-toggle-group / data-toggle-pressed</code></td><td><code class="nb-inline-code">components.js</code></td><td>Grup tombol aria-pressed (segmented).</td></tr>
+<tr><td><code class="nb-inline-code">data-loading-demo</code></td><td><code class="nb-inline-code">components.js</code></td><td>Tombol demo status loading.</td></tr>
+<tr><td><code class="nb-inline-code">data-autofocus</code></td><td><code class="nb-inline-code">components.js</code></td><td>Elemen yang pertama difokus saat modal terbuka.</td></tr>
+<tr><td><code class="nb-inline-code">data-validate</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Aktifkan validasi pada form (dengan novalidate).</td></tr>
+<tr><td><code class="nb-inline-code">data-required-message / data-pattern-message</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Pesan kesalahan khusus.</td></tr>
+<tr><td><code class="nb-inline-code">data-match=&quot;id&quot;</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Nilai harus sama dengan input lain (konfirmasi sandi).</td></tr>
+<tr><td><code class="nb-inline-code">data-password-toggle</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Tombol lihat/sembunyikan sandi.</td></tr>
+<tr><td><code class="nb-inline-code">data-char-count</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Penghitung karakter.</td></tr>
+<tr><td><code class="nb-inline-code">data-combobox*</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Combobox dengan daftar saran.</td></tr>
+<tr><td><code class="nb-inline-code">data-dropzone*</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Zona unggah berkas simulasi.</td></tr>
+<tr><td><code class="nb-inline-code">data-wizard*</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Form bertahap.</td></tr>
+<tr><td><code class="nb-inline-code">data-dirty-warn</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Peringatan perubahan belum disimpan.</td></tr>
+<tr><td><code class="nb-inline-code">data-table, data-table-search, data-table-filter, data-sort, data-table-select*, data-table-pagination</code></td><td><code class="nb-inline-code">tables.js</code></td><td>Tabel: cari, saring, urut, pilih, halaman.</td></tr>
+<tr><td><code class="nb-inline-code">data-chart, data-chart-source, data-chart-range*</code></td><td><code class="nb-inline-code">charts.js</code></td><td>Chart SVG dari sumber NB.data.</td></tr>
+<tr><td><code class="nb-inline-code">data-count-to, data-sparkline</code></td><td><code class="nb-inline-code">charts.js</code></td><td>Angka hitung naik dan sparkline.</td></tr>
+<tr><td><code class="nb-inline-code">data-sidebar-toggle / data-sidebar-close / data-nav-toggle</code></td><td><code class="nb-inline-code">app.js</code></td><td>Kontrol sidebar dan grup navigasi.</td></tr>
+<tr><td><code class="nb-inline-code">data-quicknav, data-search-toggle</code></td><td><code class="nb-inline-code">app.js</code></td><td>Kotak cari halaman di topbar.</td></tr>
+<tr><td><code class="nb-inline-code">data-board, data-board-col, data-board-move, data-board-to</code></td><td><code class="nb-inline-code">pages/kanban.js</code></td><td>Papan kanban: tombol panah, menu &quot;Pindahkan ke…&quot;, seret-lepas, dan pointer sentuh.</td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="event" aria-labelledby="event-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="event-title">Event kustom</h2></header>
+        <div class="nb-card__body nb-prose">
+<p>Semua event bergelembung (<code class="nb-inline-code">bubbles: true</code>).</p><div class="nb-table-wrap" tabindex="0" role="region" aria-label="Event kustom (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Event kustom</caption>
+<thead><tr><th scope="col">Event</th><th scope="col">Berkas</th><th scope="col">Keterangan</th></tr></thead>
+<tbody>
+<tr><td><code class="nb-inline-code">nb:valid-submit</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Form valid disubmit. detail = {form, data: FormData}. Dengarkan ini, bukan submit.</td></tr>
+<tr><td><code class="nb-inline-code">nb:form-reset</code></td><td><code class="nb-inline-code">forms.js</code></td><td>Form direset lewat NB.forms.reset.</td></tr>
+<tr><td><code class="nb-inline-code">nb:modal-open / nb:modal-close</code></td><td><code class="nb-inline-code">components.js</code></td><td>Modal dibuka/ditutup (bubbles).</td></tr>
+<tr><td><code class="nb-inline-code">nb:dismiss</code></td><td><code class="nb-inline-code">components.js</code></td><td>Alert ditutup.</td></tr>
+<tr><td><code class="nb-inline-code">nb:toggle-group</code></td><td><code class="nb-inline-code">components.js</code></td><td>Pilihan grup toggle berubah.</td></tr>
+</tbody>
+</table>
+</div>
+        </div>
+      </section>
+      <section class="nb-card" id="contoh" aria-labelledby="contoh-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="contoh-title">Contoh kode</h2></header>
+        <div class="nb-card__body nb-prose">
+<pre class="nb-code" tabindex="0" aria-label="Contoh markup form"><code>&lt;form id=&quot;form-contoh&quot; data-validate novalidate&gt;
+  &lt;label class=&quot;nb-label&quot; for=&quot;nama&quot;&gt;Nama&lt;/label&gt;
+  &lt;input class=&quot;nb-input&quot; id=&quot;nama&quot; name=&quot;nama&quot; required
+         data-required-message=&quot;Nama wajib diisi.&quot;&gt;
+  &lt;button class=&quot;nb-btn&quot; type=&quot;submit&quot;&gt;Simpan&lt;/button&gt;
+&lt;/form&gt;</code></pre><pre class="nb-code" tabindex="0" aria-label="Contoh JavaScript nb:valid-submit"><code>NB.ready(function () {
+  var form = NB.qs(&quot;#form-contoh&quot;);
+  if (!form) return;
+  form.addEventListener(&quot;nb:valid-submit&quot;, function (e) {
+    var nama = e.detail.data.get(&quot;nama&quot;);
+    NB.toast({ type: &quot;success&quot;, title: &quot;Tersimpan (demo)&quot;, message: nama });
+    NB.modal.close(&quot;modal-contoh&quot;);
+  });
+});</code></pre>
+        </div>
+      </section>
+      <section class="nb-card" id="batasan" aria-labelledby="batasan-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="batasan-title">Batasan demo statis</h2></header>
+        <div class="nb-card__body nb-prose">
+<ul><li>Tanpa backend dan tanpa <code class="nb-inline-code">fetch</code>. Semua data berasal dari <code class="nb-inline-code">data.js</code> dan <code class="nb-inline-code">records.js</code>.</li><li><code class="nb-inline-code">sessionStorage</code> dipakai untuk preferensi tampilan dan perubahan demo CRUD; hilang saat tab ditutup. <code class="nb-inline-code">localStorage</code> hanya lewat <code class="nb-inline-code">NB.storage</code> untuk preferensi UI.</li><li>Form auth tidak pernah menyimpan kata sandi.</li><li>Toast demo selalu bertanda &quot;(demo)&quot; dan tidak menjanjikan data tersimpan.</li></ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

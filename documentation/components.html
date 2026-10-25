@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indeks komponen — BLOK Admin UI Kit</title>
+  <meta name="description" content="Tabel semua komponen .nb-* BLOK: kelas, modifier, atribut data-*, dan tautan ke halaman demo.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/pages/docs-components.js" defer></script>
+</head>
+<body class="nb-app" data-page="docs-components">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>Dokumentasi</li>
+            <li><span aria-current="page">Indeks komponen</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>Dokumentasi</li>
+          <li><span aria-current="page">Indeks komponen</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">Dokumentasi</p>
+          <h1 class="nb-page-header__title">Indeks komponen</h1>
+          <p class="nb-page-header__desc">Semua komponen <code class="nb-inline-code">.nb-*</code> dengan kelas, modifier, atribut <code class="nb-inline-code">data-*</code>, dan halaman demo.</p>
+        </div>
+      </header>
+
+      <section class="nb-card" aria-labelledby="ci-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="ci-title">122 kelas komponen</h2></header>
+        <div class="nb-card__body nb-prose">
+          <p>Daftar dibangun dari kelas yang benar-benar didefinisikan di <code class="nb-inline-code">components.css</code> dan <code class="nb-inline-code">layout.css</code>. Modifier dan elemen diambil dari seluruh stylesheet; atribut <code class="nb-inline-code">data-*</code> diambil dari markup halaman demo. Kolom demo menaut ke halaman di <code class="nb-inline-code">components/</code> yang memakai kelas tersebut.</p>
+          <div class="nb-field"><label class="nb-label" for="ci-filter">Saring komponen</label><input class="nb-input" id="ci-filter" type="search" placeholder="mis. btn, modal, table" autocomplete="off" data-ci-filter></div>
+          <p class="nb-help" id="ci-count" role="status" data-ci-count>122 komponen</p>
+        </div>
+      </section>
+      <section class="nb-card" aria-labelledby="ci-table-title">
+        <header class="nb-card__header"><h2 class="nb-card__title" id="ci-table-title">Tabel komponen</h2></header>
+<div class="nb-table-wrap" tabindex="0" role="region" aria-label="Indeks komponen BLOK (tabel)">
+<table class="nb-table nb-table--dense">
+<caption class="nb-sr-only">Indeks komponen BLOK</caption>
+<thead><tr><th scope="col">Komponen</th><th scope="col">Kelas utama dan modifier</th><th scope="col">Atribut data-*</th><th scope="col">Halaman demo</th></tr></thead>
+<tbody>
+<tr><td><strong>icon</strong></td><td><code class="nb-inline-code">.nb-icon</code><br><small>Modifier: <code class="nb-inline-code">--flip</code> <code class="nb-inline-code">--lg</code> <code class="nb-inline-code">--sm</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>btn</strong></td><td><code class="nb-inline-code">.nb-btn</code><br><small>Modifier: <code class="nb-inline-code">--block</code> <code class="nb-inline-code">--caret</code> <code class="nb-inline-code">--danger</code> <code class="nb-inline-code">--ghost</code> <code class="nb-inline-code">--icon</code> <code class="nb-inline-code">--lg</code> <code class="nb-inline-code">--outline</code> <code class="nb-inline-code">--sm</code> …</small></td><td><code class="nb-inline-code">data-autofocus</code> <code class="nb-inline-code">data-badge-cycle-btn</code> <code class="nb-inline-code">data-bulk-title</code> <code class="nb-inline-code">data-confirm-target</code> <code class="nb-inline-code">data-dropdown-trigger</code> <code class="nb-inline-code">data-focus-target</code> <code class="nb-inline-code">data-loading-demo</code> <code class="nb-inline-code">data-modal-close</code> <code class="nb-inline-code">data-modal-open</code> <code class="nb-inline-code">data-noresults-clear</code> <code class="nb-inline-code">data-progress-demo-run</code> <code class="nb-inline-code">data-skeleton-demo</code> <code class="nb-inline-code">data-table-bulk</code> <code class="nb-inline-code">data-table-reset</code> <code class="nb-inline-code">data-toast</code> <code class="nb-inline-code">data-toast-burst</code> <code class="nb-inline-code">data-toast-message</code> <code class="nb-inline-code">data-toast-type</code> <code class="nb-inline-code">data-toggle-pressed</code> <code class="nb-inline-code">data-undismiss</code> <code class="nb-inline-code">data-upload-demo-run</code> <code class="nb-inline-code">data-wizard-next</code> <code class="nb-inline-code">data-wizard-prev</code> <code class="nb-inline-code">data-wizard-submit</code></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>icon btn</strong></td><td><code class="nb-inline-code">.nb-icon-btn</code><br><small>Elemen: <code class="nb-inline-code">__dot</code></small><br><small>Modifier: <code class="nb-inline-code">--plain</code></small></td><td><code class="nb-inline-code">data-dismiss</code> <code class="nb-inline-code">data-dismiss-focus</code> <code class="nb-inline-code">data-dropdown-trigger</code> <code class="nb-inline-code">data-kanban-move</code> <code class="nb-inline-code">data-modal-close</code> <code class="nb-inline-code">data-modal-open</code> <code class="nb-inline-code">data-notif-trigger</code> <code class="nb-inline-code">data-password-toggle</code> <code class="nb-inline-code">data-search-toggle</code> <code class="nb-inline-code">data-sidebar-close</code> <code class="nb-inline-code">data-sidebar-toggle</code> <code class="nb-inline-code">data-table-row-delete</code> <code class="nb-inline-code">data-toast</code> <code class="nb-inline-code">data-toast-message</code></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>segmented</strong></td><td><code class="nb-inline-code">.nb-segmented</code><br><small>Elemen: <code class="nb-inline-code">__btn</code></small><br><small>Modifier: <code class="nb-inline-code">--wrap</code></small></td><td><code class="nb-inline-code">data-chart-range-for</code> <code class="nb-inline-code">data-table-density</code> <code class="nb-inline-code">data-toggle-group</code></td><td><a href="../components/buttons.html">Tombol</a>, <a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/tables.html">Tabel</a> <small>+1</small></td></tr>
+<tr><td><strong>card</strong></td><td><code class="nb-inline-code">.nb-card</code><br><small>Elemen: <code class="nb-inline-code">__body</code> <code class="nb-inline-code">__footer</code> <code class="nb-inline-code">__header</code> <code class="nb-inline-code">__media</code> <code class="nb-inline-code">__media-label</code> <code class="nb-inline-code">__subtitle</code> <code class="nb-inline-code">__title</code></small><br><small>Modifier: <code class="nb-inline-code">--accent</code> <code class="nb-inline-code">--blue</code> <code class="nb-inline-code">--canvas</code> <code class="nb-inline-code">--danger-zone</code> <code class="nb-inline-code">--feature</code> <code class="nb-inline-code">--flat</code> <code class="nb-inline-code">--flush</code> <code class="nb-inline-code">--interactive</code> …</small></td><td><code class="nb-inline-code">data-page-size</code> <code class="nb-inline-code">data-table</code> <code class="nb-inline-code">data-table-label</code> <code class="nb-inline-code">data-validate</code> <code class="nb-inline-code">data-wizard</code></td><td><a href="../components/cards.html">Kartu</a>, <a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/empty-loading.html">Empty &amp; loading</a> <small>+3</small></td></tr>
+<tr><td><strong>kpi</strong></td><td><code class="nb-inline-code">.nb-kpi</code><br><small>Elemen: <code class="nb-inline-code">__bottom</code> <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__label</code> <code class="nb-inline-code">__meta</code> <code class="nb-inline-code">__spark</code> <code class="nb-inline-code">__top</code> <code class="nb-inline-code">__value</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/cards.html">Kartu</a>, <a href="../components/charts.html">Chart &amp; KPI</a></td></tr>
+<tr><td><strong>badge</strong></td><td><code class="nb-inline-code">.nb-badge</code><br><small>Modifier: <code class="nb-inline-code">--danger</code> <code class="nb-inline-code">--dot</code> <code class="nb-inline-code">--info</code> <code class="nb-inline-code">--ink</code> <code class="nb-inline-code">--lavender</code> <code class="nb-inline-code">--neutral</code> <code class="nb-inline-code">--outline</code> <code class="nb-inline-code">--success</code> …</small></td><td><code class="nb-inline-code">data-badge-cycle</code></td><td><a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/cards.html">Kartu</a>, <a href="../components/dropdowns.html">Dropdown &amp; popover</a> <small>+3</small></td></tr>
+<tr><td><strong>delta</strong></td><td><code class="nb-inline-code">.nb-delta</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/cards.html">Kartu</a>, <a href="../components/charts.html">Chart &amp; KPI</a></td></tr>
+<tr><td><strong>dropdown</strong></td><td><code class="nb-inline-code">.nb-dropdown</code></td><td><code class="nb-inline-code">data-dropdown</code></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>menu</strong></td><td><code class="nb-inline-code">.nb-menu</code><br><small>Elemen: <code class="nb-inline-code">__header</code> <code class="nb-inline-code">__item</code> <code class="nb-inline-code">__sep</code></small><br><small>Modifier: <code class="nb-inline-code">--danger</code> <code class="nb-inline-code">--left</code> <code class="nb-inline-code">--up</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>popover</strong></td><td><code class="nb-inline-code">.nb-popover</code><br><small>Elemen: <code class="nb-inline-code">__body</code> <code class="nb-inline-code">__footer</code> <code class="nb-inline-code">__header</code></small><br><small>Modifier: <code class="nb-inline-code">--left</code> <code class="nb-inline-code">--narrow</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>link btn</strong></td><td><code class="nb-inline-code">.nb-link-btn</code></td><td><code class="nb-inline-code">data-notif-mark-all</code> <code class="nb-inline-code">data-toast</code> <code class="nb-inline-code">data-toast-message</code></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>notif list</strong></td><td><code class="nb-inline-code">.nb-notif-list</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>notif</strong></td><td><code class="nb-inline-code">.nb-notif</code><br><small>Elemen: <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__time</code> <code class="nb-inline-code">__title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>search</strong></td><td><code class="nb-inline-code">.nb-search</code><br><small>Elemen: <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__input</code> <code class="nb-inline-code">__kbd</code></small><br><small>Modifier: <code class="nb-inline-code">--lg</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>search results</strong></td><td><code class="nb-inline-code">.nb-search-results</code><br><small>Elemen: <code class="nb-inline-code">__empty</code> <code class="nb-inline-code">__item</code></small></td><td><code class="nb-inline-code">data-quicknav-results</code></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>kbd</strong></td><td><code class="nb-inline-code">.nb-kbd</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/icons-typography.html">Ikon &amp; tipografi</a>, <a href="../components/navigation.html">Navigasi</a></td></tr>
+<tr><td><strong>avatar</strong></td><td><code class="nb-inline-code">.nb-avatar</code><br><small>Modifier: <code class="nb-inline-code">--blue</code> <code class="nb-inline-code">--lavender</code> <code class="nb-inline-code">--lg</code> <code class="nb-inline-code">--mint</code> <code class="nb-inline-code">--more</code> <code class="nb-inline-code">--pink</code> <code class="nb-inline-code">--sm</code> <code class="nb-inline-code">--yellow</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>user btn</strong></td><td><code class="nb-inline-code">.nb-user-btn</code><br><small>Elemen: <code class="nb-inline-code">__text</code></small></td><td><code class="nb-inline-code">data-dropdown-trigger</code></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>tabs</strong></td><td><code class="nb-inline-code">.nb-tabs</code><br><small>Elemen: <code class="nb-inline-code">__list</code> <code class="nb-inline-code">__panel</code> <code class="nb-inline-code">__tab</code></small></td><td><code class="nb-inline-code">data-tabs</code></td><td><a href="../components/tabs-accordion.html">Tab &amp; akordeon</a></td></tr>
+<tr><td><strong>table wrap</strong></td><td><code class="nb-inline-code">.nb-table-wrap</code><br><small>Modifier: <code class="nb-inline-code">--sticky</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>sr only</strong></td><td><code class="nb-inline-code">.nb-sr-only</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>table</strong></td><td><code class="nb-inline-code">.nb-table</code><br><small>Elemen: <code class="nb-inline-code">__empty</code></small><br><small>Modifier: <code class="nb-inline-code">--comfortable</code> <code class="nb-inline-code">--dense</code> <code class="nb-inline-code">--striped</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>cell id</strong></td><td><code class="nb-inline-code">.nb-cell-id</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>cell strong</strong></td><td><code class="nb-inline-code">.nb-cell-strong</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>cell muted</strong></td><td><code class="nb-inline-code">.nb-cell-muted</code></td><td><code class="nb-inline-code">data-sort-value</code></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>cell num</strong></td><td><code class="nb-inline-code">.nb-cell-num</code></td><td><code class="nb-inline-code">data-sort-value</code></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>field</strong></td><td><code class="nb-inline-code">.nb-field</code><br><small>Modifier: <code class="nb-inline-code">--full</code></small></td><td><code class="nb-inline-code">data-combobox</code></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a>, <a href="../components/forms.html">Formulir</a>, <a href="../components/icons-typography.html">Ikon &amp; tipografi</a> <small>+2</small></td></tr>
+<tr><td><strong>label</strong></td><td><code class="nb-inline-code">.nb-label</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a>, <a href="../components/forms.html">Formulir</a>, <a href="../components/icons-typography.html">Ikon &amp; tipografi</a> <small>+2</small></td></tr>
+<tr><td><strong>req</strong></td><td><code class="nb-inline-code">.nb-req</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a></td></tr>
+<tr><td><strong>input</strong></td><td><code class="nb-inline-code">.nb-input</code></td><td><code class="nb-inline-code">data-autofocus</code> <code class="nb-inline-code">data-confirm-input</code> <code class="nb-inline-code">data-date-after</code> <code class="nb-inline-code">data-match</code> <code class="nb-inline-code">data-match-message</code> <code class="nb-inline-code">data-pattern-message</code></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a></td></tr>
+<tr><td><strong>select</strong></td><td><code class="nb-inline-code">.nb-select</code></td><td><code class="nb-inline-code">data-table-filter</code></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a>, <a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>textarea</strong></td><td><code class="nb-inline-code">.nb-textarea</code></td><td><code class="nb-inline-code">data-char-count</code></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>help</strong></td><td><code class="nb-inline-code">.nb-help</code></td><td><code class="nb-inline-code">data-icon-filter-count</code> <code class="nb-inline-code">data-icon-filter-empty</code> <code class="nb-inline-code">data-kanban-status</code> <code class="nb-inline-code">data-noresults-count</code> <code class="nb-inline-code">data-progress-demo-text</code></td><td><a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/empty-loading.html">Empty &amp; loading</a>, <a href="../components/forms.html">Formulir</a> <small>+3</small></td></tr>
+<tr><td><strong>error</strong></td><td><code class="nb-inline-code">.nb-error</code></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>form grid</strong></td><td><code class="nb-inline-code">.nb-form-grid</code><br><small>Modifier: <code class="nb-inline-code">--3</code></small></td><td><code class="nb-inline-code">data-validate</code></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a></td></tr>
+<tr><td><strong>progress</strong></td><td><code class="nb-inline-code">.nb-progress</code><br><small>Elemen: <code class="nb-inline-code">__bar</code></small><br><small>Modifier: <code class="nb-inline-code">--thin</code></small></td><td><code class="nb-inline-code">data-progress-demo</code> <code class="nb-inline-code">data-upload-demo</code></td><td><a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/empty-loading.html">Empty &amp; loading</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>list</strong></td><td><code class="nb-inline-code">.nb-list</code><br><small>Elemen: <code class="nb-inline-code">__item</code> <code class="nb-inline-code">__main</code> <code class="nb-inline-code">__meta</code> <code class="nb-inline-code">__title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>feed</strong></td><td><code class="nb-inline-code">.nb-feed</code><br><small>Elemen: <code class="nb-inline-code">__item</code> <code class="nb-inline-code">__marker</code> <code class="nb-inline-code">__text</code> <code class="nb-inline-code">__time</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>chart</strong></td><td><code class="nb-inline-code">.nb-chart</code><br><small>Elemen: <code class="nb-inline-code">__area</code> <code class="nb-inline-code">__axis</code> <code class="nb-inline-code">__bar</code> <code class="nb-inline-code">__bar-group</code> <code class="nb-inline-code">__dot</code> <code class="nb-inline-code">__grid</code> <code class="nb-inline-code">__line</code> <code class="nb-inline-code">__point</code> …</small><br><small>Modifier: <code class="nb-inline-code">--alt</code></small></td><td><code class="nb-inline-code">data-chart</code> <code class="nb-inline-code">data-chart-center</code> <code class="nb-inline-code">data-chart-range</code> <code class="nb-inline-code">data-chart-source</code></td><td><a href="../components/cards.html">Kartu</a>, <a href="../components/charts.html">Chart &amp; KPI</a></td></tr>
+<tr><td><strong>chart fallback</strong></td><td><code class="nb-inline-code">.nb-chart-fallback</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/cards.html">Kartu</a>, <a href="../components/charts.html">Chart &amp; KPI</a></td></tr>
+<tr><td><strong>donut</strong></td><td><code class="nb-inline-code">.nb-donut</code><br><small>Elemen: <code class="nb-inline-code">__center-label</code> <code class="nb-inline-code">__center-value</code> <code class="nb-inline-code">__svg</code></small></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>legend</strong></td><td><code class="nb-inline-code">.nb-legend</code><br><small>Elemen: <code class="nb-inline-code">__item</code> <code class="nb-inline-code">__swatch</code> <code class="nb-inline-code">__value</code></small><br><small>Modifier: <code class="nb-inline-code">--dash</code> <code class="nb-inline-code">--inline</code> <code class="nb-inline-code">--line</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/charts.html">Chart &amp; KPI</a></td></tr>
+<tr><td><strong>sparkline</strong></td><td><code class="nb-inline-code">.nb-sparkline</code></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>modal</strong></td><td><code class="nb-inline-code">.nb-modal</code><br><small>Elemen: <code class="nb-inline-code">__body</code> <code class="nb-inline-code">__dialog</code> <code class="nb-inline-code">__footer</code> <code class="nb-inline-code">__form</code> <code class="nb-inline-code">__header</code> <code class="nb-inline-code">__title</code></small><br><small>Modifier: <code class="nb-inline-code">--drawer</code> <code class="nb-inline-code">--drawer-left</code> <code class="nb-inline-code">--lg</code> <code class="nb-inline-code">--sm</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/modals.html">Modal &amp; drawer</a>, <a href="../components/navigation.html">Navigasi</a></td></tr>
+<tr><td><strong>scroll lock</strong></td><td><code class="nb-inline-code">.nb-scroll-lock</code></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>toast stack</strong></td><td><code class="nb-inline-code">.nb-toast-stack</code></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>toast</strong></td><td><code class="nb-inline-code">.nb-toast</code><br><small>Elemen: <code class="nb-inline-code">__close</code> <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__msg</code> <code class="nb-inline-code">__title</code></small><br><small>Modifier: <code class="nb-inline-code">--danger</code> <code class="nb-inline-code">--info</code> <code class="nb-inline-code">--success</code> <code class="nb-inline-code">--warning</code></small></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>alert</strong></td><td><code class="nb-inline-code">.nb-alert</code><br><small>Elemen: <code class="nb-inline-code">__actions</code> <code class="nb-inline-code">__body</code> <code class="nb-inline-code">__close</code> <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__title</code></small><br><small>Modifier: <code class="nb-inline-code">--banner</code> <code class="nb-inline-code">--danger</code> <code class="nb-inline-code">--lavender</code> <code class="nb-inline-code">--neutral</code> <code class="nb-inline-code">--success</code> <code class="nb-inline-code">--warning</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a></td></tr>
+<tr><td><strong>code</strong></td><td><code class="nb-inline-code">.nb-code</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>swatch</strong></td><td><code class="nb-inline-code">.nb-swatch</code><br><small>Elemen: <code class="nb-inline-code">__chip</code> <code class="nb-inline-code">__label</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/icons-typography.html">Ikon &amp; tipografi</a></td></tr>
+<tr><td><strong>btn group</strong></td><td><code class="nb-inline-code">.nb-btn-group</code></td><td><code class="nb-inline-code">data-toggle-group</code></td><td><a href="../components/buttons.html">Tombol</a></td></tr>
+<tr><td><strong>btn row</strong></td><td><code class="nb-inline-code">.nb-btn-row</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/buttons.html">Tombol</a>, <a href="../components/cards.html">Kartu</a> <small>+5</small></td></tr>
+<tr><td><strong>profile</strong></td><td><code class="nb-inline-code">.nb-profile</code><br><small>Elemen: <code class="nb-inline-code">__head</code> <code class="nb-inline-code">__name</code> <code class="nb-inline-code">__role</code> <code class="nb-inline-code">__stats</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/cards.html">Kartu</a>, <a href="../components/empty-loading.html">Empty &amp; loading</a></td></tr>
+<tr><td><strong>price</strong></td><td><code class="nb-inline-code">.nb-price</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/cards.html">Kartu</a></td></tr>
+<tr><td><strong>check list</strong></td><td><code class="nb-inline-code">.nb-check-list</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/cards.html">Kartu</a></td></tr>
+<tr><td><strong>feature icon</strong></td><td><code class="nb-inline-code">.nb-feature-icon</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/cards.html">Kartu</a></td></tr>
+<tr><td><strong>count</strong></td><td><code class="nb-inline-code">.nb-count</code><br><small>Modifier: <code class="nb-inline-code">--yellow</code></small></td><td><code class="nb-inline-code">data-kanban-count</code></td><td><a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/tabs-accordion.html">Tab &amp; akordeon</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>status dot</strong></td><td><code class="nb-inline-code">.nb-status-dot</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>tooltip wrap</strong></td><td><code class="nb-inline-code">.nb-tooltip-wrap</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/dropdowns.html">Dropdown &amp; popover</a></td></tr>
+<tr><td><strong>tooltip</strong></td><td><code class="nb-inline-code">.nb-tooltip</code><br><small>Modifier: <code class="nb-inline-code">--bottom</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/dropdowns.html">Dropdown &amp; popover</a></td></tr>
+<tr><td><strong>spinner</strong></td><td><code class="nb-inline-code">.nb-spinner</code><br><small>Modifier: <code class="nb-inline-code">--lg</code> <code class="nb-inline-code">--sm</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a></td></tr>
+<tr><td><strong>loading inline</strong></td><td><code class="nb-inline-code">.nb-loading-inline</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a></td></tr>
+<tr><td><strong>skeleton</strong></td><td><code class="nb-inline-code">.nb-skeleton</code><br><small>Modifier: <code class="nb-inline-code">--avatar</code> <code class="nb-inline-code">--block</code> <code class="nb-inline-code">--short</code> <code class="nb-inline-code">--text</code> <code class="nb-inline-code">--title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a></td></tr>
+<tr><td><strong>skeleton group</strong></td><td><code class="nb-inline-code">.nb-skeleton-group</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a></td></tr>
+<tr><td><strong>stepper</strong></td><td><code class="nb-inline-code">.nb-stepper</code><br><small>Elemen: <code class="nb-inline-code">__item</code></small></td><td><code class="nb-inline-code">data-wizard-steps</code></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a>, <a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>empty</strong></td><td><code class="nb-inline-code">.nb-empty</code><br><small>Elemen: <code class="nb-inline-code">__actions</code> <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__text</code> <code class="nb-inline-code">__title</code></small></td><td><code class="nb-inline-code">data-noresults-empty</code></td><td><a href="../components/cards.html">Kartu</a>, <a href="../components/empty-loading.html">Empty &amp; loading</a></td></tr>
+<tr><td><strong>error block</strong></td><td><code class="nb-inline-code">.nb-error-block</code><br><small>Elemen: <code class="nb-inline-code">__code</code></small><br><small>Modifier: <code class="nb-inline-code">--lavender</code> <code class="nb-inline-code">--pink</code> <code class="nb-inline-code">--yellow</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a></td></tr>
+<tr><td><strong>fieldset</strong></td><td><code class="nb-inline-code">.nb-fieldset</code></td><td><code class="nb-inline-code">data-wizard-step</code></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a></td></tr>
+<tr><td><strong>choice list</strong></td><td><code class="nb-inline-code">.nb-choice-list</code><br><small>Modifier: <code class="nb-inline-code">--inline</code></small></td><td><code class="nb-inline-code">data-check-parent-group</code></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a></td></tr>
+<tr><td><strong>check</strong></td><td><code class="nb-inline-code">.nb-check</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a>, <a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>switch</strong></td><td><code class="nb-inline-code">.nb-switch</code><br><small>Elemen: <code class="nb-inline-code">__state</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>range field</strong></td><td><code class="nb-inline-code">.nb-range-field</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>range</strong></td><td><code class="nb-inline-code">.nb-range</code></td><td><code class="nb-inline-code">data-range-output</code> <code class="nb-inline-code">data-range-suffix</code></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>range output</strong></td><td><code class="nb-inline-code">.nb-range-output</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>input group</strong></td><td><code class="nb-inline-code">.nb-input-group</code><br><small>Elemen: <code class="nb-inline-code">__addon</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>inline form</strong></td><td><code class="nb-inline-code">.nb-inline-form</code></td><td><code class="nb-inline-code">data-demo-filter</code></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>form actions</strong></td><td><code class="nb-inline-code">.nb-form-actions</code><br><small>Modifier: <code class="nb-inline-code">--sticky</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>dirty flag</strong></td><td><code class="nb-inline-code">.nb-dirty-flag</code></td><td><code class="nb-inline-code">data-dirty-flag</code></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>combo</strong></td><td><code class="nb-inline-code">.nb-combo</code><br><small>Elemen: <code class="nb-inline-code">__empty</code> <code class="nb-inline-code">__list</code> <code class="nb-inline-code">__option</code></small></td><td><code class="nb-inline-code">data-combobox</code></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>dropzone</strong></td><td><code class="nb-inline-code">.nb-dropzone</code><br><small>Elemen: <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__title</code></small></td><td><code class="nb-inline-code">data-dropzone</code> <code class="nb-inline-code">data-dropzone-status</code> <code class="nb-inline-code">data-max-size</code> <code class="nb-inline-code">data-simulate-upload</code></td><td><a href="../components/forms.html">Formulir</a></td></tr>
+<tr><td><strong>file list</strong></td><td><code class="nb-inline-code">.nb-file-list</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/tabs-accordion.html">Tab &amp; akordeon</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>file</strong></td><td><code class="nb-inline-code">.nb-file</code><br><small>Elemen: <code class="nb-inline-code">__icon</code> <code class="nb-inline-code">__main</code> <code class="nb-inline-code">__meta</code> <code class="nb-inline-code">__name</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/tabs-accordion.html">Tab &amp; akordeon</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>accordion</strong></td><td><code class="nb-inline-code">.nb-accordion</code><br><small>Elemen: <code class="nb-inline-code">__heading</code> <code class="nb-inline-code">__item</code> <code class="nb-inline-code">__panel</code> <code class="nb-inline-code">__trigger</code></small></td><td><code class="nb-inline-code">data-accordion-single</code></td><td><a href="../components/tabs-accordion.html">Tab &amp; akordeon</a></td></tr>
+<tr><td><strong>pagination</strong></td><td><code class="nb-inline-code">.nb-pagination</code><br><small>Elemen: <code class="nb-inline-code">__btn</code> <code class="nb-inline-code">__gap</code> <code class="nb-inline-code">__info</code> <code class="nb-inline-code">__list</code></small></td><td><code class="nb-inline-code">data-demo-pager</code> <code class="nb-inline-code">data-per-page</code> <code class="nb-inline-code">data-total</code></td><td><a href="../components/navigation.html">Navigasi</a>, <a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>table toolbar</strong></td><td><code class="nb-inline-code">.nb-table-toolbar</code><br><small>Elemen: <code class="nb-inline-code">__search</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>table footer</strong></td><td><code class="nb-inline-code">.nb-table-footer</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>bulkbar</strong></td><td><code class="nb-inline-code">.nb-bulkbar</code><br><small>Elemen: <code class="nb-inline-code">__actions</code></small></td><td><code class="nb-inline-code">data-table-bulkbar</code></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>cell check</strong></td><td><code class="nb-inline-code">.nb-cell-check</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>cell actions</strong></td><td><code class="nb-inline-code">.nb-cell-actions</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>row actions</strong></td><td><code class="nb-inline-code">.nb-row-actions</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>sort</strong></td><td><code class="nb-inline-code">.nb-sort</code></td><td><code class="nb-inline-code">data-sort</code></td><td><a href="../components/tables.html">Tabel</a></td></tr>
+<tr><td><strong>avatar group</strong></td><td><code class="nb-inline-code">.nb-avatar-group</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>dl</strong></td><td><code class="nb-inline-code">.nb-dl</code><br><small>Modifier: <code class="nb-inline-code">--stacked</code></small></td><td><code class="nb-inline-code">data-wizard-summary</code></td><td><a href="../components/forms.html">Formulir</a>, <a href="../components/modals.html">Modal &amp; drawer</a>, <a href="../components/tabs-accordion.html">Tab &amp; akordeon</a> <small>+1</small></td></tr>
+<tr><td><strong>timeline</strong></td><td><code class="nb-inline-code">.nb-timeline</code><br><small>Elemen: <code class="nb-inline-code">__head</code> <code class="nb-inline-code">__item</code> <code class="nb-inline-code">__marker</code> <code class="nb-inline-code">__text</code> <code class="nb-inline-code">__time</code> <code class="nb-inline-code">__title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/modals.html">Modal &amp; drawer</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>stat list</strong></td><td><code class="nb-inline-code">.nb-stat-list</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>list group</strong></td><td><code class="nb-inline-code">.nb-list-group</code><br><small>Elemen: <code class="nb-inline-code">__item</code></small></td><td><code class="nb-inline-code">data-noresults-list</code></td><td><a href="../components/empty-loading.html">Empty &amp; loading</a>, <a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>cal</strong></td><td><code class="nb-inline-code">.nb-cal</code><br><small>Elemen: <code class="nb-inline-code">__day</code> <code class="nb-inline-code">__head</code> <code class="nb-inline-code">__title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>kanban</strong></td><td><code class="nb-inline-code">.nb-kanban</code><br><small>Elemen: <code class="nb-inline-code">__col</code> <code class="nb-inline-code">__empty</code> <code class="nb-inline-code">__head</code> <code class="nb-inline-code">__list</code></small><br><small>Modifier: <code class="nb-inline-code">--board</code></small></td><td><code class="nb-inline-code">data-kanban</code></td><td><a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>task</strong></td><td><code class="nb-inline-code">.nb-task</code><br><small>Elemen: <code class="nb-inline-code">__actions</code> <code class="nb-inline-code">__desc</code> <code class="nb-inline-code">__due</code> <code class="nb-inline-code">__foot</code> <code class="nb-inline-code">__hint</code> <code class="nb-inline-code">__meta</code> <code class="nb-inline-code">__move</code> <code class="nb-inline-code">__move-menu</code> …</small><br><small>Modifier: <code class="nb-inline-code">--board</code></small></td><td><code class="nb-inline-code">data-task</code></td><td><a href="../components/timelines.html">Timeline &amp; konten</a></td></tr>
+<tr><td><strong>icon grid</strong></td><td><code class="nb-inline-code">.nb-icon-grid</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/icons-typography.html">Ikon &amp; tipografi</a></td></tr>
+<tr><td><strong>icon tile</strong></td><td><code class="nb-inline-code">.nb-icon-tile</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/icons-typography.html">Ikon &amp; tipografi</a></td></tr>
+<tr><td><strong>type scale</strong></td><td><code class="nb-inline-code">.nb-type-scale</code><br><small>Elemen: <code class="nb-inline-code">__meta</code> <code class="nb-inline-code">__row</code> <code class="nb-inline-code">__sample</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/icons-typography.html">Ikon &amp; tipografi</a></td></tr>
+<tr><td><strong>prose</strong></td><td><code class="nb-inline-code">.nb-prose</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/icons-typography.html">Ikon &amp; tipografi</a></td></tr>
+<tr><td><strong>inline code</strong></td><td><code class="nb-inline-code">.nb-inline-code</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>app</strong></td><td><code class="nb-inline-code">.nb-app</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>main</strong></td><td><code class="nb-inline-code">.nb-main</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>content</strong></td><td><code class="nb-inline-code">.nb-content</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>sidebar</strong></td><td><code class="nb-inline-code">.nb-sidebar</code><br><small>Elemen: <code class="nb-inline-code">__brand</code> <code class="nb-inline-code">__close</code> <code class="nb-inline-code">__footer</code> <code class="nb-inline-code">__nav</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>brand</strong></td><td><code class="nb-inline-code">.nb-brand</code><br><small>Elemen: <code class="nb-inline-code">__mark</code> <code class="nb-inline-code">__text</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>nav group</strong></td><td><code class="nb-inline-code">.nb-nav-group</code><br><small>Elemen: <code class="nb-inline-code">__title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>nav</strong></td><td><code class="nb-inline-code">.nb-nav</code><br><small>Elemen: <code class="nb-inline-code">__chevron</code> <code class="nb-inline-code">__count</code> <code class="nb-inline-code">__label</code> <code class="nb-inline-code">__link</code> <code class="nb-inline-code">__tag</code></small><br><small>Modifier: <code class="nb-inline-code">--sub</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>sidebar note</strong></td><td><code class="nb-inline-code">.nb-sidebar-note</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>overlay</strong></td><td><code class="nb-inline-code">.nb-overlay</code></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>topbar</strong></td><td><code class="nb-inline-code">.nb-topbar</code><br><small>Elemen: <code class="nb-inline-code">__actions</code> <code class="nb-inline-code">__brand</code> <code class="nb-inline-code">__search</code> <code class="nb-inline-code">__search-toggle</code> <code class="nb-inline-code">__start</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>breadcrumb</strong></td><td><code class="nb-inline-code">.nb-breadcrumb</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>page header</strong></td><td><code class="nb-inline-code">.nb-page-header</code><br><small>Elemen: <code class="nb-inline-code">__actions</code> <code class="nb-inline-code">__desc</code> <code class="nb-inline-code">__text</code> <code class="nb-inline-code">__title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>eyebrow</strong></td><td><code class="nb-inline-code">.nb-eyebrow</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+<tr><td><strong>section</strong></td><td><code class="nb-inline-code">.nb-section</code><br><small>Elemen: <code class="nb-inline-code">__desc</code> <code class="nb-inline-code">__head</code> <code class="nb-inline-code">__title</code></small></td><td><span class="nb-cell-muted">—</span></td><td><span class="nb-cell-muted">dipakai di pola halaman</span></td></tr>
+<tr><td><strong>grid</strong></td><td><code class="nb-inline-code">.nb-grid</code><br><small>Modifier: <code class="nb-inline-code">--2</code> <code class="nb-inline-code">--3</code> <code class="nb-inline-code">--4</code> <code class="nb-inline-code">--aside-main</code> <code class="nb-inline-code">--main-aside</code></small></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/icons-typography.html">Ikon &amp; tipografi</a></td></tr>
+<tr><td><strong>stack</strong></td><td><code class="nb-inline-code">.nb-stack</code></td><td><code class="nb-inline-code">data-icon-filter</code> <code class="nb-inline-code">data-kanban-list</code> <code class="nb-inline-code">data-noresults-demo</code></td><td><a href="../components/charts.html">Chart &amp; KPI</a>, <a href="../components/empty-loading.html">Empty &amp; loading</a>, <a href="../components/icons-typography.html">Ikon &amp; tipografi</a> <small>+1</small></td></tr>
+<tr><td><strong>footer</strong></td><td><code class="nb-inline-code">.nb-footer</code></td><td><span class="nb-cell-muted">—</span></td><td><a href="../components/alerts.html">Alert &amp; toast</a>, <a href="../components/badges.html">Badge &amp; status</a>, <a href="../components/buttons.html">Tombol</a> <small>+11</small></td></tr>
+</tbody>
+</table>
+</div>
+      </section>
+
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif. Perubahan hanya berlaku di sesi browser ini.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

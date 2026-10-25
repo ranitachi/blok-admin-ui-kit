@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="id" class="nb-preload">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Badge &amp; status — BLOK Admin UI Kit</title>
+  <meta name="description" content="Galeri badge BLOK: status netral, sukses, peringatan, bahaya, info, titik status, ikon, outline dan penghitung.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%272%27 y=%272%27 width=%2728%27 height=%2728%27 fill=%27%23FFD447%27 stroke=%27%23151515%27 stroke-width=%273%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial,sans-serif%27 font-size=%2718%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23151515%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/forms.js" defer></script>
+  <script src="../assets/js/data.js" defer></script>
+  <script src="../assets/js/charts.js" defer></script>
+  <script src="../assets/js/pages/gallery.js" defer></script>
+</head>
+<body class="nb-app" data-page="c-badges">
+  <a class="nb-skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <!-- nb:sidebar -->
+  <aside class="nb-sidebar" id="nb-sidebar" aria-label="Navigasi utama">
+    <div class="nb-sidebar__brand">
+      <a class="nb-brand" href="../index.html">
+        <span class="nb-brand__mark" aria-hidden="true">B</span>
+        <span class="nb-brand__text"><strong>BLOK</strong><small>Admin UI Kit</small></span>
+      </a>
+      <button class="nb-icon-btn nb-sidebar__close" type="button" data-sidebar-close aria-label="Tutup menu navigasi">
+        <svg class="nb-icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="nb-sidebar__nav" aria-label="Menu">
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dashboard</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../index.html" data-nav="index"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg><span class="nb-nav__label">Katalog halaman</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard.html" data-nav="dashboard"><svg class="nb-icon" aria-hidden="true"><use href="#i-home"></use></svg><span class="nb-nav__label">Ringkasan</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-analytics.html" data-nav="dashboard-analytics"><svg class="nb-icon" aria-hidden="true"><use href="#i-chart"></use></svg><span class="nb-nav__label">Analitik</span></a></li>
+          <li><a class="nb-nav__link" href="../dashboard-operations.html" data-nav="dashboard-operations"><svg class="nb-icon" aria-hidden="true"><use href="#i-activity"></use></svg><span class="nb-nav__label">Operasional</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Data</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/assets-list.html" data-nav="assets"><svg class="nb-icon" aria-hidden="true"><use href="#i-box"></use></svg><span class="nb-nav__label">Aset</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/users-list.html" data-nav="users"><svg class="nb-icon" aria-hidden="true"><use href="#i-users"></use></svg><span class="nb-nav__label">Pengguna</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/rooms-list.html" data-nav="rooms"><svg class="nb-icon" aria-hidden="true"><use href="#i-door"></use></svg><span class="nb-nav__label">Ruangan</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Operasional</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/bookings.html" data-nav="bookings"><svg class="nb-icon" aria-hidden="true"><use href="#i-bookmark"></use></svg><span class="nb-nav__label">Peminjaman</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/maintenance.html" data-nav="maintenance"><svg class="nb-icon" aria-hidden="true"><use href="#i-wrench"></use></svg><span class="nb-nav__label">Perawatan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/tasks-kanban.html" data-nav="tasks"><svg class="nb-icon" aria-hidden="true"><use href="#i-kanban"></use></svg><span class="nb-nav__label">Tugas</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/calendar.html" data-nav="calendar"><svg class="nb-icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="nb-nav__label">Kalender</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">UI Kit</p>
+        <ul class="nb-nav">
+          <li>
+            <button class="nb-nav__link" type="button" data-nav-toggle aria-expanded="false" aria-controls="nb-nav-components">
+              <svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Komponen</span><span class="nb-nav__count" aria-label="14 halaman siap">14</span><svg class="nb-icon nb-icon--sm nb-nav__chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+            </button>
+            <ul class="nb-nav nb-nav--sub" id="nb-nav-components" hidden>
+              <li><a class="nb-nav__link" href="../components/buttons.html" data-nav="c-buttons"><span class="nb-nav__label">Tombol</span></a></li>
+              <li><a class="nb-nav__link" href="../components/cards.html" data-nav="c-cards"><span class="nb-nav__label">Kartu</span></a></li>
+              <li><a class="nb-nav__link" href="../components/badges.html" data-nav="c-badges"><span class="nb-nav__label">Badge &amp; status</span></a></li>
+              <li><a class="nb-nav__link" href="../components/alerts.html" data-nav="c-alerts"><span class="nb-nav__label">Alert &amp; toast</span></a></li>
+              <li><a class="nb-nav__link" href="../components/modals.html" data-nav="c-modals"><span class="nb-nav__label">Modal &amp; drawer</span></a></li>
+              <li><a class="nb-nav__link" href="../components/dropdowns.html" data-nav="c-dropdowns"><span class="nb-nav__label">Dropdown &amp; popover</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tabs-accordion.html" data-nav="c-tabs"><span class="nb-nav__label">Tab &amp; akordeon</span></a></li>
+              <li><a class="nb-nav__link" href="../components/navigation.html" data-nav="c-navigation"><span class="nb-nav__label">Navigasi</span></a></li>
+              <li><a class="nb-nav__link" href="../components/tables.html" data-nav="c-tables"><span class="nb-nav__label">Tabel</span></a></li>
+              <li><a class="nb-nav__link" href="../components/forms.html" data-nav="c-forms"><span class="nb-nav__label">Formulir</span></a></li>
+              <li><a class="nb-nav__link" href="../components/charts.html" data-nav="c-charts"><span class="nb-nav__label">Chart &amp; KPI</span></a></li>
+              <li><a class="nb-nav__link" href="../components/timelines.html" data-nav="c-timelines"><span class="nb-nav__label">Timeline &amp; konten</span></a></li>
+              <li><a class="nb-nav__link" href="../components/empty-loading.html" data-nav="c-empty"><span class="nb-nav__label">Empty &amp; loading</span></a></li>
+              <li><a class="nb-nav__link" href="../components/icons-typography.html" data-nav="c-icons"><span class="nb-nav__label">Ikon &amp; tipografi</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Halaman</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../pages/reports.html" data-nav="reports"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Laporan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/notifications.html" data-nav="notifications"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-nav__label">Notifikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/profile.html" data-nav="profile"><svg class="nb-icon" aria-hidden="true"><use href="#i-user"></use></svg><span class="nb-nav__label">Profil</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/settings.html" data-nav="settings"><svg class="nb-icon" aria-hidden="true"><use href="#i-settings"></use></svg><span class="nb-nav__label">Pengaturan</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/pricing.html" data-nav="pricing"><svg class="nb-icon" aria-hidden="true"><use href="#i-tag"></use></svg><span class="nb-nav__label">Harga</span></a></li>
+          <li><a class="nb-nav__link" href="../pages/help-center.html" data-nav="help"><svg class="nb-icon" aria-hidden="true"><use href="#i-help"></use></svg><span class="nb-nav__label">Pusat bantuan</span></a></li>
+          <li><a class="nb-nav__link" href="../auth/login.html" data-nav="auth"><svg class="nb-icon" aria-hidden="true"><use href="#i-lock"></use></svg><span class="nb-nav__label">Autentikasi</span></a></li>
+          <li><a class="nb-nav__link" href="../errors/404.html" data-nav="errors"><svg class="nb-icon" aria-hidden="true"><use href="#i-octagon"></use></svg><span class="nb-nav__label">Halaman error</span></a></li>
+        </ul>
+      </div>
+      <div class="nb-nav-group">
+        <p class="nb-nav-group__title">Dokumentasi</p>
+        <ul class="nb-nav">
+          <li><a class="nb-nav__link" href="../documentation/index.html" data-nav="docs"><svg class="nb-icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="nb-nav__label">Mulai di sini</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/components.html" data-nav="docs-components"><svg class="nb-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="nb-nav__label">Indeks komponen</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/tokens.html" data-nav="docs-tokens"><svg class="nb-icon" aria-hidden="true"><use href="#i-palette"></use></svg><span class="nb-nav__label">Design token</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/javascript.html" data-nav="docs-js"><svg class="nb-icon" aria-hidden="true"><use href="#i-code"></use></svg><span class="nb-nav__label">API JavaScript</span></a></li>
+          <li><a class="nb-nav__link" href="../documentation/accessibility.html" data-nav="docs-a11y"><svg class="nb-icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="nb-nav__label">Aksesibilitas</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nb-sidebar__footer">
+      <p class="nb-sidebar-note"><strong>Mode demo</strong>Semua data fiktif. Perubahan hanya bertahan selama halaman terbuka.</p>
+    </div>
+  </aside>
+  <!-- /nb:sidebar -->
+
+  <div class="nb-main">
+    <!-- ================= TOPBAR ================= -->
+    <!-- nb:topbar -->
+    <header class="nb-topbar">
+      <div class="nb-topbar__start">
+        <button class="nb-icon-btn" type="button" data-sidebar-toggle aria-controls="nb-sidebar" aria-expanded="true" aria-label="Ciutkan sidebar">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-sidebar-collapse"></use></svg>
+        </button>
+        <a class="nb-brand nb-topbar__brand" href="../index.html" aria-label="BLOK — katalog halaman">
+          <span class="nb-brand__mark" aria-hidden="true">B</span>
+          <span class="nb-brand__text"><strong>BLOK</strong></span>
+        </a>
+        <nav class="nb-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Beranda</a></li>
+            <li>UI Kit</li>
+            <li><span aria-current="page">Badge &amp; status</span></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="nb-topbar__search" data-quicknav role="search">
+        <label class="nb-sr-only" for="nb-quicknav">Cari halaman</label>
+        <div class="nb-search">
+          <svg class="nb-icon nb-search__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="nb-search__input" id="nb-quicknav" type="search" placeholder="Cari halaman…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nb-quicknav-results">
+          <kbd class="nb-search__kbd" aria-hidden="true">/</kbd>
+        </div>
+        <ul class="nb-search-results" id="nb-quicknav-results" role="listbox" aria-label="Hasil pencarian halaman" data-quicknav-results hidden></ul>
+      </div>
+
+      <div class="nb-topbar__actions">
+        <button class="nb-icon-btn nb-topbar__search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="nb-quicknav" aria-label="Tampilkan pencarian halaman">
+          <svg class="nb-icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-icon-btn" type="button" data-dropdown-trigger data-notif-trigger aria-expanded="false" aria-controls="nb-notif-panel" aria-label="Notifikasi, 3 belum dibaca">
+            <svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="nb-icon-btn__dot" data-notif-count aria-hidden="true">3</span>
+          </button>
+          <div class="nb-popover" id="nb-notif-panel" role="dialog" aria-labelledby="nb-notif-title" tabindex="-1" hidden>
+            <div class="nb-popover__header">
+              <h2 id="nb-notif-title">Notifikasi</h2>
+              <button class="nb-link-btn" type="button" data-notif-mark-all>Tandai semua dibaca</button>
+            </div>
+            <ul class="nb-notif-list">
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-pink)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-wrench"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Tiket TK-221: proyektor Lab Multimedia tidak menyala.<time class="nb-notif__time" datetime="2026-10-24T09:12">12 menit lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-yellow)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>12 peminjaman jatuh tempo minggu ini.<time class="nb-notif__time" datetime="2026-10-24T07:00">2 jam lalu</time></p>
+              </li>
+              <li class="nb-notif is-unread">
+                <span class="nb-notif__icon" style="background: var(--color-mint)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <p class="nb-notif__title"><span class="nb-sr-only nb-notif__state">Belum dibaca. </span>Audit kuartal III selesai dengan tingkat kecocokan 98%.<time class="nb-notif__time" datetime="2026-10-23">Kemarin</time></p>
+              </li>
+              <li class="nb-notif">
+                <span class="nb-notif__icon" style="background: var(--color-blue)"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                <p class="nb-notif__title">Dimas Pratama bergabung sebagai Operator Gudang.<time class="nb-notif__time" datetime="2026-10-21">3 hari lalu</time></p>
+              </li>
+            </ul>
+            <p class="nb-popover__footer">Notifikasi contoh — tidak tersambung ke server. <a href="../pages/notifications.html">Lihat semua</a></p>
+          </div>
+        </div>
+
+        <div class="nb-dropdown" data-dropdown>
+          <button class="nb-user-btn" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="nb-user-menu">
+            <span class="nb-avatar" aria-hidden="true">RA</span>
+            <span class="nb-user-btn__text"><strong>Rani Ardiani</strong><small>Administrator</small></span>
+            <svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="nb-menu" id="nb-user-menu" role="menu" aria-label="Menu akun" hidden>
+            <div class="nb-menu__header" role="presentation"><strong>Rani Ardiani</strong><span>rani@example.com</span></div>
+            <a class="nb-menu__item" role="menuitem" href="../pages/profile.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-user"></use></svg>Profil saya</a>
+            <a class="nb-menu__item" role="menuitem" href="../pages/settings.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-settings"></use></svg>Pengaturan</a>
+            <a class="nb-menu__item" role="menuitem" href="../dashboard.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-home"></use></svg>Ringkasan</a>
+            <a class="nb-menu__item" role="menuitem" href="../index.html"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+            <hr class="nb-menu__sep">
+            <button class="nb-menu__item nb-menu__item--danger" type="button" role="menuitem" data-toast="Keluar (demo)" data-toast-message="Tidak ada sesi login nyata — ini template statis." data-toast-type="info"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-logout"></use></svg>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /nb:topbar -->
+
+    <!-- ================= KONTEN ================= -->
+    <main class="nb-content" id="main" tabindex="-1">
+      <!-- nb:crumbs -->
+      <nav class="nb-breadcrumb nb-page-breadcrumb" aria-label="Breadcrumb halaman">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li>UI Kit</li>
+          <li><span aria-current="page">Badge &amp; status</span></li>
+        </ol>
+      </nav>
+      <!-- /nb:crumbs -->
+
+      <header class="nb-page-header">
+        <div class="nb-page-header__text">
+          <p class="nb-eyebrow">UI Kit · Komponen</p>
+          <h1 class="nb-page-header__title">Badge &amp; status</h1>
+          <p class="nb-page-header__desc">Label pendek untuk status, kategori dan jumlah. Teks selalu menyertai warna.</p>
+        </div>
+        <div class="nb-page-header__actions">
+          <a class="nb-btn nb-btn--outline" href="tables.html"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg>Badge di tabel</a>
+          <a class="nb-btn nb-btn--yellow" href="#dalam-konteks"><svg class="nb-icon" aria-hidden="true"><use href="#i-refresh"></use></svg>Coba ubah status</a>
+        </div>
+      </header>
+
+      <nav aria-label="Daftar isi halaman">
+        <ul class="nb-toc">
+          <li><a href="#status">Badge status</a></li>
+          <li><a href="#dot-ikon">Titik status &amp; ikon</a></li>
+          <li><a href="#outline-count">Outline &amp; penghitung</a></li>
+          <li><a href="#dalam-konteks">Badge dalam konteks</a></li>
+        </ul>
+      </nav>
+
+      <section class="nb-demo" id="status" aria-labelledby="status-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="status-title">Badge status</h2>
+            <p class="nb-demo__desc">Lima makna dasar. Warna selalu ditemani teks yang jelas (“Baik”, “Rusak berat”), sehingga tidak bergantung pada warna saja.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-specimens">
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--neutral">Draf</span><figcaption>--neutral</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--success">Baik</span><figcaption>--success</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--warning">Perlu servis</span><figcaption>--warning</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--danger">Rusak berat</span><figcaption>--danger</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--info">Dipinjam</span><figcaption>--info</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--lavender">Audit</span><figcaption>--lavender</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--ink">Baru</span><figcaption>--ink</figcaption></figure>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Badge status"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Badge status"><code>&lt;div class="nb-specimens"&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--neutral"&gt;Draf&lt;/span&gt;&lt;figcaption&gt;--neutral&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--success"&gt;Baik&lt;/span&gt;&lt;figcaption&gt;--success&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--warning"&gt;Perlu servis&lt;/span&gt;&lt;figcaption&gt;--warning&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--danger"&gt;Rusak berat&lt;/span&gt;&lt;figcaption&gt;--danger&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--info"&gt;Dipinjam&lt;/span&gt;&lt;figcaption&gt;--info&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--lavender"&gt;Audit&lt;/span&gt;&lt;figcaption&gt;--lavender&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--ink"&gt;Baru&lt;/span&gt;&lt;figcaption&gt;--ink&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="dot-ikon" aria-labelledby="dot-ikon-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="dot-ikon-title">Titik status &amp; ikon</h2>
+            <p class="nb-demo__desc">Varian <code class="nb-inline-code">--dot</code> menambah titik di depan label; varian ikon memberi petunjuk bentuk tambahan untuk pengguna buta warna.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-specimens">
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--success nb-badge--dot">Aktif</span><figcaption>--dot</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--danger nb-badge--dot">Offline</span><figcaption>--dot danger</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--success"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-check"></use></svg>Terverifikasi</span><figcaption>ikon + label</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--warning"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg>Jatuh tempo</span><figcaption>ikon + label</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--danger"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-lock"></use></svg>Terkunci</span><figcaption>ikon + label</figcaption></figure>
+            <figure class="nb-specimen">
+              <span><span class="nb-status-dot" style="--dot: var(--status-success)" aria-hidden="true"></span> Server daring</span>
+              <figcaption>.nb-status-dot</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Titik status &amp; ikon"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Titik status &amp; ikon"><code>&lt;div class="nb-specimens"&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--success nb-badge--dot"&gt;Aktif&lt;/span&gt;&lt;figcaption&gt;--dot&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--danger nb-badge--dot"&gt;Offline&lt;/span&gt;&lt;figcaption&gt;--dot danger&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--success"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-check"&gt;&lt;/use&gt;&lt;/svg&gt;Terverifikasi&lt;/span&gt;&lt;figcaption&gt;ikon + label&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--warning"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-clock"&gt;&lt;/use&gt;&lt;/svg&gt;Jatuh tempo&lt;/span&gt;&lt;figcaption&gt;ikon + label&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--danger"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-lock"&gt;&lt;/use&gt;&lt;/svg&gt;Terkunci&lt;/span&gt;&lt;figcaption&gt;ikon + label&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;
+    &lt;span&gt;&lt;span class="nb-status-dot" style="--dot: var(--status-success)" aria-hidden="true"&gt;&lt;/span&gt; Server daring&lt;/span&gt;
+    &lt;figcaption&gt;.nb-status-dot&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="outline-count" aria-labelledby="outline-count-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="outline-count-title">Outline &amp; penghitung</h2>
+            <p class="nb-demo__desc">Badge outline untuk tag/kategori yang tidak bermakna status. Penghitung (<code class="nb-inline-code">.nb-count</code>) selalu disertai label teks untuk pembaca layar.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-specimens">
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--outline">Elektronik</span><figcaption>--outline</figcaption></figure>
+            <figure class="nb-specimen"><span class="nb-badge nb-badge--outline"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-tag"></use></svg>Gedung A</span><figcaption>--outline + ikon</figcaption></figure>
+            <figure class="nb-specimen">
+              <span>Kotak masuk <span class="nb-count" aria-label="12 belum dibaca">12</span></span>
+              <figcaption>.nb-count</figcaption>
+            </figure>
+            <figure class="nb-specimen">
+              <span>Tugas <span class="nb-count nb-count--yellow" aria-label="99 lebih tugas">99+</span></span>
+              <figcaption>.nb-count--yellow</figcaption>
+            </figure>
+            <figure class="nb-specimen">
+              <button class="nb-icon-btn" type="button" aria-label="Notifikasi, 3 belum dibaca"><svg class="nb-icon" aria-hidden="true"><use href="#i-bell"></use></svg><span class="nb-icon-btn__dot" aria-hidden="true">3</span></button>
+              <figcaption>.nb-icon-btn__dot</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Outline &amp; penghitung"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Outline &amp; penghitung"><code>&lt;div class="nb-specimens"&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--outline"&gt;Elektronik&lt;/span&gt;&lt;figcaption&gt;--outline&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;&lt;span class="nb-badge nb-badge--outline"&gt;&lt;svg class="nb-icon nb-icon--sm" aria-hidden="true"&gt;&lt;use href="#i-tag"&gt;&lt;/use&gt;&lt;/svg&gt;Gedung A&lt;/span&gt;&lt;figcaption&gt;--outline + ikon&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;
+    &lt;span&gt;Kotak masuk &lt;span class="nb-count" aria-label="12 belum dibaca"&gt;12&lt;/span&gt;&lt;/span&gt;
+    &lt;figcaption&gt;.nb-count&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;
+    &lt;span&gt;Tugas &lt;span class="nb-count nb-count--yellow" aria-label="99 lebih tugas"&gt;99+&lt;/span&gt;&lt;/span&gt;
+    &lt;figcaption&gt;.nb-count--yellow&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;figure class="nb-specimen"&gt;
+    &lt;button class="nb-icon-btn" type="button" aria-label="Notifikasi, 3 belum dibaca"&gt;&lt;svg class="nb-icon" aria-hidden="true"&gt;&lt;use href="#i-bell"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span class="nb-icon-btn__dot" aria-hidden="true"&gt;3&lt;/span&gt;&lt;/button&gt;
+    &lt;figcaption&gt;.nb-icon-btn__dot&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="nb-demo" id="dalam-konteks" aria-labelledby="dalam-konteks-title">
+        <div class="nb-demo__head">
+          <div>
+            <h2 class="nb-demo__title" id="dalam-konteks-title">Badge dalam konteks</h2>
+            <p class="nb-demo__desc">Contoh pemakaian nyata dalam baris tabel. Klik <em>Ubah status</em> untuk memutar status secara demo; perubahan diumumkan lewat region <code class="nb-inline-code">aria-live</code>.</p>
+          </div>
+        </div>
+        <div class="nb-demo__preview">
+          <div class="nb-table-wrap" tabindex="0" role="region" aria-label="Contoh badge dalam tabel">
+            <table class="nb-table">
+              <thead>
+                <tr><th scope="col">Aset</th><th scope="col">Lokasi</th><th scope="col">Status</th><th scope="col"><span class="nb-sr-only">Aksi</span></th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="nb-cell-strong">Proyektor LCD</td>
+                  <td>Lab Multimedia</td>
+                  <td><span class="nb-badge nb-badge--warning nb-badge--dot" data-badge-cycle>Perlu servis</span></td>
+                  <td><button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-badge-cycle-btn>Ubah status</button></td>
+                </tr>
+                <tr>
+                  <td class="nb-cell-strong">Mikroskop binokuler</td>
+                  <td>Lab Biologi</td>
+                  <td><span class="nb-badge nb-badge--info nb-badge--dot">Dipinjam</span></td>
+                  <td><span class="nb-badge nb-badge--outline">Praktikum</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="nb-demo-output" data-badge-cycle-out aria-live="polite">Status saat ini: Perlu servis</p>
+        </div>
+        <div class="nb-demo__code">
+          <div class="nb-demo__code-bar"><span>HTML</span>
+            <button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-copy aria-label="Salin kode Badge dalam konteks"><svg class="nb-icon nb-icon--sm" aria-hidden="true"><use href="#i-code"></use></svg><span data-copy-label>Salin</span></button>
+          </div>
+          <pre class="nb-code" tabindex="0" aria-label="Kode contoh Badge dalam konteks"><code>&lt;div class="nb-table-wrap" tabindex="0" role="region" aria-label="Contoh badge dalam tabel"&gt;
+  &lt;table class="nb-table"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Aset&lt;/th&gt;&lt;th scope="col"&gt;Lokasi&lt;/th&gt;&lt;th scope="col"&gt;Status&lt;/th&gt;&lt;th scope="col"&gt;&lt;span class="nb-sr-only"&gt;Aksi&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class="nb-cell-strong"&gt;Proyektor LCD&lt;/td&gt;
+        &lt;td&gt;Lab Multimedia&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--warning nb-badge--dot" data-badge-cycle&gt;Perlu servis&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;button class="nb-btn nb-btn--sm nb-btn--outline" type="button" data-badge-cycle-btn&gt;Ubah status&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td class="nb-cell-strong"&gt;Mikroskop binokuler&lt;/td&gt;
+        &lt;td&gt;Lab Biologi&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--info nb-badge--dot"&gt;Dipinjam&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class="nb-badge nb-badge--outline"&gt;Praktikum&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;p class="nb-demo-output" data-badge-cycle-out aria-live="polite"&gt;Status saat ini: Perlu servis&lt;/p&gt;</code></pre>
+        </div>
+      </section>
+
+      <nav class="nb-gallery-pager" aria-label="Halaman komponen lain">
+          <a class="nb-btn nb-btn--outline" href="cards.html"><svg class="nb-icon nb-icon--flip" aria-hidden="true"><use href="#i-chevron-right"></use></svg><span>Sebelumnya: Kartu</span></a>
+          <a class="nb-btn nb-btn--ghost" href="../index.html"><svg class="nb-icon" aria-hidden="true"><use href="#i-grid"></use></svg>Katalog halaman</a>
+          <a class="nb-btn nb-btn--outline" href="alerts.html"><span>Berikutnya: Alert &amp; toast</span><svg class="nb-icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+      </nav>
+    </main>
+
+    <footer class="nb-footer">
+      <p>© 2026 BLOK Admin UI Kit · Template statis, seluruh data fiktif.</p>
+      <p><a href="../index.html">Katalog halaman</a> · <a href="../dashboard.html">Dashboard</a> · <a href="#main">Kembali ke atas</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
