@@ -2914,3 +2914,132 @@ span.nb-page-list__item {
 .nb-table code {
   overflow-wrap: anywhere;
 }
+
+/* ==========================================================================
+   Katalog — kartu mengambang "Unduh / GitHub"
+   ========================================================================== */
+.nb-fab {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: var(--z-overlay);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-3) var(--space-4) var(--space-4);
+  background: var(--color-paper);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  animation: nb-pop var(--dur-slow) var(--ease);
+}
+
+.nb-fab[hidden] {
+  display: none;
+}
+
+.nb-fab__title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.nb-fab__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.nb-fab__btn {
+  padding-inline: var(--space-4);
+}
+
+.nb-fab__close {
+  grid-row: 1;
+  grid-column: 2;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: calc(var(--space-1) * -1) calc(var(--space-1) * -1) 0 0;
+  color: var(--color-ink);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* Area sentuh tetap 44px walau ikonnya kecil. */
+.nb-fab__close::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+}
+
+.nb-fab__close:hover {
+  border-color: var(--color-ink);
+}
+
+.nb-fab__close:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* Toast tidak boleh tertutup kartu mengambang. */
+body:has(.nb-fab:not([hidden])) .nb-toast-stack {
+  bottom: calc(var(--space-5) + 132px);
+}
+
+@media (max-width: 767px) {
+  .nb-fab {
+    right: var(--space-4);
+    bottom: var(--space-4);
+    grid-template-columns: auto auto;
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+
+  .nb-fab__title,
+  .nb-fab__text {
+    display: none;
+  }
+
+  .nb-fab__actions {
+    grid-column: auto;
+    gap: var(--space-2);
+  }
+
+  .nb-fab__btn {
+    width: var(--tap-min);
+    padding: 0;
+  }
+
+  body:has(.nb-fab:not([hidden])) .nb-toast-stack {
+    bottom: calc(var(--space-4) + 72px);
+  }
+
+  /* Ruang di akhir halaman supaya footer tidak tertutup kartu. */
+  body:has(.nb-fab:not([hidden])) .nb-footer {
+    padding-bottom: calc(var(--space-6) + 56px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nb-fab {
+    animation: none;
+  }
+}
+
+:root[data-motion="reduce"] .nb-fab {
+  animation: none;
+}
+
+@media print {
+  .nb-fab {
+    display: none;
+  }
+}
